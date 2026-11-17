@@ -190,15 +190,17 @@ def banner(W, H, emblem, word, dark=True, bare=False):
     safe_h = H * 0.8
     em = fit(emblem, H * 0.78, safe_h)
     bg = put(bg, em, center=(W * 0.19, H * 0.5), shadow_op=0.4 if dark else 0.15)
-    wd = fit(word, W * 0.44, H * 0.34)
-    cx = W * 0.62
-    bg = put(bg, wd, center=(cx, H * 0.46), shadow_op=0.35 if dark else 0.0)
+    big = bare            # the YouTube safe strip: let the name fill it
+    wd = fit(word, W * (0.54 if big else 0.44), H * (0.5 if big else 0.34))
+    cx = W * (0.64 if big else 0.62)
+    cy0 = H * (0.40 if big else 0.46)
+    bg = put(bg, wd, center=(cx, cy0), shadow_op=0.35 if dark else 0.0)
     d = ImageDraw.Draw(bg)
-    y = H * 0.46 + wd.height / 2 + H * 0.08
+    y = cy0 + wd.height / 2 + H * 0.08
     d.line([(cx - wd.width * 0.46, y), (cx - 24, y)], fill=CYAN + (255,) if dark else INDIGO + (255,), width=max(2, int(H * 0.008)))
     d.line([(cx + 24, y), (cx + wd.width * 0.46, y)], fill=CYAN + (255,) if dark else INDIGO + (255,), width=max(2, int(H * 0.008)))
     diamond(d, cx, y, max(6, H * 0.02), CYAN + (255,) if dark else INDIGO + (255,))
-    bg = fill_mask(bg, tagline_mask(bg.size, TAGLINE.upper(), y + H * 0.16, cx, int(H * 0.085), "center", track=int(H * 0.02)), (226, 238, 250) if dark else (40, 50, 110))
+    bg = fill_mask(bg, tagline_mask(bg.size, TAGLINE.upper(), y + H * 0.16, cx, int(H * (0.105 if big else 0.085)), "center", track=int(H * 0.02)), (226, 238, 250) if dark else (40, 50, 110))
     return bg if bare else grain(bg, 8)
 
 

@@ -90,6 +90,16 @@ def crop_pad(img, pad=0.04):
     return out
 
 
+def stencil(img, color):
+    """One-colour logo that keeps the drawing readable: the dark outlines become gaps, so the shapes keep their inner detail."""
+    a = np.asarray(img).astype(np.float32)
+    lum = a[..., :3] @ np.array([0.299, 0.587, 0.114], np.float32)
+    keep = np.clip((lum - 66) / 18, 0, 1)
+    out = Image.new("RGBA", img.size, color + (0,))
+    out.putalpha(Image.fromarray((a[..., 3] * keep).astype("uint8")))
+    return out
+
+
 def tint(img, color):
     out = Image.new("RGBA", img.size, color + (0,))
     out.putalpha(img.split()[3])
@@ -165,8 +175,18 @@ def tagline_mask(size, text, y, x, px, anchor="left", track=6):
     return text_mask(size, text, font("georgia.ttf", px), (x, y), track=track, anchor=anchor)
 
 
-def banner(W, H, emblem, word, dark=True):
-    bg = dark_bg((W, H), emblem) if dark else light_bg((W, H))
+def banner(W, H, emblem, word, dark=True, bare=False):
+    if W / H < 2.5 and not bare:
+        # tall banners (YouTube): keep everything inside the central safe strip so nothing is cut on phones or TVs
+        bg = dark_bg((W, H), emblem)
+        rw = int(W * 0.6)
+        rh = int(rw / 3.65)
+        inner = banner(rw, rh, emblem, word, dark, bare=True)
+        return grain(put(bg, inner, center=(W / 2, H / 2)), 8)
+    if bare:
+        bg = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    else:
+        bg = dark_bg((W, H), emblem) if dark else light_bg((W, H))
     safe_h = H * 0.8
     em = fit(emblem, H * 0.78, safe_h)
     bg = put(bg, em, center=(W * 0.19, H * 0.5), shadow_op=0.4 if dark else 0.15)
@@ -179,7 +199,7 @@ def banner(W, H, emblem, word, dark=True):
     d.line([(cx + 24, y), (cx + wd.width * 0.46, y)], fill=CYAN + (255,) if dark else INDIGO + (255,), width=max(2, int(H * 0.008)))
     diamond(d, cx, y, max(6, H * 0.02), CYAN + (255,) if dark else INDIGO + (255,))
     bg = fill_mask(bg, tagline_mask(bg.size, TAGLINE.upper(), y + H * 0.16, cx, int(H * 0.085), "center", track=int(H * 0.02)), (226, 238, 250) if dark else (40, 50, 110))
-    return grain(bg, 8)
+    return bg if bare else grain(bg, 8)
 
 
 def business_cards(emblem, word, full):
@@ -306,7 +326,7 @@ def brand_sheet(emblem, word, full):
     img = fill_mask(img, text_mask(img.size, "LOGO, COLOUR AND TYPE AT A GLANCE", font("segoeui.ttf", 34), (124, 250), track=8, anchor="left"), INDIGO)
     # logo versions
     panels = [("Primary", light_bg((560, 560)), full), ("On dark", dark_bg((560, 560)), full),
-              ("White", gradient_fill((560, 560), INDIGO, DEEP), tint(full, (255, 255, 255))), ("Black", light_bg((560, 560)), tint(full, (20, 20, 20)))]
+              ("White", gradient_fill((560, 560), INDIGO, DEEP), stencil(full, (255, 255, 255))), ("Black", light_bg((560, 560)), stencil(full, (20, 20, 20)))]
     for i, (name, bg, lg) in enumerate(panels):
         x = 120 + i * 700
         tile = put(bg, fit(lg, 440, 440), center=(280, 280))
@@ -349,8 +369,8 @@ def main():
     save(fit(full, 2000, 2000), "northbeam_logo.png", rgba=True)
     save(fit(emblem, 1500, 1500), "northbeam_icon.png", rgba=True)
     save(fit(word, 2400, 1000), "northbeam_wordmark.png", rgba=True)
-    save(fit(tint(full, (255, 255, 255)), 2000, 2000), "northbeam_logo_white.png", rgba=True)
-    save(fit(tint(full, (20, 20, 22)), 2000, 2000), "northbeam_logo_black.png", rgba=True)
+    save(fit(stencil(full, (255, 255, 255)), 2000, 2000), "northbeam_logo_white.png", rgba=True)
+    save(fit(stencil(full, (20, 20, 22)), 2000, 2000), "northbeam_logo_black.png", rgba=True)
     dk = put(dark_bg((2000, 2000), emblem), fit(full, 1400, 1400), center=(1000, 1000), shadow_op=0.4)
     save(dk, "northbeam_logo_dark.png")
     save(avatar(emblem), "northbeam_avatar.png")

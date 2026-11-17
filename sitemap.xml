@@ -11,7 +11,6 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Urban2.png</image:loc><image:title>Urban dictionary</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Roselogo1.png</image:loc><image:title>Rose Logo</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/TreesBanner.png</image:loc><image:title>Rowan trees banner</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Northbeamlogo.png</image:loc><image:title>Northbeam logo</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Football.png</image:loc><image:title>Football Banner</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/characterdesign.jpg</image:loc><image:title>Warrior lady Illustration</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/beija666.png</image:loc><image:title>Character design illustration Beija</image:title></image:image>
@@ -114,6 +113,41 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier2_3_Bits/bits5k_cool_448.png</image:loc><image:title>Bits5 k cool - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier2_3_Bits/tier2_bloom_448.png</image:loc><image:title>Tier2 bloom - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier2_3_Bits/tier3_royal_448.png</image:loc><image:title>Tier3 royal - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Badges/base_432.png</image:loc><image:title>Base - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Badges/3month_432.png</image:loc><image:title>3 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Badges/6month_432.png</image:loc><image:title>6 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Badges/9month_432.png</image:loc><image:title>9 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Badges/1year_432.png</image:loc><image:title>1 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Badges/2year_432.png</image:loc><image:title>2 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Badges/3year_432.png</image:loc><image:title>3 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Emotes/amethyst_448.png</image:loc><image:title>Amethyst - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Emotes/crown_448.gif</image:loc><image:title>Crown - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Emotes/diamond_448.png</image:loc><image:title>Diamond - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Emotes/gem_448.gif</image:loc><image:title>Gem - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Emotes/gg_448.png</image:loc><image:title>Gg - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Emotes/heart_448.gif</image:loc><image:title>Heart - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Emotes/hype_448.gif</image:loc><image:title>Hype - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Points/points_crown_432.png</image:loc><image:title>Points crown - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Points/points_gem_432.png</image:loc><image:title>Points gem - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Points/points_heart_432.png</image:loc><image:title>Points heart - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Points/points_sparkle_432.png</image:loc><image:title>Points sparkle - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Emotes/ruby_448.png</image:loc><image:title>Ruby - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Alert/snake_alert.gif</image:loc><image:title>Snake alert - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Screens/snake_be_right_back.png</image:loc><image:title>Snake be right back - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Screens/snake_offline.png</image:loc><image:title>Snake offline - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Overlay/snake_overlay_frame.png</image:loc><image:title>Snake overlay frame - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Screens/snake_starting_soon.png</image:loc><image:title>Snake starting soon - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Emotes/sparkle_448.gif</image:loc><image:title>Sparkle - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Flair/tier2_flair_432.png</image:loc><image:title>Tier2 flair - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Flair/tier3_flair_432.png</image:loc><image:title>Tier3 flair - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_avatar.png</image:loc><image:title>Northbeam avatar</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_banner_facebook.png</image:loc><image:title>Northbeam banner facebook</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_banner_light.png</image:loc><image:title>Northbeam banner light</image:title></image:image>

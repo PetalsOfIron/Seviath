@@ -215,8 +215,8 @@ def floral_banner():
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, fn in (("petals_floral_offline.png", offline_screen), ("petals_floral_logo.png", floral_logo),
-                     ("petals_floral_banner.png", floral_banner)):
+    for name, fn in (("offline.png", offline_screen), ("logo.png", floral_logo),
+                     ("banner.png", floral_banner)):
         img = fn().convert("RGB")
         img.save(OUT / name, optimize=True)
         print("Saved", OUT / name, img.size)

@@ -110,6 +110,7 @@ TWITCH_GROUPS = [  # (folder, title, description used for alt text)
     ("Badges", "Sub badges", "Twitch subscriber badge"),
     ("Flair", "Flair", "Twitch chat flair"),
     ("Starting", "Starting soon screen", "Twitch starting soon screen"),
+    ("Brb", "Be right back screen", "Twitch be right back screen"),
     ("Offline", "Offline screen", "Twitch offline screen"),
     ("Logo", "Logos", "Twitch channel logo"),
     ("Banner", "Banners", "Twitch channel banner"),
@@ -120,16 +121,10 @@ TWITCH_GROUPS = [  # (folder, title, description used for alt text)
 ]
 
 
-# complete generated sets (tools/make_purple.py, tools/make_floral.py): one group per kind of asset
-for _theme, _title in (("Purple", "Purple set"),):
-    for _kind, _name, _what in (("Screens", "screens", "Twitch screen"), ("Logo", "logo", "Twitch logo"),
-                                ("Banner", "banner", "Twitch banner"), ("Panels", "panels", "Twitch panel"),
-                                ("Emotes", "emotes", "Twitch emote"), ("Badges", "sub badges", "Twitch sub badge"),
-                                ("Points", "channel point icons", "Twitch channel point icon"),
-                                ("Flair", "flair", "Twitch chat flair"), ("Overlay", "overlay", "Twitch overlay"),
-                                ("Alert", "alert", "Twitch alert")):
-        TWITCH_GROUPS.append((f"{_theme}/{_kind}", f"{_title} - {_name}", f"{_what} ({_title.lower()})"))
-TWITCH_GROUPS.append(("Floral", "Floral set", "Twitch floral set"))
+THEME_SETS = ("Purple", "Floral")
+THEME_FOLDERS = {"Panels": "", "Emotes": "Emotes", "Badges": "Badges", "Points": "__points", "Flair": "Flair",
+                 "Overlay": "Overlay", "Alert": "Alert", "Logo": "Logo", "Banner": "Banner", "Screens": "Offline"}
+THEME_FILES = {"offline": "Offline", "logo": "Logo", "banner": "Banner"}  # loose files in Floral/
 
 
 def ensure_gif_loop(path):
@@ -176,13 +171,48 @@ def large_version(src, rel, is_gif, w, h):
     try:
         from PIL import Image, ImageFilter, ImageSequence
 
+        import numpy as np
+
+        def shock(img, iters=2, r=2):
+            """Edge sharpening for flat illustrations: each pixel takes the colour of the lightest or darkest
+            neighbour, whichever is closer in brightness. Edges become crisp without colour fringes."""
+            arr = np.asarray(img).astype(np.float32)
+            rgb, alpha = arr[..., :3], Image.fromarray(arr[..., 3].astype("uint8"))
+            hh, ww, _ = rgb.shape
+            for _ in range(iters):
+                lum = (rgb * np.array([0.299, 0.587, 0.114], np.float32)).sum(-1)
+                pl = np.pad(lum, r, mode="edge")
+                pr = np.pad(rgb, ((r, r), (r, r), (0, 0)), mode="edge")
+                bmax = np.full((hh, ww), -1, np.float32)
+                bmin = np.full((hh, ww), 1e9, np.float32)
+                cmax, cmin = np.zeros_like(rgb), np.zeros_like(rgb)
+                for dy in range(-r, r + 1):
+                    for dx in range(-r, r + 1):
+                        if dx * dx + dy * dy > r * r + 1:
+                            continue
+                        l = pl[r + dy:r + dy + hh, r + dx:r + dx + ww]
+                        c = pr[r + dy:r + dy + hh, r + dx:r + dx + ww]
+                        m = l > bmax
+                        bmax, cmax = np.where(m, l, bmax), np.where(m[..., None], c, cmax)
+                        m = l < bmin
+                        bmin, cmin = np.where(m, l, bmin), np.where(m[..., None], c, cmin)
+                tmax, tmin = (bmax - lum) < (lum - bmin), (bmax - lum) > (lum - bmin)
+                rgb = np.where(tmax[..., None], cmax, np.where(tmin[..., None], cmin, rgb))
+            for _ in range(iters):
+                mx = np.asarray(alpha.filter(ImageFilter.MaxFilter(2 * r + 1))).astype(int)
+                mn = np.asarray(alpha.filter(ImageFilter.MinFilter(2 * r + 1))).astype(int)
+                v = np.asarray(alpha).astype(int)
+                alpha = Image.fromarray(np.where(mx - v < v - mn, mx, np.where(mx - v > v - mn, mn, v)).astype("uint8"))
+            return Image.fromarray(np.dstack([rgb.clip(0, 255), np.asarray(alpha)]).astype("uint8"), "RGBA")
+
         def big(frame):
             frame = frame.convert("RGBA")
             pm = frame.convert("RGBa").resize((w * k, h * k), Image.LANCZOS).convert("RGBA")
-            r, g, b, a = pm.split()
-            rgb = Image.merge("RGB", (r, g, b)).filter(ImageFilter.UnsharpMask(radius=1.4, percent=70, threshold=2))
+            r, g, b, a = shock(pm, 2, 2 if k <= 4 else 3).split()
+            rgb = Image.merge("RGB", (r, g, b)).filter(ImageFilter.GaussianBlur(k * 0.3)).filter(
+                ImageFilter.UnsharpMask(radius=1.6, percent=80, threshold=1))
             r, g, b = rgb.split()
-            return Image.merge("RGBA", (r, g, b, a))
+            return Image.merge("RGBA", (r, g, b, a.filter(ImageFilter.GaussianBlur(k * 0.2))))
 
         dest.parent.mkdir(parents=True, exist_ok=True)
         with Image.open(src) as im:
@@ -211,10 +241,21 @@ def twitch_assets():
         stem = f.stem
         if folder == "" and stem.startswith("channel_points"):
             folder = "__points"
+        theme = rel.parts[0] if rel.parts[0] in THEME_SETS else None
+        if theme:  # generated sets (Purple, Floral) go into the normal groups instead of getting their own
+            sub = rel.parts[1] if len(rel.parts) > 2 else ""
+            if sub:
+                folder = THEME_FOLDERS.get(sub, folder)
+            else:
+                folder = next((g for key, g in THEME_FILES.items() if key in stem), folder)
+            if "be_right_back" in stem:
+                folder = "Brb"
         # same design in other sizes / previews: strip "_112", "_small", "_preview"
         base = re.sub(r"_(\d+|small|preview)$", "", stem)
         if base.endswith("_preview") or base.endswith("_small"):
             base = re.sub(r"_(small|preview)$", "", base)
+        if theme and not base.startswith(theme.lower() + "_"):
+            base = theme.lower() + "_" + base  # keeps the two sets apart: "Purple about me" next to "About me"
         is_gif = f.suffix.lower() == ".gif"
         w, h = image_size(f)
         score = (is_gif, w * h)

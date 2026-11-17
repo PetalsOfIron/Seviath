@@ -80,8 +80,15 @@ def corner_frames(mod, n=30):
         mod.chain(d, (60, 36), (W - 60, 36), link=16, width=3, S=S)
         mod.chain(d, (60, H - 36), (W - 60, H - 36), link=16, width=3, S=S)
     base = Image.alpha_composite(base, mod.on_layer((W, H), fn))
-    f = mod.font(CORNER_FONT[0], 54)
-    m = mod.text_mask((W, H), BRAND[0], f, (W / 2 + 34, H / 2 + 20))
+    x0, x1 = 104, W - 46                      # free space between the gem and the right frame edge
+    probe = ImageDraw.Draw(Image.new("L", (10, 10)))
+    size = 54
+    while size > 20 and probe.textlength(BRAND[0], font=mod.font(CORNER_FONT[0], size)) / mod.SS > (x1 - x0) - 6:
+        size -= 1
+    f = mod.font(CORNER_FONT[0], size)
+    m = mod.text_mask((W, H), BRAND[0], f, ((x0 + x1) / 2, H / 2 + size * 0.36))
+    bb = m.getbbox()
+    assert bb and bb[0] >= x0 - 4 and bb[2] <= x1 + 4, ("corner text out of bounds", BRAND[0], bb)
     base = mod.shadow(base, m, (0, 3), 4, mod.INK, 0.7)
     base = mod.fill_mask(base, m, (252, 250, 255), (222, 214, 240))
     text_alpha = m.point(lambda v: 255 if v > 20 else 0)
@@ -92,7 +99,7 @@ def corner_frames(mod, n=30):
         fr = base.copy()
 
         def gem_fn(d, S):
-            mod.gem(d, 62, H / 2 + 2, 24 + 2 * pulse, S=S)
+            mod.gem(d, 64, H / 2 + 2, 20 + 2 * pulse, S=S)
         fr = Image.alpha_composite(fr, mod.on_layer((W, H), gem_fn))
         x = -80 + (W + 160) * t
         shine = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -158,11 +165,12 @@ def build(style):
 def snake_corner():
     import make_snake
     mod = make_snake.load_theme_module()
-    BRAND[0] = "Petals Of Iron"
+    BRAND[0], CORNER_FONT[0] = "Petals Of Iron", "OLDENGL.TTF"
     write_gif(corner_frames(mod), mod.OUT / "Corner" / "corner.gif")
 
 
 def purple_corner():
+    BRAND[0], CORNER_FONT[0] = "Petals Of Iron", "OLDENGL.TTF"
     mod = types.ModuleType("make_purple")
     mod.__file__ = str(HERE / "make_purple.py")
     sys.modules["make_purple"] = mod

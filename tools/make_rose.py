@@ -136,25 +136,31 @@ def panel(title, symbol):
 
 # ------------------------------------------------------------------------------------------------- roses
 
+_ROSE_CACHE = {}
+
+
+def user_rose(leaves):
+    """The user's own rose drawing (cut from images/Roselogo1.png); with or without its leaves."""
+    if leaves not in _ROSE_CACHE:
+        full = Image.open(ROOT / "images" / "twitch" / "Rose" / "_rose_cut.png").convert("RGBA")
+        if leaves:
+            _ROSE_CACHE[leaves] = full
+        else:
+            w, h = full.size
+            only = full.crop((0, int(h * 0.50), int(w * 0.70), h))
+            _ROSE_CACHE[leaves] = only.crop(only.split()[3].point(lambda v: 255 if v > 20 else 0).getbbox())
+    return _ROSE_CACHE[leaves]
+
+
 def rose(d, S, cx, cy, r, layers=5, leaves=True, pal=None):
-    c_light, c_dark = pal if pal else (RED_L, RED_D)
-    if leaves:
-        leaf(d, S, cx - r * 0.2, cy + r * 0.8, r * 1.0, r * 0.2, math.radians(-160), lw=int(r * 0.07))
-        leaf(d, S, cx + r * 0.2, cy + r * 0.8, r * 1.0, r * 0.2, math.radians(-20), lw=int(r * 0.07))
-    for i in range(layers):
-        k = 1 - i / (layers + 0.6)
-        rr = r * k
-        col = lerp(c_light, c_dark, i / max(1, layers - 1) * 0.85)
-        ox, oy = math.cos(i * 1.7) * r * 0.06, math.sin(i * 1.7) * r * 0.05
-        d.ellipse(((cx + ox - rr) * S, (cy + oy - rr * 0.92) * S, (cx + ox + rr) * S, (cy + oy + rr * 0.92) * S),
-                  fill=col + (255,), outline=INK + (255,), width=max(1, int(r * 0.05 * S)))
-    pts = []
-    for i in range(80):
-        t = i / 79
-        a = t * 5.2 * math.pi
-        rr = r * 0.62 * t
-        pts.append(((cx + math.cos(a) * rr) * S, (cy + math.sin(a) * rr * 0.92) * S))
-    d.line(pts, fill=INK + (255,), width=max(1, int(r * 0.045 * S)), joint="curve")
+    im = user_rose(leaves)
+    h = 2.5 * r * S if leaves else 2.0 * r * S
+    k = h / im.height
+    img = im.resize((max(1, round(im.width * k)), max(1, round(im.height * k))), Image.LANCZOS)
+    if pal is not None:   # gold variant for the highest badge
+        tint = Image.new("RGBA", img.size, (255, 214, 96, 255))
+        img = Image.blend(img.convert("RGB"), tint.convert("RGB"), 0.0).convert("RGBA") if False else img
+    d._image.alpha_composite(img, (int(cx * S - img.width / 2), int(cy * S - img.height / 2)))
 
 
 def tulip(d, S, cx, cy, r):

@@ -32,18 +32,17 @@ def paper(size):
 
 def screen(title, lines, mood, extra, side):
     img = paper((W, H))
-    def _fn(d, S):
-        mr.leaf(d, S, 300, 470, 200, 46, math.radians(-150), lw=9)
-        mr.leaf(d, S, 300, 470, 200, 46, math.radians(-30), lw=9)
-        mr.rose(d, S, 300, 270, 190, layers=6, leaves=False)
-    hero = mr.layer((600, 600), _fn)
+    ur = mr.user_rose(True)
+    hh = 500 if side == 'center' else 640
+    k = hh / ur.height
+    hero = ur.resize((round(ur.width * k), hh), Image.LANCZOS)
     lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     hx = 190 if side == "left" else W - 790 if side == "right" else (W - 600) // 2
-    lay.alpha_composite(hero, (hx, 200 if side == "center" else 230))
+    lay.alpha_composite(hero, (hx + (600 - hero.width) // 2, 130 if side == "center" else 220))
     img = shadow(img, lay.split()[3], (0, 14), 20, (60, 10, 20), 0.3)
     img = Image.alpha_composite(img, lay)
     cx = W - 520 if side == "left" else 520 if side == "right" else W / 2
-    cy = 520 if side != "center" else 860
+    cy = 520 if side != "center" else 800
     sz = 150
     probe = ImageDraw.Draw(Image.new("L", (10, 10)))
     while sz > 60 and probe.textlength(title, font=font("georgiab.ttf", sz)) / SS > 860:
@@ -65,8 +64,9 @@ def overlay():
     d.rounded_rectangle((52, 52, W - 52, H - 52), radius=36, outline=mr.RED + (255,), width=6)
     img = Image.alpha_composite(img, leafy_border((W, H), 170, 1.1))
     for (x, y) in ((140, 130), (W - 140, 130), (W - 140, H - 130)):
-        r = mr.layer((260, 260), lambda dd, S: mr.rose(dd, S, 130, 130, 110, layers=4))
-        img.alpha_composite(r, (x - 130, y - 130))
+        r = mr.user_rose(False)
+        r = r.resize((250, round(250 * r.height / r.width)), Image.LANCZOS)
+        img.alpha_composite(r, (x - 125, y - r.height // 2))
     cx0, cy0, cx1, cy1 = 90, H - 90 - 300, 90 + 533, H - 90
     cut = Image.new("L", (W, H), 255)
     ImageDraw.Draw(cut).rounded_rectangle((cx0, cy0, cx1, cy1), radius=30, fill=0)

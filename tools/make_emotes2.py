@@ -14,7 +14,7 @@ import make_redo as rd
 TW = ROOT / "images" / "twitch"
 
 
-def base_emote(C, kind, with_art, size):
+def base_emote(C, kind, with_art, size, light=False):
     big = 448
     img = Image.new("RGBA", (big, big), (0, 0, 0, 0))
     if with_art:
@@ -34,6 +34,16 @@ def base_emote(C, kind, with_art, size):
         sh.alpha_composite(pr, (44, 52))
         img = shadow(img, sh.split()[3], (0, 8), 8, (0, 0, 0), 0.4)
         img.alpha_composite(pr, (44, 44))
+    if light:   # a warm light behind the emote with a few sparkles
+        glow_l = Image.new("RGBA", (big, big), (0, 0, 0, 0))
+        ImageDraw.Draw(glow_l).ellipse((10, 10, big - 10, big - 10), fill=(255, 240, 170, 150))
+        glow_l = glow_l.filter(ImageFilter.GaussianBlur(40))
+        out = Image.alpha_composite(glow_l, img)
+        d = ImageDraw.Draw(out)
+        import make_rose as _mr
+        for (sx_, sy_, sr) in ((70, 70, 30), (big - 70, 90, 24), (big - 60, big - 110, 20), (60, big - 90, 18)):
+            _mr.sparkle(d, 1, sx_, sy_, sr, fill=(255, 244, 190))
+        return out
     return img
 
 
@@ -61,7 +71,7 @@ def build(name):
         shutil.rmtree(out)
     out.mkdir(parents=True)
     for i, (fn_, mood, kind, anim) in enumerate(me.THEMES[name]):
-        base = base_emote(C, kind, with_art=(i % 3 == 0 and C["mascot"] != "slash"), size=448)
+        base = base_emote(C, kind, with_art=(i % 3 == 0 and C["mascot"] != "slash"), size=448, light=fn_.startswith("light2"))
         for size in (448, 112, 56, 28):
             if anim:
                 frames = [frame(base, k / 20, anim).resize((size, size), Image.LANCZOS) for k in range(20)]

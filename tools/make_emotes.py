@@ -32,7 +32,7 @@ THEMES = {
               ("knocked_out", "cry", "stars", None), ("rage", "angry", "flame", None), ("gg_slash", "smile", "gg", "sway")],
     "Snake": [("hype", "party", "sun", "bounce"), ("light", "angry", "tongue", "shake"), ("coil_hug", "lovely", "heart", None), ("shed_skin", "surprise", "leaf", None),
               ("sun_nap", "sleepy", "sun", "sway"), ("egg_hatch", "party", "egg", "bounce"), ("venom", "mad", "drop", None),
-              ("scale_shine", "cool", "star", None), ("tongue_flick", "laughing", "tongue", None), ("gg_snake", "smile", "gg", None)],
+              ("scale_shine", "cool", "star", None), ("light2", "laughing", "tongue", None), ("gg_snake", "smile", "gg", None)],
     "Floral": [("hype", "party", "flower", "bounce"), ("bloom", "joyful", "flower", "bounce"), ("petal_rain", "lovely", "petals", None), ("bee", "smile", "bee", "sway"),
                ("water_me", "cry", "drop", None), ("sunbathe", "cool", "sun", None), ("bouquet", "party", "bouquet", None),
                ("sleepy_bud", "sleepy", "moon", None), ("wilted", "sad", "leaf", None), ("gg_flower", "laughing", "gg", None)],

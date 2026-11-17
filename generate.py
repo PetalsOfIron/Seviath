@@ -98,7 +98,7 @@ def section_ld(site, topic, sid, items):
 # ------------------------------------------------------------ twitch assets
 # Everything dropped into images/twitch/ shows up in the Twitch Design section automatically.
 # Rules: one entry per design (the biggest size is used), and a GIF always wins over a PNG of the same design.
-# GIFs are made to play once (the "repeat forever" flag is removed from the file).
+# GIFs repeat forever (the loop flag is added to the file when it is missing).
 
 TWITCH_DIR = ROOT / "images" / "twitch"
 TWITCH_GROUPS = [  # (folder, title, description used for alt text)
@@ -111,6 +111,7 @@ TWITCH_GROUPS = [  # (folder, title, description used for alt text)
     ("Flair", "Flair", "Twitch chat flair"),
     ("Starting", "Starting soon screen", "Twitch starting soon screen"),
     ("Offline", "Offline screen", "Twitch offline screen"),
+    ("Logo", "Logos", "Twitch channel logo"),
     ("Banner", "Banners", "Twitch channel banner"),
     ("Emotes", "Emotes", "Twitch emote"),
     ("Emotes/Hype", "Hype emotes", "Twitch hype emote"),
@@ -119,13 +120,14 @@ TWITCH_GROUPS = [  # (folder, title, description used for alt text)
 ]
 
 
-def strip_gif_loop(path):
-    """Remove the NETSCAPE looping extension so the GIF plays once and stops on its last frame."""
+def ensure_gif_loop(path):
+    """Make sure the GIF repeats forever (adds the NETSCAPE looping extension when it is missing)."""
     data = path.read_bytes()
-    i = data.find(b"NETSCAPE2.0")
-    if i < 3 or data[i - 3:i] != b"\x21\xff\x0b" or data[i + 11:i + 13] != b"\x03\x01" or data[i + 15] != 0:
+    if b"NETSCAPE2.0" in data or data[:6] not in (b"GIF87a", b"GIF89a"):
         return
-    path.write_bytes(data[:i - 3] + data[i + 16:])
+    pos = 13 + (3 * 2 ** ((data[10] & 7) + 1) if data[10] & 0x80 else 0)   # right after the global colour table
+    ext = bytes([0x21, 0xFF, 0x0B]) + b"NETSCAPE2.0" + bytes([3, 1, 0, 0, 0])
+    path.write_bytes(data[:pos] + ext + data[pos:])
 
 
 def image_size(path):
@@ -139,6 +141,50 @@ def pretty_label(stem):
     stem = re.sub(r"^(\d+)_(\d)year", r"\1.\2 year", stem)
     stem = re.sub(r"(\d)([a-z])", r"\1 \2", stem).replace("_", " ")
     return stem[:1].upper() + stem[1:]
+
+
+LARGE_DIR = ROOT / "images" / "twitch-large"
+
+
+def upscale_factor(w):
+    return 6 if w <= 80 else 4 if w < 400 else 1
+
+
+def large_version(src, rel, is_gif, w, h):
+    """Bigger, smooth copy of a small asset (badges, icons, emotes, panels). Returns the site path of the file to link.
+    Uses Lanczos in premultiplied alpha (no dark halos) plus a light sharpen. Needs Pillow; without it the existing
+    copy is used (the copies are committed, so the deploy does not need Pillow)."""
+    k = upscale_factor(w)
+    if k == 1:
+        return "images/twitch/" + rel.as_posix()
+    dest = LARGE_DIR / rel
+    href = "images/twitch-large/" + rel.as_posix()
+    if dest.exists() and dest.stat().st_mtime >= src.stat().st_mtime:
+        return href
+    try:
+        from PIL import Image, ImageFilter, ImageSequence
+
+        def big(frame):
+            frame = frame.convert("RGBA")
+            pm = frame.convert("RGBa").resize((w * k, h * k), Image.LANCZOS).convert("RGBA")
+            r, g, b, a = pm.split()
+            rgb = Image.merge("RGB", (r, g, b)).filter(ImageFilter.UnsharpMask(radius=1.4, percent=70, threshold=2))
+            r, g, b = rgb.split()
+            return Image.merge("RGBA", (r, g, b, a))
+
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        with Image.open(src) as im:
+            if is_gif:
+                frames, durations = [], []
+                for fr in ImageSequence.Iterator(im):
+                    durations.append(fr.info.get("duration", 60))
+                    frames.append(big(fr))
+                frames[0].save(dest, save_all=True, append_images=frames[1:], duration=durations, disposal=2, loop=0, optimize=False)
+            else:
+                big(im).save(dest, optimize=True)
+        return href
+    except Exception:
+        return href if dest.exists() else "images/twitch/" + rel.as_posix()
 
 
 def twitch_assets():
@@ -167,8 +213,9 @@ def twitch_assets():
     out = []
     for _, f, folder, base, w, h, is_gif in best.values():
         if is_gif:
-            strip_gif_loop(f)
-        out.append({"folder": folder, "label": pretty_label(base), "href": "images/twitch/" + f.relative_to(TWITCH_DIR).as_posix(),
+            ensure_gif_loop(f)
+        rel = f.relative_to(TWITCH_DIR)
+        out.append({"folder": folder, "label": pretty_label(base), "href": large_version(f, rel, is_gif, w, h),
                     "w": w, "h": h, "gif": is_gif})
     def sort_key(a):
         label = a["label"]

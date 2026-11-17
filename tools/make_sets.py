@@ -547,6 +547,8 @@ def animated(C, size, text, tsize, sc, n=28):
             wh = Image.new("RGBA", size, (255, 255, 255, 0))
             wh.putalpha(ImageChops.multiply(sh.split()[3], tm))
             fr = Image.alpha_composite(fr, wh)
+        elif C["anim"] == "static":
+            pass
         elif C["anim"] == "runner":
             glow_l = Image.new("RGBA", size, (0, 0, 0, 0))
             gd = ImageDraw.Draw(glow_l)

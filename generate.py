@@ -172,6 +172,9 @@ def large_version(src, rel, is_gif, w, h):
     k = upscale_factor(w)
     if k == 1:
         return "images/twitch/" + rel.as_posix()
+    apng = (LARGE_DIR / rel).with_suffix(".png")
+    if is_gif and apng.exists():     # smooth animated PNG redraw of this animated emote
+        return "images/twitch-large/" + rel.with_suffix(".png").as_posix()
     dest = LARGE_DIR / rel
     href = "images/twitch-large/" + rel.as_posix()
     if dest.exists() and dest.stat().st_mtime >= src.stat().st_mtime:

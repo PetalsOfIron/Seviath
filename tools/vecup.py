@@ -28,7 +28,7 @@ def palette(rgba_list, k=12, seed=1):
     return np.array(keep, np.float32)
 
 
-def enlarge(im, pal, out=448, work=8, ablur=1.4, acut=130):
+def enlarge_mode(im, pal, out=448, work=8, ablur=1.4, acut=130):
     """im: RGBA original; returns RGBA at out x out (non-square sizes keep their ratio)."""
     im = im.convert("RGBA")
     ow = round(im.width * out / max(im.size)); oh = round(im.height * out / max(im.size))
@@ -75,3 +75,30 @@ def gif_save(frames, pal, out, path, durations):
         im.putpalette(flat)
         ims.append(im)
     ims[0].save(path, save_all=True, append_images=ims[1:], duration=durations, loop=0, disposal=2, transparency=n, optimize=False)
+
+
+def enlarge(im, pal, out=448, work=8, ablur=1.4, acut=130):   # noqa: F811  (smooth label-field version)
+    """Smooth enlargement: every palette colour (and 'transparent') becomes a soft field that is enlarged with
+    bicubic interpolation; the winning colour at each pixel gives clean, curved outlines instead of stair steps."""
+    im = im.convert("RGBA")
+    ow = round(im.width * out / max(im.size))
+    oh = round(im.height * out / max(im.size))
+    ww, wh = ow * 2, oh * 2
+    a = np.asarray(im)
+    K = len(pal)
+    d = ((a[..., :3].astype(np.float32)[:, :, None, :] - pal[None, None]) ** 2).sum(-1)
+    soft = np.exp(-(d - d.min(-1, keepdims=True)) / 900.0)               # soft colour membership (keeps edge blends)
+    soft = soft / soft.sum(-1, keepdims=True)
+    al = (a[..., 3].astype(np.float32) / 255.0)[..., None]
+    memb = np.concatenate([soft * al, 1 - al], axis=-1)                    # last channel: transparent
+    sc = ww / im.width
+    fields = np.zeros((wh, ww, K + 1), np.float32)
+    for k in range(K + 1):
+        ch = Image.fromarray((memb[..., k] * 255).astype(np.uint8))
+        up = ch.resize((ww, wh), Image.BICUBIC).filter(ImageFilter.GaussianBlur(max(1.0, 0.55 * sc)))
+        fields[..., k] = np.asarray(up)
+    win = fields.argmax(-1)
+    colors = np.vstack([pal, np.zeros((1, 3), np.float32)])[win].astype(np.uint8)
+    alpha = np.where(win == K, 0, 255).astype(np.uint8)
+    big = Image.fromarray(np.dstack([colors, alpha]), "RGBA")
+    return big.resize((ow, oh), Image.LANCZOS)

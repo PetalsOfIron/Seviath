@@ -162,7 +162,7 @@ LARGE_DIR = ROOT / "images" / "twitch-large"
 
 
 def upscale_factor(w):
-    return 6 if w <= 80 else 4 if w < 400 else 1
+    return 1   # originals are linked as they are (no enlarged copies)
 
 
 def large_version(src, rel, is_gif, w, h):

@@ -32,11 +32,11 @@ SETS = {
                   font="impact.ttf", frame="slash", mascot="slash", anim="runner", screens=False, blush=(255, 120, 110), ink=(30, 0, 10)),
     "Snake": dict(shape="scallop", pshape='pill', main=(40, 130, 210), dark=(8, 40, 90), accent=(250, 206, 72), accent2=(60, 200, 180), fill=(96, 206, 236), text=(10, 44, 100), text2=(6, 28, 70),
                   font="OLDENGL.TTF", frame="scales", mascot="snake", anim="pulse", screens=False, blush=(250, 170, 120), ink=(8, 36, 80)),
-    "Floral": dict(shape="flower", pshape='pill', main=(176, 110, 214), dark=(30, 28, 72), accent=(246, 208, 104), accent2=(214, 140, 112), fill=(52, 44, 100), text=(252, 250, 255), text2=(226, 214, 244),
+    "Floral": dict(shape="flower", pshape='cartouche', main=(176, 110, 214), dark=(30, 28, 72), accent=(246, 208, 104), accent2=(214, 140, 112), fill=(52, 44, 100), text=(252, 250, 255), text2=(226, 214, 244),
                    font="OLDENGL.TTF", frame="petals", mascot="flower", anim="pulse", screens=True, blush=(240, 130, 170), ink=(60, 20, 90)),
     "Tessel": dict(shape="hex", pshape='notch', main=(31, 163, 74), dark=(10, 40, 30), accent=(223, 255, 61), accent2=(14, 59, 46), fill=(16, 64, 46), text=(250, 252, 250), text2=(206, 214, 208),
                    font="constan.ttf", frame="pitch", mascot="football", anim="runner", screens=True, blush=(240, 150, 140), ink=(10, 40, 30)),
-    "Perfum": dict(shape="oval", pshape='cartouche', main=(234, 170, 160), dark=(84, 28, 52), accent=(226, 190, 120), accent2=(130, 70, 100), fill=(247, 238, 222), text=(96, 34, 60), text2=(70, 22, 44),
+    "Perfum": dict(shape="oval", pshape='oval', main=(234, 170, 160), dark=(84, 28, 52), accent=(226, 190, 120), accent2=(130, 70, 100), fill=(247, 238, 222), text=(96, 34, 60), text2=(70, 22, 44),
                    font="constan.ttf", frame="petalgold", mascot="bottle", anim="shine", screens=True, blush=(240, 140, 150), ink=(84, 28, 52)),
     "Northbeam": dict(shape="triangle", pshape='arrow', main=(88, 100, 214), dark=(14, 24, 52), accent=(125, 235, 240), accent2=(40, 60, 140), fill=(24, 40, 96), text=(240, 248, 252), text2=(190, 214, 240),
                       font="OLDENGL.TTF", frame="triangle", mascot="triangle", anim="runner", screens=True, blush=(150, 190, 240), ink=(14, 24, 70)),
@@ -414,6 +414,8 @@ def panel_poly(kind, w, h, m):
         pts += [(w - m, h - m), (m, h - m), (m, h / 2 + r)]
         pts += [(m + math.sin(math.radians(t)) * r, h / 2 + r * math.cos(math.radians(t))) for t in range(0, 181, 10)]
         return pts
+    if kind == "oval":
+        return [(w / 2 + math.cos(2 * math.pi * i / 90) * (w / 2 - m), h / 2 + math.sin(2 * math.pi * i / 90) * (h / 2 - m)) for i in range(90)]
     if kind == "cartouche":
         r = 60
         pts = []

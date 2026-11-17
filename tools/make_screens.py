@@ -82,22 +82,61 @@ BG = {"Tessel": bg_tessel, "Perfum": bg_perfum, "Northbeam": bg_northbeam, "Stri
 DARK_TEXT = {"Perfum"}
 
 
+
+_HERO = {}
+
+
+def hero_art(name, px):
+    """The set's own artwork, fitted into a square of px (transparent background)."""
+    key = (name, px)
+    if key in _HERO:
+        return _HERO[key]
+    art = None
+    if name == "Northbeam":
+        import make_northbeam as nb
+        em, wd = (nb.crop_pad(p) for p in nb.split_logo(nb.load_logo()))
+        art = nb.fit(nb.lockup(em, wd), px, px)
+    elif name == "Strikeline":
+        import make_football as mf
+        art = mf.fit(mf.figure(), px, px)
+    elif name == "Tessel":
+        import make_brands as mb
+        art = mb.load("Footballboot.png", size=(1400, 1400))
+    elif name == "Perfum":
+        import make_brands as mb
+        b = mb.load("Bottle.png")
+        art = mb.feather_x(b.crop((1700, 1900, 2900, 3900)), 0, bottom=0)
+    elif name == "Hood":
+        art = Image.open(ROOT / "images" / "LogoGaming.png").convert("RGBA").resize((px, px), Image.LANCZOS)
+    if art is not None:
+        box = art.split()[3].point(lambda v: 255 if v > 10 else 0).getbbox()
+        if box:
+            art = art.crop(box)
+        k = min(px / art.width, px / art.height)
+        art = art.resize((max(1, round(art.width * k)), max(1, round(art.height * k))), Image.LANCZOS)
+    _HERO[key] = art
+    return art
+
+
 def compose(name, kind):
     C = dict(ms.SETS[name])
     ms.apply_set(C)
     title, sub, mood, extra = TEXT[kind]
     img = BG[name]()
-    hero_px = {"starting": 560, "brb": 600, "offline": 460}[kind]
-    hero = mr.emote(mood, extra, hero_px)
+    hero_px = {"starting": 400, "brb": 620, "offline": 500}[kind]
+    art = hero_art(name, hero_px)
+    hero = art if art is not None else mr.emote(mood, extra, hero_px)
     lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    hw, hh = hero.size
+    mirror = name in ("Perfum", "Strikeline") and kind != "starting"
     if kind == "starting":
-        lay.alpha_composite(hero, ((W - hero_px) // 2, 40))
-        tpos, align = (W / 2, 780), "center"
-    elif kind == "brb":
-        lay.alpha_composite(hero, (150, (H - hero_px) // 2))
+        lay.alpha_composite(hero, ((W - hw) // 2, 70 + (400 - hh) // 2))
+        tpos, align = (W / 2, 800), "center"
+    elif (kind == "brb") != mirror:
+        lay.alpha_composite(hero, (150 + (hero_px - hw) // 2, (H - hh) // 2))
         tpos, align = (1330, 500), "center"
     else:
-        lay.alpha_composite(hero, (W - hero_px - 190, (H - hero_px) // 2 + 20))
+        lay.alpha_composite(hero, (W - hw - 190, (H - hh) // 2 + 20))
         tpos, align = (640, 500), "center"
     if kind == "offline":
         img = Image.alpha_composite(img, Image.new("RGBA", (W, H), (0, 0, 0, 90)))
@@ -107,7 +146,7 @@ def compose(name, kind):
     t1, t2 = ((C["text"], C["text2"]) if dark else (C["text"] if sum(C["text"]) > 600 else (250, 250, 250), C["text2"] if sum(C["text"]) > 600 else (214, 224, 236)))
     if dark:
         t1, t2 = (96, 34, 60), (70, 22, 44)
-    sz = ms.fit_size(title, C["font"], 900 if kind != "starting" else 1300, 190)
+    sz = ms.fit_size(title, C["font"], 900 if kind != "starting" else 1300, 190 if kind != "starting" else 150)
     m = text_mask((W, H), title, font(C["font"], sz), (tpos[0], tpos[1] + (0 if kind != "starting" else 0)))
     if not dark:
         img = shadow(img, m, (0, 8), 10, (0, 0, 0), 0.6)
@@ -191,6 +230,10 @@ def main():
                 img = floral(kind)
             elif name == "Snake":
                 img = snake(kind)
+            elif name == "Hood":
+                import make_hood as mh
+                t, sb, _, _ = TEXT[kind]
+                img = mh.screen(t, " ".join(sb))
             else:
                 img = compose(name, kind)
             save(img, TW / name / "Screens" / (fn + ".png"))

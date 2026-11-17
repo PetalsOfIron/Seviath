@@ -19,7 +19,7 @@ KEEP_FRAME0 = ("Hood", "Purple", "Rose")     # their first frame has no effect o
 
 
 def base_alert(name):
-    p = TW / name / "Alert" / "alert.gif"
+    p = TW / name / "Alert" / ("purple_alert.gif" if name == "Purple" else "alert.gif")
     if name in KEEP_FRAME0:
         im = Image.open(p)
         im.seek(0)
@@ -58,7 +58,7 @@ def star(d, x, y, r, col):
 
 def fx(name, base, t):
     w, h = base.size
-    C = ms.SETS[name]
+    C = ms.SETS.get(name, {"accent": (255, 255, 255)})
     acc = C["accent"]
     out = base.copy()
     ov = Image.new("RGBA", (w, h), (0, 0, 0, 0))
@@ -133,7 +133,7 @@ def fx(name, base, t):
         ov = ov.filter(ImageFilter.GaussianBlur(4 * u))
         return Image.alpha_composite(out, clip(ov, base))
     if name == "Strikeline":
-        for k, (yy, hh) in enumerate(((0.28, 0.07), (0.46, 0.14), (0.7, 0.07))):
+        for k, (yy, hh) in enumerate(((0.08, 0.07), (0.86, 0.07), (0.02, 0.04))):
             f = (t + k * 0.18) % 1.0
             x = w * (1.2 - 2.4 * f)
             d.rectangle((x, yy * h, x + 0.5 * w, (yy + hh) * h), fill=(0, 168, 232, 190))
@@ -161,7 +161,7 @@ def gif(frames, path):
 def main():
     names = sys.argv[1:] or ["Hood", "Helmet", "Slash", "Snake", "Floral", "Tessel", "Perfum", "Northbeam", "Strikeline", "Purple", "Rose"]
     for n in names:
-        for kind, getb, fn in (("Alert", base_alert, "alert.gif"), ("Corner", base_corner, "corner.gif")):
+        for kind, getb, fn in (("Alert", base_alert, "purple_alert.gif" if n == "Purple" else "alert.gif"), ("Corner", base_corner, "corner.gif")):
             b = getb(n)
             gif([fx(n, b, i / N) for i in range(N)], TW / n / kind / fn)
         print("Saved", n, flush=True)

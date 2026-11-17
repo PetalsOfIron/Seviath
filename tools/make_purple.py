@@ -422,8 +422,18 @@ def alert_frames(text="Thanks for the follow!", n=24):
         gem(d, 80, H / 2, 38, S=S)
         gem(d, W - 80, H / 2, 38, S=S)
     base = Image.alpha_composite(base, on_layer(base.size, fn))
-    f = font("OLDENGL.TTF", 96)
-    m = text_mask((W, H), text, f, (W / 2, H / 2 + 34))
+    # two lines, each sized to fit between the two gems
+    words = text.split(" ")
+    half = len(words) // 2 + len(words) % 2
+    lines = [" ".join(words[:half]), " ".join(words[half:])]
+    probe = ImageDraw.Draw(Image.new("L", (10, 10)))
+    size = 120
+    for ln in lines:
+        wdt = probe.textlength(ln, font=font("OLDENGL.TTF", 100)) / SS
+        size = min(size, int(100 * 480 / wdt))
+    f = font("OLDENGL.TTF", size)
+    m = text_mask((W, H), lines[0], f, (W / 2, H / 2 - 4))
+    m = ImageChops.lighter(m, text_mask((W, H), lines[1], f, (W / 2, H / 2 + size * 0.95)))
     base = shadow(base, m, (0, 4), 6, (10, 0, 30), 0.7)
     base = fill_mask(base, m, (246, 242, 255), (206, 196, 246))
     frames = []

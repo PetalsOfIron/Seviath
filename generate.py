@@ -13,6 +13,7 @@ Seviathstudio download link, then run:
 import hashlib
 import json
 import html
+import re
 from urllib.parse import quote
 from pathlib import Path
 
@@ -94,22 +95,156 @@ def section_ld(site, topic, sid, items):
     return {"@type": "ItemList", "name": f'{topic} - {site["name"]}', "itemListElement": elems}
 
 
+# ------------------------------------------------------------ twitch assets
+# Everything dropped into images/twitch/ shows up in the Twitch Design section automatically.
+# Rules: one entry per design (the biggest size is used), and a GIF always wins over a PNG of the same design.
+# GIFs are made to play once (the "repeat forever" flag is removed from the file).
+
+TWITCH_DIR = ROOT / "images" / "twitch"
+TWITCH_GROUPS = [  # (folder, title, description used for alt text)
+    ("", "Panels", "Twitch channel panel"),
+    ("__points", "Channel point icons", "Twitch channel point icon"),
+    ("Alert", "Alert", "Twitch stream alert animation"),
+    ("Corner", "Corner", "Twitch stream corner animation"),
+    ("Overlay", "Overlays", "Twitch stream overlay"),
+    ("Badges", "Sub badges", "Twitch subscriber badge"),
+    ("Flair", "Flair", "Twitch chat flair"),
+    ("Emotes", "Emotes", "Twitch emote"),
+    ("Emotes/Hype", "Hype emotes", "Twitch hype emote"),
+    ("Emotes/Tier1", "Tier 1 emotes", "Twitch tier 1 sub emote"),
+    ("Emotes/Tier2_3_Bits", "Tier 2, Tier 3 & Bits emotes", "Twitch tier 2, tier 3 and bits emote"),
+]
+
+
+def strip_gif_loop(path):
+    """Remove the NETSCAPE looping extension so the GIF plays once and stops on its last frame."""
+    data = path.read_bytes()
+    i = data.find(b"NETSCAPE2.0")
+    if i < 3 or data[i - 3:i] != b"\x21\xff\x0b" or data[i + 11:i + 13] != b"\x03\x01" or data[i + 15] != 0:
+        return
+    path.write_bytes(data[:i - 3] + data[i + 16:])
+
+
+def image_size(path):
+    head = path.read_bytes()[:26]
+    if head[:6] in (b"GIF87a", b"GIF89a"):
+        return int.from_bytes(head[6:8], "little"), int.from_bytes(head[8:10], "little")
+    return int.from_bytes(head[16:20], "big"), int.from_bytes(head[20:24], "big")
+
+
+def pretty_label(stem):
+    stem = re.sub(r"^(\d+)_(\d)year", r"\1.\2 year", stem)
+    stem = re.sub(r"(\d)([a-z])", r"\1 \2", stem).replace("_", " ")
+    return stem[:1].upper() + stem[1:]
+
+
+def twitch_assets():
+    if not TWITCH_DIR.is_dir():
+        return []
+    best = {}
+    for f in sorted(TWITCH_DIR.rglob("*")):
+        if f.suffix.lower() not in (".png", ".gif", ".jpg", ".jpeg", ".webp"):
+            continue
+        rel = f.relative_to(TWITCH_DIR)
+        folder = rel.parent.as_posix().replace(".", "")
+        stem = f.stem
+        if folder == "" and stem.startswith("channel_points"):
+            folder = "__points"
+        # same design in other sizes / previews: strip "_112", "_small", "_preview"
+        base = re.sub(r"_(\d+|small|preview)$", "", stem)
+        if base.endswith("_preview") or base.endswith("_small"):
+            base = re.sub(r"_(small|preview)$", "", base)
+        is_gif = f.suffix.lower() == ".gif"
+        w, h = image_size(f)
+        score = (is_gif, w * h)
+        key = (folder, base)
+        if key not in best or score > best[key][0]:
+            best[key] = (score, f, folder, base, w, h, is_gif)
+    order = {g[0]: i for i, g in enumerate(TWITCH_GROUPS)}
+    out = []
+    for _, f, folder, base, w, h, is_gif in best.values():
+        if is_gif:
+            strip_gif_loop(f)
+        out.append({"folder": folder, "label": pretty_label(base), "href": "images/twitch/" + f.relative_to(TWITCH_DIR).as_posix(),
+                    "w": w, "h": h, "gif": is_gif})
+    out.sort(key=lambda a: (order.get(a["folder"], 99), "" if a["label"] == "Base" else a["label"].lower() if not a["label"][:1].isdigit()
+                            else f'{float(re.match(r"[\d.]+", a["label"]).group()) / (12 if "month" in a["label"] else 1):08.3f}'))
+    return out
+
+
+def hd_version(href, w, h):
+    """Smoothly enlarged copy of a small PNG (Lanczos) so it stays crisp instead of being stretched by the browser.
+    Needs Pillow; without it the original is used. The copies are committed, so the deploy does not need Pillow."""
+    dest_rel = "images/twitch-hd/" + href[len("images/twitch/"):]
+    dest = ROOT / dest_rel
+    src = ROOT / href
+    try:
+        if dest.exists() and dest.stat().st_mtime >= src.stat().st_mtime:
+            return dest_rel
+        from PIL import Image
+        img = Image.open(src).convert("RGBA")
+        # premultiply so transparent edges do not get dark halos while resizing
+        r, g, b, al = img.split()
+        premult = Image.merge("RGBA", (Image.composite(r, r.point(lambda _: 0), al), Image.composite(g, g.point(lambda _: 0), al),
+                                       Image.composite(b, b.point(lambda _: 0), al), al))
+        big = premult.resize((w, h), Image.LANCZOS)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        big.save(dest, optimize=True)
+        return dest_rel
+    except Exception:
+        return dest_rel if dest.exists() else None
+
+
+def render_twitch_gallery(assets):
+    parts = []
+    for folder, title, what in TWITCH_GROUPS:
+        items = [a for a in assets if a["folder"] == folder]
+        if not items:
+            continue
+        figs = []
+        for a in items:
+            alt = f'{what}: {a["label"]} - designed by Santa Madara Neilande'
+            size = "wide" if a["w"] >= 400 else "small"
+            # small files (emotes, badges, flair, panels) are shown bigger so they are easy to see
+            dw = a["w"] * 3 if a["w"] <= 80 else a["w"] * 2 if a["w"] <= 150 else int(a["w"] * 1.5) if a["w"] < 400 else a["w"]
+            src, sw, sh = a["href"], a["w"], a["h"]
+            if dw > a["w"] and not a["gif"]:
+                hd = hd_version(a["href"], dw, round(a["h"] * dw / a["w"]))
+                if hd:
+                    src, sw, sh = hd, dw, round(a["h"] * dw / a["w"])
+            figs.append(
+                f'<figure class="asset asset-{size}" style="--dw:{dw}px">'
+                f'<a href="{esc(quote(a["href"]))}" target="_blank" rel="noopener" title="{esc(a["label"])}">'
+                f'<img src="{esc(quote(src))}" width="{sw}" height="{sh}" loading="lazy" '
+                f'alt="{esc(alt)}"></a><figcaption>{esc(a["label"])}</figcaption></figure>')
+        parts.append(f'        <h3 class="gallery-title">{esc(title)}</h3>\n'
+                     f'        <div class="gallery">{"".join(figs)}</div>')
+    return "\n".join(parts)
+
+
 def portfolio_body(site, projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Portfolio</h1>\n'
              '        <p class="hero-tagline">Santa Madara Neilande &mdash; designer, illustrator, 3D artist &amp; developer</p>\n'
              '    </header>']
     lds = []
+    assets = twitch_assets()
     for key, title, sid, *kind in SECTIONS:
         items = [p for p in projects if p.get("section") == key
                  and (not kind or (p.get("type", "image") == "video") == (kind[0] == "video"))]
         topic, intro = SECTION_INFO[sid]
         anchor = sid.replace("-grid", "")
-        lds.append(section_ld(site, topic, sid, items))
+        extra = ""
+        ld_items = items
+        if sid == "twitch-grid" and assets:
+            extra = "\n" + render_twitch_gallery(assets)
+            ld_items = items + [{"title": f'{a["label"]} ({a["folder"] or "panel"})', "href": a["href"], "type": "image"}
+                                for a in assets]
+        lds.append(section_ld(site, topic, sid, ld_items))
         parts.append(
             f'    <section class="section" id="{anchor}" aria-labelledby="{anchor}-title">\n'
             f'        <h2 class="section-title" id="{anchor}-title">{esc(title)}</h2>\n'
             f'        <p class="section-intro">{esc(intro)}</p>\n'
-            f'        {render_section(items, sid)}\n'
+            f'        {render_section(items, sid)}{extra}\n'
             f'    </section>')
     return "\n\n".join(parts), lds
 
@@ -466,6 +601,15 @@ main > .hero:first-child { margin-top: 20vh; }
 }
 code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px; }
 .tool-card { margin-top: 8px; }
+.gallery-title { font-family: 'Fraunces', serif; font-size: 22px; margin: 32px 0 14px; color: var(--burgundy-dark); }
+.gallery { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
+.asset { margin: 0; padding: 10px; text-align: center; border-radius: 12px;
+         background: rgba(122, 26, 43, 0.08); border: 1px solid rgba(122, 26, 43, 0.2); }
+.asset a { display: block; }
+.asset img { display: block; margin: 0 auto; width: min(100%, var(--dw)); height: auto; }
+.asset-wide { flex: 1 1 min(100%, 380px); }
+.asset-wide img { width: 100%; }
+.asset figcaption { margin-top: 6px; font-size: 13px; }
 .section-intro { margin: -12px 0 20px; line-height: 1.5; }
 .feature-list { padding-left: 20px; margin: 0; }
 .feature-list li { margin-bottom: 6px; }
@@ -576,7 +720,8 @@ def main():
     img_xml = "".join(
         f"    <image:image><image:loc>{esc(abs_url(site, p['href']))}</image:loc>"
         f"<image:title>{esc(p['title'])}</image:title></image:image>\n"
-        for p in projects if not p.get("href", "").startswith("http"))
+        for p in [q for q in projects if not q.get("href", "").startswith("http")]
+        + [{"title": a["label"] + " - Twitch design", "href": a["href"]} for a in twitch_assets()])
     entries = "".join(
         f"  <url>\n    <loc>{esc(u)}</loc>\n{img_xml if u == f'{base}/' else ''}  </url>\n" for u in urls)
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'

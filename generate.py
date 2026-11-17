@@ -73,6 +73,14 @@ SECTION_INFO = {
 }
 
 
+def asset_url(href):
+    """Link to a file with a version code from its content, so browsers never show an old cached copy
+    (for example a GIF that used to play only once)."""
+    f = ROOT / href
+    ver = hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else "0"
+    return quote(href) + "?v=" + ver
+
+
 def abs_url(site, href):
     if href.startswith("http"):
         return href
@@ -293,7 +301,7 @@ def render_twitch_gallery(assets):
         if not items:
             continue
         btns = "\n      ".join(
-            f'<a class="proj-btn" href="{esc(quote(a["href"]))}" target="_blank" rel="noopener" '
+            f'<a class="proj-btn" href="{esc(asset_url(a["href"]))}" target="_blank" rel="noopener" '
             f'title="{esc(what)}: {esc(a["label"])}">{esc(a["label"])}{" (animated)" if a["gif"] else ""}</a>'
             for a in items)
         parts.append(f'        <h3 class="gallery-title">{esc(title)}</h3>\n'
@@ -326,7 +334,7 @@ def render_design_gallery(assets):
     for brand in sorted({a["brand"] for a in assets}):
         items = [a for a in assets if a["brand"] == brand]
         btns = "\n      ".join(
-            f'<a class="proj-btn" href="{esc(quote(a["href"]))}" target="_blank" rel="noopener" '
+            f'<a class="proj-btn" href="{esc(asset_url(a["href"]))}" target="_blank" rel="noopener" '
             f'title="{esc(a["label"])}">{esc(a["label"])}</a>' for a in items)
         parts.append(f'        <h3 class="gallery-title">{esc(DESIGN_BRANDS.get(brand, brand))}</h3>\n'
                      f'        <div class="btn-grid">\n      {btns}\n    </div>')

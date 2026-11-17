@@ -129,7 +129,7 @@ TWITCH_GROUPS = [  # (folder, title, description used for alt text)
 ]
 
 
-THEME_SETS = ("Purple", "Floral")
+THEME_SETS = ("Purple", "Floral", "Snake", "Slash", "Helmet", "Hood")
 THEME_FOLDERS = {"Panels": "", "Emotes": "Emotes", "Badges": "Badges", "Points": "__points", "Flair": "Flair",
                  "Overlay": "Overlay", "Alert": "Alert", "Logo": "Logo", "Banner": "Banner", "Screens": "Offline"}
 THEME_FILES = {"offline": "Offline", "logo": "Logo", "banner": "Banner"}  # loose files in Floral/
@@ -258,6 +258,8 @@ def twitch_assets():
                 folder = next((g for key, g in THEME_FILES.items() if key in stem), folder)
             if "be_right_back" in stem:
                 folder = "Brb"
+            if "starting_soon" in stem:
+                folder = "Starting"
         # same design in other sizes / previews: strip "_112", "_small", "_preview"
         base = re.sub(r"_(\d+|small|preview)$", "", stem)
         if base.endswith("_preview") or base.endswith("_small"):

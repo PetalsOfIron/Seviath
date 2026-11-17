@@ -398,7 +398,6 @@ def contacts_body(site):
             <div class="btn-grid">
                 <a class="proj-btn" href="mailto:{esc(site["email"])}">&#9993; {esc(site["email"])}</a>
                 <a class="proj-btn" href="{esc(site["linkedin"])}" target="_blank" rel="me noopener">LinkedIn</a>
-                <a class="proj-btn" href="{esc(site["github"])}" target="_blank" rel="me noopener">GitHub</a>
             </div>
         </div>
     </section>"""

@@ -161,9 +161,12 @@ def prop(d, S, kind, cx, cy, r, C):
         d.rounded_rectangle((X(rx - r * 0.3), X(ry - r * 0.1), X(rx + r * 0.22), X(ry + r * 0.16)), radius=int(r * 0.1 * S), fill=(226, 230, 238, 255), outline=ink, width=w)
         disc(rx + r * 0.1, ry + r * 0.08, r * 0.15, (226, 230, 238, 255))
     elif kind == "boot":
-        poly([(rx - r * 0.3, ry - r * 0.3), (rx - r * 0.05, ry - r * 0.3), (rx, ry + r * 0.05), (rx + r * 0.38, ry + r * 0.18), (rx + r * 0.38, ry + r * 0.34), (rx - r * 0.3, ry + r * 0.34)], (30, 30, 34, 255))
-        for k in range(4):
-            d.rectangle((X(rx - r * 0.24 + k * r * 0.18), X(ry + r * 0.34), X(rx - r * 0.18 + k * r * 0.18), X(ry + r * 0.44)), fill=a)
+        import make_brands as mb
+        bt = mb.load("Footballboot.png")
+        bt = bt.crop(bt.split()[3].point(lambda v: 255 if v > 10 else 0).getbbox())
+        sz = max(8, int(r * 1.25 * S))
+        bt.thumbnail((sz, sz))
+        d._image.alpha_composite(bt, (int((rx - r * 0.15) * S - bt.width / 2), int((ry + r * 0.1) * S - bt.height / 2)))
     elif kind == "flag":
         d.line([(X(rx - r * 0.2), X(ry + r * 0.5)), (X(rx - r * 0.2), X(ry - r * 0.35))], fill=ink, width=w * 2)
         poly([(rx - r * 0.2, ry - r * 0.35), (rx + r * 0.32, ry - r * 0.2), (rx - r * 0.2, ry - r * 0.04)], m)

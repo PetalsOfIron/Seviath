@@ -64,7 +64,7 @@ def perfum():
         for k in (-1, 1):
             d.ellipse(((cx + k * 44 - 4) * S, (cy - 4) * S, (cx + k * 44 + 4) * S, (cy + 4) * S), fill=ROSE)
     img = down(L)
-    b = mb.load("Bottle.png").crop((1750, 2000, 2850, 3900))
+    b = mb.load("Bottle.png").crop((1750, 2000, 2850, 3650))
     b.thumbnail((190, 300))
     cam = Image.new("RGBA", (232, 346), (0, 0, 0, 0))
     cd = ImageDraw.Draw(cam)

@@ -28,7 +28,7 @@ def palette(rgba_list, k=12, seed=1):
     return np.array(keep, np.float32)
 
 
-def enlarge(im, pal, out=448, work=8):
+def enlarge(im, pal, out=448, work=8, ablur=1.4, acut=130):
     """im: RGBA original; returns RGBA at out x out (non-square sizes keep their ratio)."""
     im = im.convert("RGBA")
     ow = round(im.width * out / max(im.size)); oh = round(im.height * out / max(im.size))
@@ -41,8 +41,8 @@ def enlarge(im, pal, out=448, work=8):
     L = Image.fromarray(lab, "L").filter(ImageFilter.ModeFilter(5))
     lab = np.asarray(L)
     colored = pal[lab].astype(np.uint8)
-    alpha = im.split()[3].resize((ww, wh), Image.BICUBIC).filter(ImageFilter.GaussianBlur(1.4))
-    alpha = alpha.point(lambda v: 0 if v < 110 else 255 if v > 150 else int((v - 110) * 255 / 40))
+    alpha = im.split()[3].resize((ww, wh), Image.BICUBIC).filter(ImageFilter.GaussianBlur(ablur))
+    alpha = alpha.point(lambda v: 0 if v < acut - 20 else 255 if v > acut + 20 else int((v - acut + 20) * 255 / 40))
     out_im = Image.fromarray(np.dstack([colored, np.asarray(alpha)]), "RGBA")
     return out_im.resize((ow, oh), Image.LANCZOS)
 
@@ -57,3 +57,21 @@ if __name__ == "__main__":
     b2 = Image.new("RGBA", r.size, (200, 196, 196, 255)); b2.alpha_composite(im.resize(r.size, Image.LANCZOS))
     s = Image.new("RGB", (r.width * 2 + 10, r.height)); s.paste(b2.convert("RGB"), (0, 0)); s.paste(bg.convert("RGB"), (r.width + 10, 0))
     s.save("C:/Users/SAPHIR~1/AppData/Local/Temp/claude/1c11d2ce0030b2d4/5c4410c7-1755-4db2-9956-c88b7487f3ac/scratchpad/vec.png")
+
+
+def gif_save(frames, pal, out, path, durations):
+    """Animated GIF with a fixed palette and hard (1-bit) transparency - no dithering, no halo dots around the edges."""
+    n = len(pal)
+    flat = [int(c) for p in pal for c in p] + [0, 0, 0] * (256 - n)
+    ims = []
+    for f in frames:
+        big = enlarge(f, pal, out=out, ablur=2.0, acut=118)
+        a = np.asarray(big)
+        rgb = a[..., :3].astype(np.float32)
+        d = ((rgb[:, :, None, :] - pal[None, None]) ** 2).sum(-1)
+        lab = d.argmin(-1).astype(np.uint8)
+        lab[a[..., 3] < 128] = n                      # transparent index
+        im = Image.fromarray(lab, "P")
+        im.putpalette(flat)
+        ims.append(im)
+    ims[0].save(path, save_all=True, append_images=ims[1:], duration=durations, loop=0, disposal=2, transparency=n, optimize=False)

@@ -103,8 +103,34 @@ def badge(C, name, tier_idx, prop, size=432):
 FLAIR_MODE = {"Hood": "cross", "Slash": "cross", "Helmet": "above", "Tessel": "below", "Strikeline": "below"}
 
 
+def tessel_boot(size):
+    import make_brands as mb
+    b = mb.load("Footballboot.png")
+    b = b.crop(b.split()[3].point(lambda v: 255 if v > 10 else 0).getbbox())
+    b.thumbnail((size, size))
+    out = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    out.alpha_composite(b, ((size - b.width) // 2, (size - b.height) // 2))
+    return out
+
+
+def tessel_flair(C, tier, size=432):
+    img = ms.medallion(C, size, None, C["main"] if tier == 2 else C["accent"], dots=0)
+    big = tessel_boot(int(size * (0.62 if tier == 2 else 0.7)))
+    img.alpha_composite(big, ((size - big.width) // 2, int(size * 0.2)))
+    d = ImageDraw.Draw(img)
+    if tier == 3:
+        for i in range(3):
+            mr.sparkle(d, 1, size / 2 + (i - 1) * 40, size * 0.17, 14, fill=C["accent"])
+    small = tessel_boot(int(size * 0.16))
+    for sx in (-1, 1):
+        img.alpha_composite(small, (int(size / 2 + sx * size * 0.2 - small.width / 2), int(size * 0.68)))
+    return img
+
+
 def flair(C, tier, size=432):
     name = C["_name"]
+    if name == "Tessel":
+        return tessel_flair(C, tier, size)
     mode = FLAIR_MODE.get(name, "flank")
     sig = SIG[name]
     img = Image.new("RGBA", (size, size), (0, 0, 0, 0))

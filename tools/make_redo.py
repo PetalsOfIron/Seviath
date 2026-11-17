@@ -127,10 +127,27 @@ def tessel_flair(C, tier, size=432):
     return img
 
 
+def helmet_flair(C, tier, size=432):
+    """Helmet art and a small crown, both fully inside the shield."""
+    img = ms.medallion(C, size, None, C["main"] if tier == 2 else C["accent"])
+    d = int(size * (0.44 if tier == 2 else 0.5))
+    pic = portrait_disc(C, d)
+    img.alpha_composite(pic, ((size - d) // 2, int(size * 0.40)))
+    crown = prop_img(C, "crown", int(size * (0.2 if tier == 2 else 0.26)))
+    img.alpha_composite(crown, ((size - crown.width) // 2, int(size * 0.22)))
+    dr = ImageDraw.Draw(img)
+    if tier == 3:
+        for sx in (-1, 1):
+            mr.sparkle(dr, 1, size / 2 + sx * size * 0.2, size * 0.3, 12, fill=C["accent"])
+    return img
+
+
 def flair(C, tier, size=432):
     name = C["_name"]
     if name == "Tessel":
         return tessel_flair(C, tier, size)
+    if name == "Helmet":
+        return helmet_flair(C, tier, size)
     mode = FLAIR_MODE.get(name, "flank")
     sig = SIG[name]
     img = Image.new("RGBA", (size, size), (0, 0, 0, 0))

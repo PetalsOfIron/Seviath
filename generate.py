@@ -120,6 +120,18 @@ TWITCH_GROUPS = [  # (folder, title, description used for alt text)
 ]
 
 
+# complete generated sets (tools/make_purple.py, tools/make_floral.py): one group per kind of asset
+for _theme, _title in (("Purple", "Purple set"),):
+    for _kind, _name, _what in (("Screens", "screens", "Twitch screen"), ("Logo", "logo", "Twitch logo"),
+                                ("Banner", "banner", "Twitch banner"), ("Panels", "panels", "Twitch panel"),
+                                ("Emotes", "emotes", "Twitch emote"), ("Badges", "sub badges", "Twitch sub badge"),
+                                ("Points", "channel point icons", "Twitch channel point icon"),
+                                ("Flair", "flair", "Twitch chat flair"), ("Overlay", "overlay", "Twitch overlay"),
+                                ("Alert", "alert", "Twitch alert")):
+        TWITCH_GROUPS.append((f"{_theme}/{_kind}", f"{_title} - {_name}", f"{_what} ({_title.lower()})"))
+TWITCH_GROUPS.append(("Floral", "Floral set", "Twitch floral set"))
+
+
 def ensure_gif_loop(path):
     """Make sure the GIF repeats forever (adds the NETSCAPE looping extension when it is missing)."""
     data = path.read_bytes()

@@ -817,6 +817,21 @@ def main():
                       "url": f"{base}/seviathstudio.html", "downloadUrl": s["download_url"],
                       "author": {"@id": f"{base}/#person"},
                       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}),
+        # friendly page for old or mistyped links (GitHub Pages shows 404.html for missing files)
+        "404.html": layout(
+            site, filename="404.html", title=f"Page not found - {name}",
+            description="This page or file has moved. Go back to the portfolio.", keywords=name,
+            body='''<header class="hero">
+        <h1 class="hero-name">404</h1>
+        <p class="hero-tagline">That file has moved or no longer exists.</p>
+    </header>
+    <section class="section">
+        <div class="card">
+            <p>If you followed an old link or an old copy of this page is still saved in your browser, press
+            <strong>Ctrl + F5</strong> to reload it, or go back to the portfolio and open the file again.</p>
+            <div class="btn-grid"><a class="proj-btn" href="index.html">Back to the portfolio</a></div>
+        </div>
+    </section>'''),
         # old URL kept alive, points search engines to the new home
         "portfolio.html": f"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><title>Portfolio - {esc(name)}</title>

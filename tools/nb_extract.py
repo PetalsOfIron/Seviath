@@ -7,7 +7,7 @@ SRC = "C:/Users/SaphiresSilver/Projects/portfolio/images/Northbeamlogo.png"
 
 def cutout():
     a = np.asarray(Image.open(SRC).convert("RGB")).astype(np.float32)
-    bg = a[6, :, :]                                   # background only changes left to right
+    bg = a[40, :, :]                                   # background only changes left to right
     d = np.abs(a - bg[None, :, :]).max(-1)
     alpha = np.clip((d - 7) / 20, 0, 1)
     safe = np.maximum(alpha, 1e-3)[..., None]

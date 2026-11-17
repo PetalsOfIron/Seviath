@@ -136,14 +136,15 @@ def panel(title, symbol):
 
 # ------------------------------------------------------------------------------------------------- roses
 
-def rose(d, S, cx, cy, r, layers=5, leaves=True):
+def rose(d, S, cx, cy, r, layers=5, leaves=True, pal=None):
+    c_light, c_dark = pal if pal else (RED_L, RED_D)
     if leaves:
         leaf(d, S, cx - r * 0.2, cy + r * 0.8, r * 1.0, r * 0.2, math.radians(-160), lw=int(r * 0.07))
         leaf(d, S, cx + r * 0.2, cy + r * 0.8, r * 1.0, r * 0.2, math.radians(-20), lw=int(r * 0.07))
     for i in range(layers):
         k = 1 - i / (layers + 0.6)
         rr = r * k
-        col = lerp(RED_L, RED_D, i / max(1, layers - 1) * 0.85)
+        col = lerp(c_light, c_dark, i / max(1, layers - 1) * 0.85)
         ox, oy = math.cos(i * 1.7) * r * 0.06, math.sin(i * 1.7) * r * 0.05
         d.ellipse(((cx + ox - rr) * S, (cy + oy - rr * 0.92) * S, (cx + ox + rr) * S, (cy + oy + rr * 0.92) * S),
                   fill=col + (255,), outline=INK + (255,), width=max(1, int(r * 0.05 * S)))
@@ -156,27 +157,88 @@ def rose(d, S, cx, cy, r, layers=5, leaves=True):
     d.line(pts, fill=INK + (255,), width=max(1, int(r * 0.045 * S)), joint="curve")
 
 
+def tulip(d, S, cx, cy, r):
+    for sx, rot in ((-1, -0.35), (1, 0.35)):
+        pts = []
+        for i in range(30):
+            u = i / 29
+            pts.append((cx + sx * r * 0.34 * math.sin(math.pi * u) ** 0.8 + math.sin(rot) * (1 - u) * r * 0.5, cy + r * 0.2 - u * r * 1.5))
+        d.polygon([(x * S, y * S) for x, y in pts], fill=RED_D + (255,), outline=INK + (255,), width=max(1, int(r * 0.05 * S)))
+    pts = [(cx - r * 0.28, cy + r * 0.2), (cx, cy - r * 1.35), (cx + r * 0.28, cy + r * 0.2), (cx, cy + r * 0.38)]
+    d.polygon([(x * S, y * S) for x, y in pts], fill=RED + (255,), outline=INK + (255,), width=max(1, int(r * 0.05 * S)))
+
+
+def drop(d, S, cx, cy, w, h, fill=RED):
+    pts = []
+    for i in range(32):
+        u = i / 31
+        pts.append((cx - w * math.sin(math.pi * u) ** 0.9, cy - h * u))
+    for i in range(31, -1, -1):
+        u = i / 31
+        pts.append((cx + w * math.sin(math.pi * u) ** 0.9, cy - h * u))
+    d.polygon([(x * S, y * S) for x, y in pts], fill=fill + (255,), outline=INK + (255,), width=max(1, int(w * 0.16 * S)))
+
+
+def stem(d, S, cx, y0, y1, w, leaves=True, ls=1.0):
+    d.line([(cx * S, y0 * S), (cx * S, y1 * S)], fill=INK + (255,), width=int(w * S))
+    if leaves:
+        leaf(d, S, cx, y0 - 8, 92 * ls, 24 * ls, math.radians(-150), lw=7)
+        leaf(d, S, cx, y0 - 30, 92 * ls, 24 * ls, math.radians(-30), lw=7)
+
+
 def badge(tier, size=432):
     name, idx, ring = tier
     k = size / 432
     c = size / 2
+    gold = idx >= 5
+    ring_col = GOLD if gold else (150, 158, 172)
 
     def fn(d, S):
         d.ellipse((4 * S, 4 * S, (size - 4) * S, (size - 4) * S), fill=INK + (255,))
-        d.ellipse((14 * S, 14 * S, (size - 14) * S, (size - 14) * S), fill=ring[0] + (255,))
-        d.ellipse((50 * S, 50 * S, (size - 50) * S, (size - 50) * S), fill=INK + (255,))
-        d.ellipse((60 * S, 60 * S, (size - 60) * S, (size - 60) * S), fill=(240, 230, 224, 255))
-        n = 8 + idx
-        for i in range(n):
-            a = 2 * math.pi * i / n - math.pi / 2
-            berry_dot(d, S, c + math.cos(a) * (size / 2 - 32 * k), c + math.sin(a) * (size / 2 - 32 * k), 10 * k)
-        rose(d, S, c, c - 6 * k, 118 * k, layers=2 + idx // 3)
+        d.ellipse((12 * S, 12 * S, (size - 12) * S, (size - 12) * S), fill=ring_col + (255,))
+        d.ellipse((52 * S, 52 * S, (size - 52) * S, (size - 52) * S), fill=INK + (255,))
+        d.ellipse((61 * S, 61 * S, (size - 61) * S, (size - 61) * S), fill=(240, 230, 224, 255))
+        if idx >= 8:  # ring dots
+            n = 24
+            for i in range(n):
+                a = 2 * math.pi * i / n
+                berry_dot(d, S, c + math.cos(a) * (size / 2 - 32 * k), c + math.sin(a) * (size / 2 - 32 * k), 8 * k)
+        if name == "base":
+            leaf(d, S, c, c - 74 * k, 70 * k, 22 * k, math.radians(-155), lw=7)
+            leaf(d, S, c, c - 74 * k, 70 * k, 22 * k, math.radians(-25), lw=7)
+            d.ellipse(((c - 92 * k) * S, (c - 84 * k) * S, (c + 92 * k) * S, (c + 100 * k) * S), fill=RED + (255,), outline=INK + (255,), width=int(9 * S * k))
+            d.arc(((c - 66 * k) * S, (c - 60 * k) * S, (c + 66 * k) * S, (c + 76 * k) * S), 215, 262, fill=RED_L + (255,), width=int(7 * S * k))
+        elif name == "2month":
+            stem(d, S, c, c + 100 * k, c - 70 * k, 9 * k, ls=0.9 * k)
+        elif name == "3month":
+            stem(d, S, c + 0, c + 110 * k, c - 10 * k, 9 * k, ls=0.9 * k)
+            drop(d, S, c, c - 20 * k, 30 * k, 90 * k)
+        elif name == "6month":
+            stem(d, S, c, c + 112 * k, c - 4 * k, 9 * k, ls=1.0 * k)
+            drop(d, S, c, c - 14 * k, 40 * k, 112 * k)
+            drop(d, S, c + 16 * k, c - 24 * k, 22 * k, 90 * k, fill=RED_D)
+        elif name == "9month":
+            stem(d, S, c, c + 118 * k, c + 6 * k, 9 * k, ls=1.0 * k)
+            tulip(d, S, c, c - 6 * k, 96 * k)
+        else:
+            if name in ("1_5year",):
+                berry_dot(d, S, c - 108 * k, c + 100 * k, 14 * k); berry_dot(d, S, c + 108 * k, c + 100 * k, 14 * k)
+            r_ = 108 * k
+            if name == "4_5year":
+                rose(d, S, c, c + 6 * k, r_, layers=4, pal=((252, 226, 130), (176, 120, 20)))
+            else:
+                rose(d, S, c, c + 6 * k, r_, layers=4 if idx >= 6 else 3)
+            if name in ("2year", "4year", "4_5year"):
+                sparkle(d, S, c - 130 * k, c - 100 * k, 26 * k); sparkle(d, S, c + 130 * k, c - 100 * k, 26 * k)
+            if name in ("3_5year", "4year", "4_5year"):
+                pts = [(c - 56 * k, c - 118 * k), (c - 56 * k, c - 160 * k), (c - 28 * k, c - 138 * k), (c, c - 172 * k), (c + 28 * k, c - 138 * k), (c + 56 * k, c - 160 * k), (c + 56 * k, c - 118 * k)]
+                d.polygon([(x * S, y * S) for x, y in pts], fill=(255, 208, 90, 255), outline=INK + (255,), width=int(6 * S * k))
     return layer((size, size), fn)
 
 
-BADGES = [("base", 0, [(196, 204, 214)]), ("2month", 1, [GOLD]), ("3month", 2, [GOLD]), ("6month", 3, [GOLD]), ("9month", 4, [GOLD]),
-          ("1year", 5, [GOLD]), ("1_5year", 6, [GOLD]), ("2year", 7, [GOLD]), ("2_5year", 8, [GOLD]), ("3year", 9, [GOLD]),
-          ("3_5year", 10, [GOLD]), ("4year", 11, [GOLD]), ("4_5year", 12, [GOLD])]
+BADGES = [("base", 0, None), ("2month", 1, None), ("3month", 2, None), ("6month", 3, None), ("9month", 4, None),
+          ("1year", 5, None), ("1_5year", 6, None), ("2year", 7, None), ("2_5year", 8, None), ("3year", 9, None),
+          ("3_5year", 10, None), ("4year", 11, None), ("4_5year", 12, None)]
 
 
 def flair(tier, size=432):

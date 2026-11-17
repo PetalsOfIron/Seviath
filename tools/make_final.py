@@ -132,13 +132,21 @@ def hood_banner():
     inner = Image.new("RGBA", (W, H), mh.PAPER + (255,))
     base.paste(inner, (0, 0), paper)
     img = Image.alpha_composite(base, frame)
-    logo = Image.open(ROOT / "images" / "LogoGaming.png").convert("RGBA").resize((760, 760), Image.LANCZOS)
-    img.alpha_composite(logo, (150, 120))
-    img.alpha_composite(logo.transpose(Image.FLIP_LEFT_RIGHT), (W - 150 - 760, 120))
-    img = mh.lettered(img, "Petals Of Iron", (W / 2, 520), mh.fit_size("Petals Of Iron", "OLDENGL.TTF", 1250, 260), color=(120, 4, 6), grad=(80, 0, 2))
+    LOGO, GAP = 600, 70
+    logo = Image.open(ROOT / "images" / "LogoGaming.png").convert("RGBA").resize((LOGO, LOGO), Image.LANCZOS)
+    lx0, rx0 = 150, W - 150 - LOGO
+    img.alpha_composite(logo, (lx0, (H - LOGO) // 2))
+    img.alpha_composite(logo.transpose(Image.FLIP_LEFT_RIGHT), (rx0, (H - LOGO) // 2))
+    x0, x1 = lx0 + LOGO + GAP, rx0 - GAP          # the clear white space between the two logos
+    room = x1 - x0
+    cx = (x0 + x1) / 2
+    size = mh.fit_size("Petals Of Iron", "OLDENGL.TTF", room * 0.94, 260)
+    img = mh.lettered(img, "Petals Of Iron", (cx, 520), size, color=(120, 4, 6), grad=(80, 0, 2))
     d = ImageDraw.Draw(img)
-    d.line([(W / 2 - 520, 610), (W / 2 + 520, 610)], fill=mh.RED + (255,), width=6)
-    img = fill_mask(img, text_mask(img.size, "Gamer  -  Streamer  -  Artist", font("georgiai.ttf", 84), (W / 2, 730), track=4), (110, 6, 8))
+    d.line([(cx - room * 0.4, 610), (cx + room * 0.4, 610)], fill=mh.RED + (255,), width=6)
+    sub = "Gamer  -  Streamer  -  Artist"
+    ssz = mh.fit_size(sub, "georgiai.ttf", room * 0.88, 84, track=4)
+    img = fill_mask(img, text_mask(img.size, sub, font("georgiai.ttf", ssz), (cx, 730), track=4), (110, 6, 8))
     return grain(img, 6)
 
 

@@ -47,7 +47,7 @@ def portrait_disc(C, size):
     return pic
 
 
-ART_BADGE = ("Snake", "Tessel", "Perfum", "Northbeam")
+ART_BADGE = ("Snake", "Tessel", "Perfum", "Northbeam", "Floral")
 
 
 def art_icon(C, size, tier_idx):
@@ -81,15 +81,18 @@ def badge(C, name, tier_idx, prop, size=432):
     ring = RING[tier_idx] if tier_idx < 3 else (C["main"] if tier_idx < 5 else C["accent"])
     img = ms.medallion(C, size, None, ring)
     inner = int(size * (0.40 + 0.04 * tier_idx))
+    tri = C["shape"] == "triangle"
+    if tri:
+        inner = int(size * (0.30 + 0.02 * tier_idx))
     if name in ART_BADGE:
         ic = art_icon(C, inner, tier_idx)
     else:
         ic = prop_img(C, SIG[name], inner)
-    img.alpha_composite(ic, ((size - inner) // 2, (size - inner) // 2 + 4))
+    img.alpha_composite(ic, ((size - inner) // 2, (size - inner) // 2 + (34 if tri else 4)))
     d = ImageDraw.Draw(img)
     for i in range(tier_idx):                     # one star per tier along the bottom
         x = size / 2 + (i - (tier_idx - 1) / 2.0) * 36
-        mr.sparkle(d, 1, x, size - 70, 15, fill=C["accent"])
+        mr.sparkle(d, 1, x, size - (92 if tri else 70), 13 if tri else 15, fill=C["accent"])
     if tier_idx >= 4 and name not in ART_BADGE:   # two small companions from tier 5
         for sx in (-1, 1):
             sm = prop_img(C, SIG[name], int(size * 0.16))

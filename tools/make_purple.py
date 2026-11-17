@@ -193,7 +193,20 @@ def screen(title, subtitle):
     for p0, p1 in (((0, 400), (400, 0)), ((W - 400, 0), (W, 400)), ((0, H - 400), (400, H)), ((W - 400, H), (W, H - 400))):
         canvas = bead_string(canvas, p0, p1)
     canvas = text_blackletter(canvas, title, (c[0], c[1] + 70), 170 if len(title) < 12 else 150)
-    canvas = pill_text(canvas, subtitle, (c[0], c[1] + 190), 46)
+    # subtitle: wrapped to at most two lines and sized so every line stays inside the chain diamond
+    words = subtitle.split(" ")
+    lines = [subtitle]
+    if len(subtitle) > 24:
+        best = min(range(1, len(words)), key=lambda i: abs(len(" ".join(words[:i])) - len(" ".join(words[i:]))))
+        lines = [" ".join(words[:best]), " ".join(words[best:])]
+    probe = ImageDraw.Draw(Image.new("L", (10, 10)))
+    for k, ln in enumerate(lines):
+        y = c[1] + 150 + k * 62
+        room = 2 * (520 - (y - c[1])) - 70            # width of the diamond at that height, minus a margin
+        size = 46
+        while size > 24 and probe.textlength(ln, font=font("georgiai.ttf", size)) / SS > room:
+            size -= 2
+        canvas = pill_text(canvas, ln, (c[0], y), size)
     return grain(canvas, 8)
 
 

@@ -131,7 +131,7 @@ TWITCH_GROUPS = [  # (folder, title, description used for alt text)
 
 THEME_SETS = ("Purple", "Floral", "Snake", "Slash", "Helmet", "Hood")
 THEME_FOLDERS = {"Panels": "", "Emotes": "Emotes", "Badges": "Badges", "Points": "__points", "Flair": "Flair",
-                 "Overlay": "Overlay", "Alert": "Alert", "Logo": "Logo", "Banner": "Banner", "Screens": "Offline"}
+                 "Overlay": "Overlay", "Alert": "Alert", "Corner": "Corner", "Logo": "Logo", "Banner": "Banner", "Screens": "Offline"}
 THEME_FILES = {"offline": "Offline", "logo": "Logo", "banner": "Banner"}  # loose files in Floral/
 
 

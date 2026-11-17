@@ -248,6 +248,38 @@ def render_twitch_gallery(assets):
     return "\n".join(parts)
 
 
+# ------------------------------------------------------------- design assets
+# Brand projects: everything in images/design/<Brand>/ becomes buttons under the Design section.
+DESIGN_DIR = ROOT / "images" / "design"
+DESIGN_BRANDS = {"Tessel": "Tessel brand", "Perfum": "Perfum brand"}
+
+
+def design_assets():
+    out = []
+    if not DESIGN_DIR.is_dir():
+        return out
+    for brand_dir in sorted(p for p in DESIGN_DIR.iterdir() if p.is_dir()):
+        for f in sorted(brand_dir.iterdir()):
+            if f.suffix.lower() not in (".png", ".jpg", ".jpeg", ".webp"):
+                continue
+            label = pretty_label(f.stem.replace(brand_dir.name.lower() + "_", ""))
+            out.append({"brand": brand_dir.name, "label": f"{brand_dir.name} {label.lower()}",
+                        "href": "images/design/" + brand_dir.name + "/" + f.name})
+    return out
+
+
+def render_design_gallery(assets):
+    parts = []
+    for brand in sorted({a["brand"] for a in assets}):
+        items = [a for a in assets if a["brand"] == brand]
+        btns = "\n      ".join(
+            f'<a class="proj-btn" href="{esc(quote(a["href"]))}" target="_blank" rel="noopener" '
+            f'title="{esc(a["label"])}">{esc(a["label"])}</a>' for a in items)
+        parts.append(f'        <h3 class="gallery-title">{esc(DESIGN_BRANDS.get(brand, brand))}</h3>\n'
+                     f'        <div class="btn-grid">\n      {btns}\n    </div>')
+    return "\n".join(parts)
+
+
 def portfolio_body(site, projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Portfolio</h1>\n'
              '        <p class="hero-tagline">Santa Madara Neilande &mdash; designer, illustrator, 3D artist &amp; developer</p>\n'
@@ -261,6 +293,9 @@ def portfolio_body(site, projects):
         anchor = sid.replace("-grid", "")
         extra = ""
         ld_items = items
+        if sid == "design-grid" and design_assets():
+            extra = chr(10) + render_design_gallery(design_assets())
+            ld_items = items + [{"title": a["label"], "href": a["href"], "type": "image"} for a in design_assets()]
         if sid == "twitch-grid" and assets:
             extra = "\n" + render_twitch_gallery(assets)
             ld_items = items + [{"title": f'{a["label"]} ({a["folder"] or "panel"})', "href": a["href"], "type": "image"}
@@ -739,7 +774,8 @@ def main():
         f"    <image:image><image:loc>{esc(abs_url(site, p['href']))}</image:loc>"
         f"<image:title>{esc(p['title'])}</image:title></image:image>\n"
         for p in [q for q in projects if not q.get("href", "").startswith("http")]
-        + [{"title": a["label"] + " - Twitch design", "href": a["href"]} for a in twitch_assets()])
+        + [{"title": a["label"] + " - Twitch design", "href": a["href"]} for a in twitch_assets()]
+        + [{"title": a["label"], "href": a["href"]} for a in design_assets()])
     entries = "".join(
         f"  <url>\n    <loc>{esc(u)}</loc>\n{img_xml if u == f'{base}/' else ''}  </url>\n" for u in urls)
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'

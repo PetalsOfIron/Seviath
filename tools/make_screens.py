@@ -213,6 +213,49 @@ def snake(kind):
     return grain(img, 8)
 
 
+
+def strikeline(kind):
+    """Broadcast-style Strikeline screen: spotlight on the centred figure, cyan stripe bundles, lower-third title plate, brand strip."""
+    import make_football as mf
+    CY, NAVY_D = (0, 168, 232), (8, 14, 24)
+    title, sub, _, _ = TEXT[kind]
+    img = radial((W, H), (36, 66, 108), NAVY_D, cx=0.5, cy=0.38, spread=0.95).convert("RGBA")
+    img = glow(img, (W / 2 - 520, 20, W / 2 + 520, 700), (60, 150, 230), blur=170, alpha=95)
+    sb = mf.stripes(int(W * 0.2), int(H * 0.5))
+    sb.putalpha(sb.split()[3].point(lambda v: int(v * (0.35 if kind == "offline" else 0.9))))
+    img.alpha_composite(sb, (0, int(H * 0.15)))
+    img.alpha_composite(sb.transpose(Image.FLIP_LEFT_RIGHT), (W - sb.width, int(H * 0.15)))
+    fig = mf.fit(mf.figure(), 520, {"starting": 520, "brb": 500, "offline": 460}[kind])
+    lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    lay.alpha_composite(fig, ((W - fig.width) // 2, 70))
+    img = shadow(img, lay.split()[3], (0, 18), 26, (0, 0, 0), 0.6)
+    img = Image.alpha_composite(img, lay)
+    if kind == "offline":
+        img = Image.alpha_composite(img, Image.new("RGBA", (W, H), (0, 0, 0, 90)))
+    # lower-third plate
+    pw, ph, py = 1240, 250, 650
+    plate = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    pd = ImageDraw.Draw(plate)
+    pd.polygon([(W / 2 - pw / 2 + 50, py), (W / 2 + pw / 2, py), (W / 2 + pw / 2 - 50, py + ph), (W / 2 - pw / 2, py + ph)], fill=(10, 18, 32, 215))
+    pd.polygon([(W / 2 - pw / 2 + 50, py), (W / 2 - pw / 2 + 74, py), (W / 2 - pw / 2 + 24, py + ph), (W / 2 - pw / 2, py + ph)], fill=CY + (255,))
+    pd.line([(W / 2 - pw / 2 + 60, py + ph - 2), (W / 2 + pw / 2 - 50, py + ph - 2)], fill=CY + (200,), width=4)
+    img = shadow(img, plate.split()[3], (0, 12), 16, (0, 0, 0), 0.5)
+    img = Image.alpha_composite(img, plate)
+    sz = ms.fit_size(title.upper(), "impact.ttf", 1060, 128, track=12)
+    m = text_mask((W, H), title.upper(), font("impact.ttf", sz), (W / 2 + 12, py + 22 + sz * 0.84), track=12)
+    img = fill_mask(img, m, (250, 252, 255), (200, 212, 226))
+    line = " ".join(sub)
+    szs = ms.fit_size(line.upper(), "bahnschrift.ttf", 1040, 34, track=8)
+    img = fill_mask(img, text_mask((W, H), line.upper(), font("bahnschrift.ttf", szs), (W / 2 + 12, py + ph - 44), track=8), CY)
+    # brand strip + corner brackets
+    d = ImageDraw.Draw(img)
+    d.rectangle((0, H - 56, W, H), fill=(6, 10, 18, 235))
+    d.line([(0, H - 56), (W, H - 56)], fill=CY + (255,), width=3)
+    img = fill_mask(img, text_mask((W, H), "STRIKELINE   -   FOOTBALL COMPANY", font("bahnschrift.ttf", 24), (W / 2, H - 20), track=10), (190, 205, 222))
+    corner_brackets(img, 36, 90, CY + (230,), width=4)
+    return grain(img, 8)
+
+
 def save(img, path):
     path.parent.mkdir(parents=True, exist_ok=True)
     img.convert("RGB").save(path, optimize=True)
@@ -230,6 +273,8 @@ def main():
                 img = floral(kind)
             elif name == "Snake":
                 img = snake(kind)
+            elif name == "Strikeline":
+                img = strikeline(kind)
             elif name == "Hood":
                 import make_hood as mh
                 t, sb, _, _ = TEXT[kind]

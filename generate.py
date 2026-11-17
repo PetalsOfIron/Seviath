@@ -52,7 +52,7 @@ SECTIONS = [
     ("design", "Design", "design-grid"),
     ("twitch", "Twitch Design", "twitch-grid"),
     ("art-3D", "Illustration", "illustration-grid", "image"),
-    ("art-3D", "3D & Video", "video-grid", "video"),
+    ("art-3D", "3D", "video-grid", "video"),
 ]
 
 

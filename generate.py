@@ -137,9 +137,49 @@ def studio_body(site):
     </section>"""
 
 
+# ------------------------------------------------------------ useful tools
+
+def tools_body(site):
+    t = site["usefultools"]
+
+    def card(key, text):
+        e = t[key]
+        return (f'''<div class="tool-card">
+                <h3 class="card-sub">{esc(e["name"])}</h3>
+                <p>{text}</p>
+                <p>Current version: <strong>{esc(e["version"])}</strong></p>
+                <div class="btn-grid">
+                    <a class="proj-btn download-btn" href="{esc(e["download_url"])}" rel="noopener">&#11015; Download for {esc(e["name"])}</a>
+                    <a class="proj-btn" href="{esc(e["source_url"])}" target="_blank" rel="noopener">Source code on GitHub</a>
+                </div>
+            </div>''')
+
+    retail = card("retail", "The retail edition for the current World of Warcraft (Midnight). One merged addon that "
+                  "brings all the Useful Tools modules together in a single install.")
+    forever = card("forever", "The edition for the WoW Forever client. Same tools, adapted to Forever, with quest "
+                   "markers built from the Questie quest database.")
+    return f"""<header class="hero">
+        <h1 class="hero-name">SeviathsUsefultools</h1>
+        <p class="hero-tagline">World of Warcraft addons made by Santa Madara Neilande</p>
+    </header>
+
+    <section class="section">
+        <div class="card">
+            <h2 class="section-title">About</h2>
+            <p>SeviathsUsefultools is a collection of <strong>World of Warcraft addons</strong> that adds handy tools
+            to the game: a farming pack, a codex, dungeon &amp; raid helpers and guild tools. They are free,
+            open source and available for two versions of the game. Pick the one that matches your client.</p>
+            <p>To install, download the addon, unzip it and put the <code>SeviathsUsefulTools</code> folder into
+            your <code>Interface/AddOns</code> folder of the matching game version.</p>
+            {retail}
+            {forever}
+        </div>
+    </section>"""
+
+
 # --------------------------------------------------------------------- page
 
-NAV = [("index.html", "Portfolio"), ("seviathstudio.html", "Seviathstudio"), ("contacts.html", "Contacts")]
+NAV = [("index.html", "Portfolio"), ("usefultools.html", "SeviathsUsefultools"), ("seviathstudio.html", "Seviathstudio"), ("contacts.html", "Contacts")]
 
 
 def layout(site, *, filename, title, description, body, keywords, extra_ld=None, og_type="website"):
@@ -379,6 +419,8 @@ main > .hero:first-child { margin-top: 20vh; }
     border: 1px solid rgba(122, 26, 43, 0.35);
     color: var(--burgundy-dark);
 }
+code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px; }
+.tool-card { margin-top: 8px; }
 .feature-list { padding-left: 20px; margin: 0; }
 .feature-list li { margin-bottom: 6px; }
 
@@ -437,6 +479,21 @@ def main():
             body=contacts_body(site),
             extra_ld={"@type": "ContactPage", "name": f"Contacts - {name}", "url": f"{base}/contacts.html",
                       "about": {"@id": f"{base}/#person"}}),
+        "usefultools.html": layout(
+            site, filename="usefultools.html",
+            title=f"SeviathsUsefultools - World of Warcraft addons by {name} | Download",
+            description=("SeviathsUsefultools is a free World of Warcraft addon with farming, codex, dungeon & raid "
+                         "and guild tools. Download the Retail (Midnight) or WoW Forever edition."),
+            keywords=(f"SeviathsUsefultools, Seviaths Useful Tools, WoW addon, World of Warcraft addon, WoW Forever, "
+                      f"retail addon, Midnight, {name}, download"),
+            body=tools_body(site),
+            extra_ld={"@type": "SoftwareApplication", "name": "SeviathsUsefultools",
+                      "applicationCategory": "GameApplication", "operatingSystem": "Windows, macOS",
+                      "url": f"{base}/usefultools.html",
+                      "downloadUrl": [site["usefultools"]["retail"]["download_url"],
+                                      site["usefultools"]["forever"]["download_url"]],
+                      "author": {"@id": f"{base}/#person"},
+                      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}),
         "seviathstudio.html": layout(
             site, filename="seviathstudio.html",
             title=f"Seviathstudio - Digital painting app by {name} | Download",
@@ -462,7 +519,7 @@ def main():
         (ROOT / fname).write_text(content, encoding="utf-8")
         print(f"Generated: {fname}")
 
-    urls = [f"{base}/", f"{base}/seviathstudio.html", f"{base}/contacts.html"]
+    urls = [f"{base}/", f"{base}/usefultools.html", f"{base}/seviathstudio.html", f"{base}/contacts.html"]
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                + "".join(f"  <url><loc>{esc(u)}</loc></url>\n" for u in urls) + "</urlset>\n")

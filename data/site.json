@@ -4,11 +4,31 @@
  "email": "santamadaraneilande@gmail.com",
  "linkedin": "https://www.linkedin.com/in/santa-madara-neilande-9388401b6/",
  "github": "https://github.com/PetalsOfIron",
- "roles": ["Graphic Designer", "Twitch Designer", "Illustrator", "3D Artist", "DevOps & Software Developer"],
+ "roles": [
+  "Graphic Designer",
+  "Twitch Designer",
+  "Illustrator",
+  "3D Artist",
+  "DevOps & Software Developer"
+ ],
  "seviathstudio": {
   "download_url": "https://github.com/PetalsOfIron/seviathstudio/releases/latest",
   "download_label": "Download Seviathstudio",
   "version": "latest",
   "source_url": "https://github.com/PetalsOfIron/seviathstudio"
+ },
+ "usefultools": {
+  "retail": {
+   "name": "Retail (Midnight)",
+   "download_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail/releases/latest",
+   "source_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail",
+   "version": "latest"
+  },
+  "forever": {
+   "name": "WoW Forever",
+   "download_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever/releases/latest",
+   "source_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever",
+   "version": "latest"
+  }
  }
 }

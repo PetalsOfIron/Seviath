@@ -164,6 +164,8 @@ main > .hero:first-child { margin-top: 20vh; }
     border: 1px solid rgba(122, 26, 43, 0.35);
     color: var(--burgundy-dark);
 }
+code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px; }
+.tool-card { margin-top: 8px; }
 .feature-list { padding-left: 20px; margin: 0; }
 .feature-list li { margin-bottom: 6px; }
 

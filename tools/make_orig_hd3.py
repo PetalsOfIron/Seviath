@@ -17,7 +17,7 @@ def smooth_up(f, out):
     oh = round(f.height * out / f.width)
     prem = f.convert("RGBa").resize((ow, oh), Image.LANCZOS).convert("RGBA")
     r, g, b, _ = prem.split()
-    rgb = Image.merge("RGB", (r, g, b)).filter(ImageFilter.UnsharpMask(radius=1.2, percent=60, threshold=2))
+    rgb = Image.merge("RGB", (r, g, b)).filter(ImageFilter.UnsharpMask(radius=1.6, percent=95, threshold=2))
     a = f.split()[3].resize((ow, oh), Image.BICUBIC).filter(ImageFilter.GaussianBlur(1.3))
     a = a.point(lambda v: 0 if v < 70 else 255 if v > 185 else int((v - 70) * 255 / 115))
     r, g, b = rgb.split()

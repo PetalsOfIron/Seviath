@@ -230,7 +230,7 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
     url = f"{base}/" if filename == "index.html" else f"{base}/{filename}"
     image = f"{base}/images/petals-background.png"
     nav = "".join(
-        f'<a href="{f}"' + (' aria-current="page"' if f == filename else "") + f'>{esc(n)}</a>'
+        f'<a href="{f}?v={BUILD}"' + (' aria-current="page"' if f == filename else "") + f'>{esc(n)}</a>'
         for f, n in NAV)
     person = {
         "@type": "Person",
@@ -289,7 +289,7 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
     {body}
     </main>
 
-    <footer class="footer">&copy; {esc(site["name"])} &middot; <a href="contacts.html">Contacts</a></footer>
+    <footer class="footer">&copy; {esc(site["name"])} &middot; <a href="contacts.html?v={BUILD}">Contacts</a></footer>
 
 </body>
 </html>
@@ -494,6 +494,9 @@ code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px
 """
 
 CSS_VERSION = hashlib.md5(CSS.encode("utf-8")).hexdigest()[:8]
+# Changes whenever the generator or data change. Page links carry it so a browser that cached an
+# older copy of a page (GitHub Pages allows 10 minutes) fetches the fresh one after a deploy.
+BUILD = hashlib.md5(b"".join(p.read_bytes() for p in (Path(__file__), PROJECTS_FILE, SITE_FILE))).hexdigest()[:8]
 
 
 def main():

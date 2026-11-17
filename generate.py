@@ -183,53 +183,19 @@ def twitch_assets():
     return out
 
 
-def hd_version(href, w, h):
-    """Smoothly enlarged copy of a small PNG (Lanczos) so it stays crisp instead of being stretched by the browser.
-    Needs Pillow; without it the original is used. The copies are committed, so the deploy does not need Pillow."""
-    dest_rel = "images/twitch-hd/" + href[len("images/twitch/"):]
-    dest = ROOT / dest_rel
-    src = ROOT / href
-    try:
-        if dest.exists() and dest.stat().st_mtime >= src.stat().st_mtime:
-            return dest_rel
-        from PIL import Image
-        img = Image.open(src).convert("RGBA")
-        # premultiply so transparent edges do not get dark halos while resizing
-        r, g, b, al = img.split()
-        premult = Image.merge("RGBA", (Image.composite(r, r.point(lambda _: 0), al), Image.composite(g, g.point(lambda _: 0), al),
-                                       Image.composite(b, b.point(lambda _: 0), al), al))
-        big = premult.resize((w, h), Image.LANCZOS)
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        big.save(dest, optimize=True)
-        return dest_rel
-    except Exception:
-        return dest_rel if dest.exists() else None
-
-
 def render_twitch_gallery(assets):
+    """One button per design, grouped under small headings - the same look as the other works."""
     parts = []
     for folder, title, what in TWITCH_GROUPS:
         items = [a for a in assets if a["folder"] == folder]
         if not items:
             continue
-        figs = []
-        for a in items:
-            alt = f'{what}: {a["label"]} - designed by Santa Madara Neilande'
-            size = "wide" if a["w"] >= 400 else "small"
-            # small files (emotes, badges, flair, panels) are shown bigger so they are easy to see
-            dw = a["w"] * 3 if a["w"] <= 80 else a["w"] * 2 if a["w"] <= 150 else int(a["w"] * 1.5) if a["w"] < 400 else a["w"]
-            src, sw, sh = a["href"], a["w"], a["h"]
-            if dw > a["w"] and not a["gif"]:
-                hd = hd_version(a["href"], dw, round(a["h"] * dw / a["w"]))
-                if hd:
-                    src, sw, sh = hd, dw, round(a["h"] * dw / a["w"])
-            figs.append(
-                f'<figure class="asset asset-{size}" style="--dw:{dw}px">'
-                f'<a href="{esc(quote(a["href"]))}" target="_blank" rel="noopener" title="{esc(a["label"])}">'
-                f'<img src="{esc(quote(src))}" width="{sw}" height="{sh}" loading="lazy" '
-                f'alt="{esc(alt)}"></a><a class="proj-btn asset-btn" href="{esc(quote(a["href"]))}" target="_blank" rel="noopener">{esc(a["label"])}</a></figure>')
+        btns = "\n      ".join(
+            f'<a class="proj-btn" href="{esc(quote(a["href"]))}" target="_blank" rel="noopener" '
+            f'title="{esc(what)}: {esc(a["label"])}">{esc(a["label"])}{" (animated)" if a["gif"] else ""}</a>'
+            for a in items)
         parts.append(f'        <h3 class="gallery-title">{esc(title)}</h3>\n'
-                     f'        <div class="gallery">{"".join(figs)}</div>')
+                     f'        <div class="btn-grid">\n      {btns}\n    </div>')
     return "\n".join(parts)
 
 
@@ -613,14 +579,6 @@ main > .hero:first-child { margin-top: 20vh; }
 code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px; }
 .tool-card { margin-top: 8px; }
 .gallery-title { font-family: 'Fraunces', serif; font-size: 22px; margin: 32px 0 14px; color: var(--burgundy-dark); }
-.gallery { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
-.asset { margin: 0; padding: 10px; text-align: center; border-radius: 12px;
-         background: rgba(122, 26, 43, 0.08); border: 1px solid rgba(122, 26, 43, 0.2); }
-.asset a { display: block; }
-.asset img { display: block; margin: 0 auto; width: min(100%, var(--dw)); height: auto; }
-.asset-wide { flex: 1 1 min(100%, 380px); }
-.asset-wide img { width: 100%; }
-.asset-btn { display: block; margin-top: 8px; padding: 8px 10px; font-size: 13px; }
 .section-intro { margin: -12px 0 20px; line-height: 1.5; }
 .feature-list { padding-left: 20px; margin: 0; }
 .feature-list li { margin-bottom: 6px; }

@@ -175,7 +175,8 @@ def make_body(kind, C):
                 col_img.putalpha(a)
                 d._image.alpha_composite(col_img, (int((cx - r) * S), int((cy - r) * S)))
             d.ellipse(((cx - r) * S, (cy - r) * S, (cx + r) * S, (cy + r) * S), outline=ink, width=int(r * 0.095 * S))
-            face_disc(d, S, cx, cy, r, (252, 240, 226))
+            if not C.get("_noface"):
+                face_disc(d, S, cx, cy, r, (252, 240, 226))
         elif kind == "snake":
             circle(d, S, cx, cy, r, tuple(int(c * (0.75 if dark else 1)) for c in C["main"]))
             for i in range(-3, 4):

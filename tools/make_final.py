@@ -153,7 +153,8 @@ def slash_banner():
         img = mu.outlined(img, m, mu.ORANGE if k == 0 else (255, 255, 255), mu.ORANGE_D if k == 0 else (225, 225, 225), width=12)
     C = dict(ms.SETS["Slash"])
     ms.apply_set(C)
-    ball = me.emote_img(C, "angry", "bolt", 880)
+    C["_noface"] = True
+    ball = mr.layer((880, 880), lambda d, S: (mr.berry_body(d, S, 440, 470, 340, C["main"]), me.prop(d, S, "bolt", 440 - 40, 470 + 20, 340 * 0.9, C)))
     lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     lay.alpha_composite(ball, (int(W * 0.68), 70))
     img = shadow(img, lay.split()[3], (0, 14), 20, (0, 0, 0), 0.6)

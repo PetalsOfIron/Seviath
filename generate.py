@@ -312,7 +312,7 @@ def render_twitch_gallery(assets):
 # ------------------------------------------------------------- design assets
 # Brand projects: everything in images/design/<Brand>/ becomes buttons under the Design section.
 DESIGN_DIR = ROOT / "images" / "design"
-DESIGN_BRANDS = {"Tessel": "Tessel brand", "Perfum": "Perfum brand"}
+DESIGN_BRANDS = {"Tessel": "Tessel brand", "Perfum": "Perfum brand", "Northbeam": "Northbeam company kit"}
 
 
 def design_assets():
@@ -321,10 +321,11 @@ def design_assets():
         return out
     for brand_dir in sorted(p for p in DESIGN_DIR.iterdir() if p.is_dir()):
         for f in sorted(brand_dir.iterdir()):
-            if f.suffix.lower() not in (".png", ".jpg", ".jpeg", ".webp"):
+            if f.suffix.lower() not in (".png", ".jpg", ".jpeg", ".webp", ".pdf", ".ico"):
                 continue
             label = pretty_label(f.stem.replace(brand_dir.name.lower() + "_", ""))
-            out.append({"brand": brand_dir.name, "label": f"{brand_dir.name} {label.lower()}",
+            tag = {".pdf": " (PDF)", ".ico": " (ICO)"}.get(f.suffix.lower(), "")
+            out.append({"brand": brand_dir.name, "label": f"{brand_dir.name} {label.lower()}{tag}",
                         "href": "images/design/" + brand_dir.name + "/" + f.name})
     return out
 
@@ -356,7 +357,7 @@ def portfolio_body(site, projects):
         ld_items = items
         if sid == "design-grid" and design_assets():
             extra = chr(10) + render_design_gallery(design_assets())
-            ld_items = items + [{"title": a["label"], "href": a["href"], "type": "image"} for a in design_assets()]
+            ld_items = items + [{"title": a["label"], "href": a["href"], "type": "image"} for a in design_assets() if a["href"].lower().endswith((".png", ".jpg", ".jpeg", ".webp"))]
         if sid == "twitch-grid" and assets:
             extra = "\n" + render_twitch_gallery(assets)
             ld_items = items + [{"title": f'{a["label"]} ({a["folder"] or "panel"})', "href": a["href"], "type": "image"}
@@ -851,7 +852,7 @@ def main():
         f"<image:title>{esc(p['title'])}</image:title></image:image>\n"
         for p in [q for q in projects if not q.get("href", "").startswith("http")]
         + [{"title": a["label"] + " - Twitch design", "href": a["href"]} for a in twitch_assets()]
-        + [{"title": a["label"], "href": a["href"]} for a in design_assets()])
+        + [{"title": a["label"], "href": a["href"]} for a in design_assets() if a["href"].lower().endswith((".png", ".jpg", ".jpeg", ".webp"))])
     entries = "".join(
         f"  <url>\n    <loc>{esc(u)}</loc>\n{img_xml if u == f'{base}/' else ''}  </url>\n" for u in urls)
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'

@@ -157,9 +157,14 @@ def rose(d, S, cx, cy, r, layers=5, leaves=True, pal=None):
     h = 2.5 * r * S if leaves else 2.0 * r * S
     k = h / im.height
     img = im.resize((max(1, round(im.width * k)), max(1, round(im.height * k))), Image.LANCZOS)
-    if pal is not None:   # gold variant for the highest badge
-        tint = Image.new("RGBA", img.size, (255, 214, 96, 255))
-        img = Image.blend(img.convert("RGB"), tint.convert("RGB"), 0.0).convert("RGBA") if False else img
+    if pal is not None:   # gold variant for the highest badge: shift the red hue to gold, grey leaves stay grey
+        hsv = img.convert("RGB").convert("HSV")
+        hh, ss, vv = hsv.split()
+        hh = hh.point(lambda v: (v + 34) % 256 if v < 40 or v > 235 else v)
+        vv = vv.point(lambda v: min(255, int(v * 1.35 + 25)))
+        img = Image.merge("HSV", (hh, ss, vv)).convert("RGB").convert("RGBA")
+        img.putalpha(im.split()[3].resize(img.size))
+
     d._image.alpha_composite(img, (int(cx * S - img.width / 2), int(cy * S - img.height / 2)))
 
 
@@ -204,8 +209,8 @@ def badge(tier, size=432):
         d.ellipse((12 * S, 12 * S, (size - 12) * S, (size - 12) * S), fill=ring_col + (255,))
         d.ellipse((52 * S, 52 * S, (size - 52) * S, (size - 52) * S), fill=INK + (255,))
         d.ellipse((61 * S, 61 * S, (size - 61) * S, (size - 61) * S), fill=(240, 230, 224, 255))
-        if idx >= 8:  # ring dots
-            n = 24
+        if idx >= 8:  # ring dots: more of them on every higher tier
+            n = {8: 12, 9: 16, 10: 20, 11: 24, 12: 30}[idx]
             for i in range(n):
                 a = 2 * math.pi * i / n
                 berry_dot(d, S, c + math.cos(a) * (size / 2 - 32 * k), c + math.sin(a) * (size / 2 - 32 * k), 8 * k)
@@ -227,18 +232,34 @@ def badge(tier, size=432):
             stem(d, S, c, c + 118 * k, c + 6 * k, 9 * k, ls=1.0 * k)
             tulip(d, S, c, c - 6 * k, 96 * k)
         else:
-            if name in ("1_5year",):
-                berry_dot(d, S, c - 108 * k, c + 100 * k, 14 * k); berry_dot(d, S, c + 108 * k, c + 100 * k, 14 * k)
-            r_ = 108 * k
-            if name == "4_5year":
-                rose(d, S, c, c + 6 * k, r_, layers=4, pal=((252, 226, 130), (176, 120, 20)))
-            else:
-                rose(d, S, c, c + 6 * k, r_, layers=4 if idx >= 6 else 3)
-            if name in ("2year", "4year", "4_5year"):
-                sparkle(d, S, c - 130 * k, c - 100 * k, 26 * k); sparkle(d, S, c + 130 * k, c - 100 * k, 26 * k)
-            if name in ("3_5year", "4year", "4_5year"):
-                pts = [(c - 56 * k, c - 118 * k), (c - 56 * k, c - 160 * k), (c - 28 * k, c - 138 * k), (c, c - 172 * k), (c + 28 * k, c - 138 * k), (c + 56 * k, c - 160 * k), (c + 56 * k, c - 118 * k)]
+            r_ = 100 * k
+            ry = c + (10 * k if idx >= 10 else 0)
+            # the rose itself is the same drawing on every year; everything around it grows with the tier
+            if idx >= 11:   # 4 years and up: a red band inside the gold ring
+                d.ellipse((24 * S, 24 * S, (size - 24) * S, (size - 24) * S), outline=RED + (255,), width=int(8 * S * k))
+            rose(d, S, c, ry, r_, layers=4, pal=(1, 2) if idx == 12 else None)
+            if idx >= 6:    # 1.5 years: two berries at the bottom
+                berry_dot(d, S, c - 100 * k, c + 100 * k, 14 * k)
+                berry_dot(d, S, c + 100 * k, c + 100 * k, 14 * k)
+            if idx >= 7:    # 2 years: two sparkles at the top
+                sparkle(d, S, c - 132 * k, c - 104 * k, 26 * k)
+                sparkle(d, S, c + 132 * k, c - 104 * k, 26 * k)
+            if idx >= 9:    # 3 years: a leaf wreath at the bottom
+                for sx in (-1, 1):
+                    for j, ang in enumerate((-35, -10)):
+                        a_ = math.radians(180 + ang if sx < 0 else -ang)
+                        leaf(d, S, c + sx * (60 + 34 * j) * k, c + (138 - 6 * j) * k, 54 * k, 14 * k, a_, fill=SLATE, lw=5)
+            if idx >= 10:   # 3.5 years: a crown (bigger from 4 years)
+                cs = 1.0 if idx == 10 else 1.35
+                pts = [(c - 52 * cs * k, c - 112 * k), (c - 52 * cs * k, c - 112 * k - 40 * cs * k), (c - 26 * cs * k, c - 112 * k - 20 * cs * k), (c, c - 112 * k - 52 * cs * k),
+                       (c + 26 * cs * k, c - 112 * k - 20 * cs * k), (c + 52 * cs * k, c - 112 * k - 40 * cs * k), (c + 52 * cs * k, c - 112 * k)]
                 d.polygon([(x * S, y * S) for x, y in pts], fill=(255, 208, 90, 255), outline=INK + (255,), width=int(6 * S * k))
+                if idx >= 12:   # 4.5 years: ruby gems on the crown
+                    for gx in (-26, 0, 26):
+                        berry_dot(d, S, c + gx * cs * k, c - 112 * k - 12 * cs * k, 7 * k)
+            if idx >= 11:   # 4 years: two more sparkles lower down
+                sparkle(d, S, c - 148 * k, c + 40 * k, 20 * k)
+                sparkle(d, S, c + 148 * k, c + 40 * k, 20 * k)
     return layer((size, size), fn)
 
 

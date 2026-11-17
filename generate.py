@@ -10,6 +10,7 @@ Seviathstudio download link, then run:
 
     python3 generate.py
 """
+import hashlib
 import json
 import html
 from pathlib import Path
@@ -190,7 +191,7 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,900;1,500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v={CSS_VERSION}">
 <script type="application/ld+json">
 {ld}
 </script>
@@ -381,6 +382,8 @@ a { color: var(--burgundy); }
     .card { padding: 22px; }
 }
 """
+
+CSS_VERSION = hashlib.md5(CSS.encode("utf-8")).hexdigest()[:8]
 
 
 def main():

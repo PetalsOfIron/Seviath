@@ -47,29 +47,97 @@ def portrait_disc(C, size):
     return pic
 
 
+ART_BADGE = ("Snake", "Tessel", "Perfum", "Northbeam")
+
+
+def art_icon(C, size, tier_idx):
+    """The set's own artwork, shown larger and brighter on higher tiers (a closer crop each time)."""
+    if C["_name"] == "Tessel":
+        import make_brands as mb
+        b = mb.load("Footballboot.png")
+        b = b.crop(b.split()[3].point(lambda v: 255 if v > 10 else 0).getbbox())
+        k = 0.66 + 0.05 * tier_idx
+        b.thumbnail((int(size * k), int(size * k)))
+        out = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+        out.alpha_composite(b, ((size - b.width) // 2, (size - b.height) // 2))
+        return out
+    pim, _ = ms.portrait(C["mascot"], C)
+    k = 0.92 - 0.07 * tier_idx                       # visible share of the crop; smaller = closer
+    n = pim.width
+    box = int(n * (1 - k) / 2)
+    pic = pim.crop((box, box, n - box, n - box)).resize((size, size), Image.LANCZOS)
+    mk = Image.new("L", (size * 3, size * 3), 0)
+    ImageDraw.Draw(mk).ellipse((0, 0, size * 3 - 1, size * 3 - 1), fill=255)
+    pic.putalpha(ImageChops.multiply(pic.split()[3], mk.resize((size, size), Image.LANCZOS)))
+    return pic
+
+
+SIG = {"Hood": "sword", "Helmet": "crown", "Slash": "bolt", "Snake": "egg", "Floral": "flower", "Tessel": "boot", "Perfum": "rose", "Northbeam": "snow", "Strikeline": "arrow"}
+RING = [(150, 150, 160), (176, 140, 110), (200, 200, 210), (110, 190, 230), (250, 206, 72), (250, 150, 60), (230, 80, 120)]
+
+
 def badge(C, name, tier_idx, prop, size=432):
-    ring = tuple(int(c * 0.55 + 100) for c in C["accent2"]) if tier_idx < 3 else (C["main"] if tier_idx < 5 else C["accent"])
+    """Same object on every tier of a set; it grows and gains ornaments as the tier goes up."""
+    ring = RING[tier_idx] if tier_idx < 3 else (C["main"] if tier_idx < 5 else C["accent"])
     img = ms.medallion(C, size, None, ring)
-    inner = int(size * 0.56)
-    ic = prop_img(C, prop, inner)
-    img.alpha_composite(ic, ((size - inner) // 2, (size - inner) // 2 + 6))
+    inner = int(size * (0.40 + 0.04 * tier_idx))
+    if name in ART_BADGE:
+        ic = art_icon(C, inner, tier_idx)
+    else:
+        ic = prop_img(C, SIG[name], inner)
+    img.alpha_composite(ic, ((size - inner) // 2, (size - inner) // 2 + 4))
     d = ImageDraw.Draw(img)
-    for i in range(tier_idx + 1 if tier_idx > 2 else 0):   # stars along the bottom grow with the tier
-        x = size / 2 + (i - tier_idx / 2.0) * 34
-        mr.sparkle(d, 1, x, size - 62, 13, fill=C["accent"])
+    for i in range(tier_idx):                     # one star per tier along the bottom
+        x = size / 2 + (i - (tier_idx - 1) / 2.0) * 36
+        mr.sparkle(d, 1, x, size - 70, 15, fill=C["accent"])
+    if tier_idx >= 4 and name not in ART_BADGE:   # two small companions from tier 5
+        for sx in (-1, 1):
+            sm = prop_img(C, SIG[name], int(size * 0.16))
+            img.alpha_composite(sm, (int(size / 2 + sx * size * 0.30 - sm.width / 2), int(size * 0.2)))
     return img
 
 
+FLAIR_MODE = {"Hood": "cross", "Slash": "cross", "Helmet": "above", "Tessel": "below", "Strikeline": "below"}
+
+
 def flair(C, tier, size=432):
-    img = ms.medallion(C, size, None, C["main"] if tier == 2 else C["accent"], dots=14 if tier == 3 else 0)
-    pic = portrait_disc(C, int(size * 0.66 if tier == 2 else size * 0.74))
-    img.alpha_composite(pic, ((size - pic.width) // 2, (size - pic.height) // 2))
-    if tier == 3:
-        top = prop_img(C, "crown", int(size * 0.5))
-        img.alpha_composite(top, ((size - top.width) // 2, 8))
+    name = C["_name"]
+    mode = FLAIR_MODE.get(name, "flank")
+    sig = SIG[name]
+    img = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    big = int(size * 0.5)
+    if mode == "cross":
+        for a in (-38, 38):
+            p = prop_img(C, sig, int(size * 0.8)).rotate(a, resample=Image.BICUBIC)
+            img.alpha_composite(p, ((size - p.width) // 2, (size - p.height) // 2))
+    plate = ms.medallion(C, size, None, C["main"] if tier == 2 else C["accent"], dots=14 if tier == 3 else 0)
+    pic = portrait_disc(C, int(size * 0.5 if mode in ("cross", "flank") else size * 0.56))
+    off = (0, 0)
+    if mode == "above":
+        off = (0, 30)
+    elif mode == "below":
+        off = (0, -20)
+    if mode == "cross":
+        shrink = ms.medallion(C, int(size * 0.62), None, C["main"] if tier == 2 else C["accent"])
+        shrink.alpha_composite(portrait_disc(C, int(size * 0.62 * 0.62)), ((shrink.width - int(size * 0.62 * 0.62)) // 2,) * 2)
+        img.alpha_composite(shrink, ((size - shrink.width) // 2, (size - shrink.height) // 2))
     else:
-        bot = prop_img(C, mf.FLAIR[C["_name"]][0][2], int(size * 0.34))
-        img.alpha_composite(bot, (size - bot.width - 36, size - bot.height - 34))
+        img.alpha_composite(plate)
+        img.alpha_composite(pic, ((size - pic.width) // 2 + off[0], (size - pic.height) // 2 + off[1]))
+    n = 1 if tier == 2 else 2
+    if mode == "flank":
+        for sx in (-1, 1):
+            p = prop_img(C, sig, int(size * (0.26 if tier == 2 else 0.34)))
+            img.alpha_composite(p, (int(size / 2 + sx * size * 0.34 - p.width / 2), int(size * 0.62)))
+    elif mode == "above":
+        p = prop_img(C, sig, int(size * (0.34 if tier == 2 else 0.46)))
+        img.alpha_composite(p, ((size - p.width) // 2, 4))
+    elif mode == "below":
+        p = prop_img(C, sig, int(size * (0.3 if tier == 2 else 0.4)))
+        img.alpha_composite(p, ((size - p.width) // 2, size - p.height - 6))
+    elif tier == 3:
+        p = prop_img(C, "star", int(size * 0.2))
+        img.alpha_composite(p, ((size - p.width) // 2, 6))
     return img
 
 
@@ -153,13 +221,21 @@ def corner(name):
         return
     label = "Petals Of Iron" if name in ("Helmet", "Slash", "Snake", "Floral") else name
     frames = ms.animated(C, (440, 200), "", 64, 0.5, 30)
-    icon = portrait_disc(C, 120)
-    sz = ms.fit_size(label, C["font"], 230, 60)
-    tl = ms.title_text(Image.new("RGBA", (440, 200), (0, 0, 0, 0)), label, (292, 100 + sz * 0.34), sz, C)
+    pim, _p = ms.portrait(C["mascot"], C)
+    if pim is not None:
+        icon = portrait_disc(C, 120)
+    else:
+        icon = Image.new("RGBA", (120, 120), (0, 0, 0, 0))
+        ImageDraw.Draw(icon).ellipse((0, 0, 119, 119), fill=C["main"] + (255,), outline=C["dark"] + (255,), width=5)
+        pr = prop_img(C, SIG[name], 80)
+        icon.alpha_composite(pr, (20, 20))
+    inset = {"slant": 40, "arrow": 20}.get(C.get("pshape"), 0)
+    sz = ms.fit_size(label, C["font"], 200 - inset, 56)
+    tl = ms.title_text(Image.new("RGBA", (440, 200), (0, 0, 0, 0)), label, (292 + inset // 2 - 10, 100 + sz * 0.34), sz, C)
     outf = []
     for f in frames:
         f = f.copy()
-        f.alpha_composite(icon, (44, 40))
+        f.alpha_composite(icon, (60 if C.get('pshape') == 'slant' else 44, 40))
         f.alpha_composite(tl)
         outf.append(f)
     ms.gif(outf, out)

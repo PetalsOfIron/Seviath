@@ -22,17 +22,15 @@ import make_unique as mu
 TW = ROOT / "images" / "twitch"
 
 # badge tiers: (file, mood, prop) - the story of a growing fan in the set's world
-BADGES = {
-    "Hood": [("base", "smile", "controller"), ("3month", "smile", "headset"), ("6month", "cool", "shield"), ("9month", "angry", "sword"), ("1year", "party", "bolt"), ("2year", "laughing", "trophy"), ("3year", "cool", "crown")],
-    "Helmet": [("base", "smile", "shield"), ("3month", "smile", "sword"), ("6month", "angry", "flame"), ("9month", "cool", "horn"), ("1year", "party", "coin"), ("2year", "laughing", "trophy"), ("3year", "cool", "crown")],
-    "Slash": [("base", "smile", "bolt"), ("3month", "angry", "burst"), ("6month", "laughing", "flame"), ("9month", "party", "star"), ("1year", "cool", "headset"), ("2year", "laughing", "trophy"), ("3year", "angry", "crown")],
-    "Snake": [("base", "sleepy", "egg"), ("3month", "smile", "leaf"), ("6month", "smile", "drop"), ("9month", "angry", "tongue"), ("1year", "party", "sun"), ("2year", "cool", "star"), ("3year", "laughing", "crown")],
-    "Floral": [("base", "sleepy", "leaf"), ("3month", "smile", "drop"), ("6month", "smile", "bee"), ("9month", "joyful", "flower"), ("1year", "lovely", "petals"), ("2year", "party", "bouquet"), ("3year", "cool", "crown")],
-    "Tessel": [("base", "smile", "flag"), ("3month", "smile", "whistle"), ("6month", "joyful", "boot"), ("9month", "party", "ball"), ("1year", "laughing", "scoreboard"), ("2year", "cool", "trophy"), ("3year", "party", "crown")],
-    "Perfum": [("base", "sleepy", "drop"), ("3month", "smile", "petals"), ("6month", "joyful", "rose"), ("9month", "sparkly", "spray"), ("1year", "lovely", "gem"), ("2year", "cool", "sparkle"), ("3year", "party", "crown")],
-    "Northbeam": [("base", "sleepy", "snow"), ("3month", "smile", "compass"), ("6month", "joyful", "aurora"), ("9month", "sparkly", "star"), ("1year", "party", "beam"), ("2year", "laughing", "flag"), ("3year", "cool", "crown")],
-    "Strikeline": [("base", "smile", "armband"), ("3month", "joyful", "arrow"), ("6month", "surprise", "whistle"), ("9month", "angry", "ball"), ("1year", "party", "scoreboard"), ("2year", "laughing", "trophy"), ("3year", "cool", "crown")],
-}
+BADGES = {'Hood': [('base', 'smile', 'controller'), ('3month', 'smile', 'headset'), ('6month', 'cool', 'shield'), ('9month', 'angry', 'sword'), ('1year', 'party', 'bolt'), ('2year', 'laughing', 'stars'), ('3year', 'cool', 'sparkle')],
+    'Helmet': [('base', 'smile', 'shield'), ('3month', 'smile', 'sword'), ('6month', 'angry', 'flame'), ('9month', 'cool', 'horn'), ('1year', 'party', 'coin'), ('2year', 'laughing', 'burst'), ('3year', 'cool', 'star')],
+    'Slash': [('base', 'smile', 'bolt'), ('3month', 'angry', 'burst'), ('6month', 'laughing', 'flame'), ('9month', 'party', 'star'), ('1year', 'cool', 'headset'), ('2year', 'laughing', 'stars'), ('3year', 'angry', 'sword')],
+    'Snake': [('base', 'sleepy', 'egg'), ('3month', 'smile', 'leaf'), ('6month', 'smile', 'drop'), ('9month', 'angry', 'tongue'), ('1year', 'party', 'sun'), ('2year', 'cool', 'moon'), ('3year', 'laughing', 'star')],
+    'Floral': [('base', 'sleepy', 'leaf'), ('3month', 'smile', 'drop'), ('6month', 'smile', 'bee'), ('9month', 'joyful', 'flower'), ('1year', 'lovely', 'petals'), ('2year', 'party', 'bouquet'), ('3year', 'cool', 'sun')],
+    'Tessel': [('base', 'smile', 'flag'), ('3month', 'smile', 'whistle'), ('6month', 'joyful', 'boot'), ('9month', 'party', 'ball'), ('1year', 'laughing', 'scoreboard'), ('2year', 'cool', 'redcard'), ('3year', 'party', 'star')],
+    'Perfum': [('base', 'sleepy', 'drop'), ('3month', 'smile', 'petals'), ('6month', 'joyful', 'rose'), ('9month', 'sparkly', 'spray'), ('1year', 'lovely', 'sparkle'), ('2year', 'cool', 'heart'), ('3year', 'party', 'moon')],
+    'Northbeam': [('base', 'sleepy', 'snow'), ('3month', 'smile', 'compass'), ('6month', 'joyful', 'aurora'), ('9month', 'sparkly', 'star'), ('1year', 'party', 'beam'), ('2year', 'laughing', 'flag'), ('3year', 'cool', 'moon')],
+    'Strikeline': [('base', 'smile', 'armband'), ('3month', 'joyful', 'arrow'), ('6month', 'surprise', 'whistle'), ('9month', 'angry', 'ball'), ('1year', 'party', 'scoreboard'), ('2year', 'laughing', 'flag'), ('3year', 'cool', 'star')]}
 FLAIR = {  # (file, mood, prop)
     "Hood": [("tier2_flair", "cool", "headset"), ("tier3_flair", "angry", "sword")], "Helmet": [("tier2_flair", "cool", "shield"), ("tier3_flair", "angry", "crown")],
     "Slash": [("tier2_flair", "angry", "bolt"), ("tier3_flair", "laughing", "flame")], "Snake": [("tier2_flair", "cool", "star"), ("tier3_flair", "angry", "tongue")],
@@ -42,7 +40,7 @@ FLAIR = {  # (file, mood, prop)
 }
 POINTS = {
     "Hood": [("points_controller", "smile", "controller"), ("points_sword", "angry", "sword"), ("points_heart", "lovely", "heart"), ("points_bolt", "party", "bolt")],
-    "Helmet": [("points_coin", "lovely", "coin"), ("points_sword", "angry", "sword"), ("points_crown", "cool", "crown"), ("points_horn", "surprise", "horn")],
+    "Helmet": [("points_coin", "lovely", "coin"), ("points_sword", "angry", "sword"), ("points_flame", "cool", "flame"), ("points_horn", "surprise", "horn")],
     "Slash": [("points_bolt", "angry", "bolt"), ("points_flame", "laughing", "flame"), ("points_star", "party", "star"), ("points_boom", "surprise", "burst")],
     "Snake": [("points_egg", "smile", "egg"), ("points_tongue", "laughing", "tongue"), ("points_sun", "sleepy", "sun"), ("points_drop", "mad", "drop")],
     "Floral": [("points_flower", "joyful", "flower"), ("points_bee", "smile", "bee"), ("points_petals", "lovely", "petals"), ("points_drop", "cry", "drop")],

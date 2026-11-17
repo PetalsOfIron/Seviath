@@ -32,7 +32,11 @@ def paper(size):
 
 def screen(title, lines, mood, extra, side):
     img = paper((W, H))
-    hero = mr.emote(mood, extra, 600)
+    def _fn(d, S):
+        mr.leaf(d, S, 300, 470, 200, 46, math.radians(-150), lw=9)
+        mr.leaf(d, S, 300, 470, 200, 46, math.radians(-30), lw=9)
+        mr.rose(d, S, 300, 270, 190, layers=6, leaves=False)
+    hero = mr.layer((600, 600), _fn)
     lay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     hx = 190 if side == "left" else W - 790 if side == "right" else (W - 600) // 2
     lay.alpha_composite(hero, (hx, 200 if side == "center" else 230))
@@ -40,7 +44,10 @@ def screen(title, lines, mood, extra, side):
     img = Image.alpha_composite(img, lay)
     cx = W - 520 if side == "left" else 520 if side == "right" else W / 2
     cy = 520 if side != "center" else 860
-    sz = 170
+    sz = 150
+    probe = ImageDraw.Draw(Image.new("L", (10, 10)))
+    while sz > 60 and probe.textlength(title, font=font("georgiab.ttf", sz)) / SS > 860:
+        sz -= 6
     m = text_mask((W, H), title, font("georgiab.ttf", sz), (cx, cy))
     img = fill_mask(img, m, mr.INK, (110, 14, 30))
     d = ImageDraw.Draw(img)

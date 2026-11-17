@@ -190,9 +190,10 @@ def tools_body(site):
         return (f'''<div class="tool-card">
                 <h3 class="card-sub">{esc(e["name"])}</h3>
                 <p>{text}</p>
-                <p>Current version: <strong>{esc(e["version"])}</strong></p>
+                <p>Current version: <strong>{esc(e["version"])}</strong>{(" &middot; updated " + esc(e["updated"])) if e.get("updated") else ""}</p>
                 <div class="btn-grid">
                     <a class="proj-btn download-btn" href="{esc(e["download_url"])}" rel="noopener">&#11015; Download for {esc(e["name"])}</a>
+                    <a class="proj-btn" href="{esc(e.get("releases_url", e["download_url"]))}" target="_blank" rel="noopener">What is new</a>
                     <a class="proj-btn" href="{esc(e["source_url"])}" target="_blank" rel="noopener">Source code on GitHub</a>
                 </div>
             </div>''')
@@ -212,8 +213,9 @@ def tools_body(site):
             <p>SeviathsUsefultools is a collection of <strong>World of Warcraft addons</strong> that adds handy tools
             to the game: a farming pack, a codex, dungeon &amp; raid helpers and guild tools. They are free,
             open source and available for two versions of the game. Pick the one that matches your client.</p>
-            <p>To install, download the addon, unzip it and put the <code>SeviathsUsefulTools</code> folder into
-            your <code>Interface/AddOns</code> folder of the matching game version.</p>
+            <p>To install, download the addon, unzip it and put <strong>all the folders</strong> of the zip (<code>SeviathsUsefulTools</code>
+            and the <code>SeviathsUsefulTools_...</code> data folders) into your <code>Interface/AddOns</code> folder of the matching
+            game version.</p>
             {retail}
             {forever}
         </div>

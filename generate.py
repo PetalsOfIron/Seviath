@@ -312,7 +312,7 @@ def render_twitch_gallery(assets):
 # ------------------------------------------------------------- design assets
 # Brand projects: everything in images/design/<Brand>/ becomes buttons under the Design section.
 DESIGN_DIR = ROOT / "images" / "design"
-DESIGN_BRANDS = {"Tessel": "Tessel brand", "Perfum": "Perfum brand", "Northbeam": "Northbeam company kit"}
+DESIGN_BRANDS = {"Tessel": "Tessel brand", "Perfum": "Perfum brand", "Northbeam": "Northbeam company kit", "Football": "Football company kit"}
 
 
 def design_assets():

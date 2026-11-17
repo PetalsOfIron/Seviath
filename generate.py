@@ -254,6 +254,10 @@ def twitch_assets():
             sub = rel.parts[1] if len(rel.parts) > 2 else ""
             if sub:
                 folder = THEME_FOLDERS.get(sub, folder)
+                if sub == "Emotes" and stem.startswith("hype"):
+                    folder = "Emotes/Hype"
+                if sub == "Emotes" and len(rel.parts) > 3:
+                    folder = "Emotes/" + rel.parts[2]
             else:
                 folder = next((g for key, g in THEME_FILES.items() if key in stem), folder)
             if "be_right_back" in stem:

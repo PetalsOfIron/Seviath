@@ -24,13 +24,18 @@ def smooth_up(f, out):
     return Image.merge("RGBA", (r, g, b, a))
 
 
-def run(rel, out):
+def run(rel, out, vector=False):
     with Image.open(SRC / rel) as im:
         frames, dur = [], []
         for f in ImageSequence.Iterator(im):
             dur.append(f.info.get("duration", 60))
             frames.append(f.convert("RGBA"))
-    big = [smooth_up(f, out) for f in frames]
+    if vector:      # smooth colour-field enlargement: curved, non-pixelated outlines (for the small corner)
+        import vecup
+        pal = vecup.palette(frames[::2], k=22)
+        big = [vecup.enlarge(f, pal, out=out) for f in frames]
+    else:
+        big = [smooth_up(f, out) for f in frames]
     dest = (LARGE / rel).with_suffix(".png")
     dest.parent.mkdir(parents=True, exist_ok=True)
     big[0].save(dest, format="PNG", save_all=True, append_images=big[1:], duration=dur, loop=0, disposal=1)
@@ -39,4 +44,4 @@ def run(rel, out):
 
 if __name__ == "__main__":
     run("Alert/petals_alert.gif", 1200)
-    run("Corner/petals_corner.gif", 880)
+    run("Corner/petals_corner.gif", 880, vector=True)

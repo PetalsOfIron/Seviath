@@ -171,7 +171,6 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Overlay/overlay_frame.png</image:loc><image:title>Northbeam overlay frame - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Overlay/overlay_frame.png</image:loc><image:title>Perfum overlay frame - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Overlay/purple_overlay_frame.png</image:loc><image:title>Purple overlay frame - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/Overlay/overlay_frame.png</image:loc><image:title>Rose overlay frame - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Overlay/overlay_frame.png</image:loc><image:title>Slash overlay frame - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Overlay/overlay_frame.png</image:loc><image:title>Snake overlay frame - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Overlay/overlay_frame.png</image:loc><image:title>Strikeline overlay frame - Twitch design</image:title></image:image>
@@ -289,7 +288,6 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Screens/starting_soon.png</image:loc><image:title>Northbeam starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Screens/starting_soon.png</image:loc><image:title>Perfum starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Screens/starting_soon.png</image:loc><image:title>Purple starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/Screens/starting_soon.png</image:loc><image:title>Rose starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Screens/starting_soon.png</image:loc><image:title>Slash starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Screens/snake_starting_soon.png</image:loc><image:title>Snake starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Screens/starting_soon.png</image:loc><image:title>Strikeline starting soon - Twitch design</image:title></image:image>
@@ -300,7 +298,6 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Screens/be_right_back.png</image:loc><image:title>Northbeam be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Screens/be_right_back.png</image:loc><image:title>Perfum be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Screens/be_right_back.png</image:loc><image:title>Purple be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/Screens/be_right_back.png</image:loc><image:title>Rose be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Screens/be_right_back.png</image:loc><image:title>Slash be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Screens/be_right_back.png</image:loc><image:title>Snake be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Screens/be_right_back.png</image:loc><image:title>Strikeline be right back - Twitch design</image:title></image:image>
@@ -311,7 +308,6 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Screens/offline.png</image:loc><image:title>Northbeam offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Screens/offline.png</image:loc><image:title>Perfum offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Screens/offline.png</image:loc><image:title>Purple offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/Screens/offline.png</image:loc><image:title>Rose offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Screens/offline.png</image:loc><image:title>Slash offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Screens/offline.png</image:loc><image:title>Snake offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Screens/offline.png</image:loc><image:title>Strikeline offline - Twitch design</image:title></image:image>
@@ -452,7 +448,6 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier2_3_Bits/bits5k_cool_112.png</image:loc><image:title>Bits5 k cool - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier2_3_Bits/tier2_bloom_112.png</image:loc><image:title>Tier2 bloom - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier2_3_Bits/tier3_royal_112.png</image:loc><image:title>Tier3 royal - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/_rose_cut.png</image:loc><image:title>Rose  rose cut - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_avatar.png</image:loc><image:title>Football avatar</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_banner_facebook.png</image:loc><image:title>Football banner facebook</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_banner_linkedin.png</image:loc><image:title>Football banner linkedin</image:title></image:image>

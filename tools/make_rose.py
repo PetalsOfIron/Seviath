@@ -142,7 +142,7 @@ _ROSE_CACHE = {}
 def user_rose(leaves):
     """The user's own rose drawing (cut from images/Roselogo1.png); with or without its leaves."""
     if leaves not in _ROSE_CACHE:
-        full = Image.open(ROOT / "images" / "twitch" / "Rose" / "_rose_cut.png").convert("RGBA")
+        full = Image.open(ROOT / "tools" / "assets" / "_rose_cut.png").convert("RGBA")
         if leaves:
             _ROSE_CACHE[leaves] = full
         else:

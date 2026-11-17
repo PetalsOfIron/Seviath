@@ -13,6 +13,7 @@ Seviathstudio download link, then run:
 import hashlib
 import json
 import html
+from urllib.parse import quote
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -56,19 +57,61 @@ SECTIONS = [
 ]
 
 
-def portfolio_body(projects):
+SECTION_INFO = {
+    "programming-grid": ("Programming & DevOps projects",
+        "Software and DevOps projects by Santa Madara Neilande: World of Warcraft addons, a digital painting app, "
+        "provisioning scripts and CI demos on GitHub."),
+    "design-grid": ("Graphic design",
+        "Graphic design work: brochures, posters, logos, banners and layouts."),
+    "twitch-grid": ("Twitch design",
+        "Twitch design for streamers: channel logos, stream banners and panels."),
+    "illustration-grid": ("Illustration & character design",
+        "Digital illustration and character design: elves, pirates, warriors and fantasy portraits."),
+    "video-grid": ("3D art and Unity games",
+        "3D environments and Unity game scenes shown as videos on YouTube."),
+}
+
+
+def abs_url(site, href):
+    if href.startswith("http"):
+        return href
+    return site["url"].rstrip("/") + "/" + quote(href)
+
+
+def section_ld(site, topic, sid, items):
+    """schema.org ItemList so Google understands what each section contains."""
+    elems = []
+    for i, p in enumerate(items, 1):
+        url = abs_url(site, p.get("href", ""))
+        if sid == "programming-grid":
+            thing = {"@type": "SoftwareSourceCode", "name": p["title"], "codeRepository": url}
+        elif p.get("type", "image") == "video":
+            thing = {"@type": "VideoObject", "name": p["title"], "url": url, "contentUrl": url}
+        else:
+            thing = {"@type": "ImageObject", "name": p["title"], "contentUrl": url,
+                     "creator": {"@id": site["url"].rstrip("/") + "/#person"}}
+        elems.append({"@type": "ListItem", "position": i, "item": thing})
+    return {"@type": "ItemList", "name": f'{topic} - {site["name"]}', "itemListElement": elems}
+
+
+def portfolio_body(site, projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Portfolio</h1>\n'
              '        <p class="hero-tagline">Santa Madara Neilande &mdash; designer, illustrator, 3D artist &amp; developer</p>\n'
              '    </header>']
+    lds = []
     for key, title, sid, *kind in SECTIONS:
         items = [p for p in projects if p.get("section") == key
                  and (not kind or (p.get("type", "image") == "video") == (kind[0] == "video"))]
+        topic, intro = SECTION_INFO[sid]
+        anchor = sid.replace("-grid", "")
+        lds.append(section_ld(site, topic, sid, items))
         parts.append(
-            f'    <section class="section" id="{sid.replace("-grid", "")}">\n'
-            f'        <h2 class="section-title">{esc(title)}</h2>\n'
+            f'    <section class="section" id="{anchor}" aria-labelledby="{anchor}-title">\n'
+            f'        <h2 class="section-title" id="{anchor}-title">{esc(title)}</h2>\n'
+            f'        <p class="section-intro">{esc(intro)}</p>\n'
             f'        {render_section(items, sid)}\n'
             f'    </section>')
-    return "\n\n".join(parts)
+    return "\n\n".join(parts), lds
 
 
 # ----------------------------------------------------------------- contacts
@@ -205,7 +248,7 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
         "name": f'{site["name"]} - Portfolio', "inLanguage": "en",
         "publisher": {"@id": f"{base}/#person"}}]
     if extra_ld:
-        graph.append(extra_ld)
+        graph.extend(extra_ld if isinstance(extra_ld, list) else [extra_ld])
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -421,6 +464,7 @@ main > .hero:first-child { margin-top: 20vh; }
 }
 code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px; }
 .tool-card { margin-top: 8px; }
+.section-intro { margin: -12px 0 20px; line-height: 1.5; }
 .feature-list { padding-left: 20px; margin: 0; }
 .feature-list li { margin-bottom: 6px; }
 
@@ -459,6 +503,7 @@ def main():
     base = site["url"].rstrip("/")
     s = site["seviathstudio"]
 
+    port_body, port_lds = portfolio_body(site, projects)
     pages = {
         "index.html": layout(
             site, filename="index.html",
@@ -466,10 +511,12 @@ def main():
             description=(f"Portfolio of {name}: graphic design, Twitch design (logos, banners, overlays), "
                          "character illustration, 3D art and DevOps / software projects."),
             keywords=(f"{name}, Santa Neilande, Madara Neilande, portfolio, graphic designer, twitch design, "
-                      "twitch logo, stream banner, illustrator, character design, 3D artist, DevOps, Latvia"),
-            body=portfolio_body(projects),
-            extra_ld={"@type": "CollectionPage", "name": f"{name} - Portfolio", "url": f"{base}/",
-                      "about": {"@id": f"{base}/#person"}}),
+                      "twitch logo, twitch banner, twitch overlay, stream design, illustrator, character design, "
+                      "fantasy illustration, 3D artist, Unity, brochure design, poster design, logo design, "
+                      "DevOps, Latvia"),
+            body=port_body,
+            extra_ld=[{"@type": "CollectionPage", "name": f"{name} - Portfolio", "url": f"{base}/",
+                       "about": {"@id": f"{base}/#person"}}] + port_lds),
         "contacts.html": layout(
             site, filename="contacts.html",
             title=f"Contacts - {name} | Designer, Illustrator & Developer",
@@ -520,9 +567,16 @@ def main():
         print(f"Generated: {fname}")
 
     urls = [f"{base}/", f"{base}/usefultools.html", f"{base}/seviathstudio.html", f"{base}/contacts.html"]
+    # image entries help Google Images find the illustrations and designs
+    img_xml = "".join(
+        f"    <image:image><image:loc>{esc(abs_url(site, p['href']))}</image:loc>"
+        f"<image:title>{esc(p['title'])}</image:title></image:image>\n"
+        for p in projects if not p.get("href", "").startswith("http"))
+    entries = "".join(
+        f"  <url>\n    <loc>{esc(u)}</loc>\n{img_xml if u == f'{base}/' else ''}  </url>\n" for u in urls)
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
-               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-               + "".join(f"  <url><loc>{esc(u)}</loc></url>\n" for u in urls) + "</urlset>\n")
+               '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+               'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' + entries + "</urlset>\n")
     (ROOT / "sitemap.xml").write_text(sitemap, encoding="utf-8")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
     (ROOT / "style.css").write_text(CSS, encoding="utf-8")

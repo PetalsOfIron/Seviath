@@ -1,6 +1,6 @@
 {
  "name": "Santa Madara Neilande",
- "projects": [ 
+ "projects": [
   {
    "title": "github",
    "section": "programming",
@@ -19,7 +19,7 @@
    "type": "image",
    "href": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail"
   },
-   {
+  {
    "title": "Seviathstudio",
    "section": "programming",
    "type": "image",
@@ -38,28 +38,28 @@
    "href": "https://github.com/santamadaraneilande-ctrl/portfolio"
   },
   {
-    "title": "Elfen lady illustration",
-    "section": "art-3D",
-    "type": "image",
-    "href": "images/elven.png"
+   "title": "Elfen lady illustration",
+   "section": "art-3D",
+   "type": "image",
+   "href": "images/elven.png"
   },
   {
-    "title": "Red head illustration",
-    "section": "art-3D",
-    "type": "image",
-    "href": "images/redhead1.png"
+   "title": "Red head illustration",
+   "section": "art-3D",
+   "type": "image",
+   "href": "images/redhead1.png"
   },
   {
-    "title": "Pirate illustration",
-    "section": "art-3D",
-    "type": "image",
-    "href": "images/bottlepirate.png"
+   "title": "Pirate illustration",
+   "section": "art-3D",
+   "type": "image",
+   "href": "images/bottlepirate.png"
   },
   {
-    "title": "Pigman illustration",
-    "section": "art-3D",
-    "type": "image",
-    "href": "images/cukcilvekspabeigtaversija.png"
+   "title": "Pigman illustration",
+   "section": "art-3D",
+   "type": "image",
+   "href": "images/cukcilvekspabeigtaversija.png"
   },
   {
    "title": "Brochure first-side",
@@ -141,7 +141,7 @@
   },
   {
    "title": "Logo for a streamer gamer",
-   "section": "design",
+   "section": "twitch",
    "type": "image",
    "href": "images/LogoGaming.png"
   },
@@ -153,11 +153,11 @@
   },
   {
    "title": "Gamer streamer banner",
-   "section": "design",
+   "section": "twitch",
    "type": "image",
    "href": "images/Gamerstreamer.png"
   },
-   {
+  {
    "title": "Football Banner",
    "section": "design",
    "type": "image",
@@ -165,7 +165,7 @@
   },
   {
    "title": "Snake banner",
-   "section": "design",
+   "section": "twitch",
    "type": "image",
    "href": "images/Banner snake.png"
   },

@@ -1,0 +1,14 @@
+{
+ "name": "Santa Madara Neilande",
+ "url": "https://petalsofiron.github.io/Seviath",
+ "email": "santamadaraneilande@gmail.com",
+ "linkedin": "https://www.linkedin.com/in/santa-madara-neilande-9388401b6/",
+ "github": "https://github.com/PetalsOfIron",
+ "roles": ["Graphic Designer", "Twitch Designer", "Illustrator", "3D Artist", "DevOps & Software Developer"],
+ "seviathstudio": {
+  "download_url": "https://github.com/PetalsOfIron/seviathstudio/releases/latest",
+  "download_label": "Download Seviathstudio",
+  "version": "latest",
+  "source_url": "https://github.com/PetalsOfIron/seviathstudio"
+ }
+}

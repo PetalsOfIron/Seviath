@@ -216,7 +216,7 @@ def render_twitch_gallery(assets):
                 f'<figure class="asset asset-{size}" style="--dw:{dw}px">'
                 f'<a href="{esc(quote(a["href"]))}" target="_blank" rel="noopener" title="{esc(a["label"])}">'
                 f'<img src="{esc(quote(src))}" width="{sw}" height="{sh}" loading="lazy" '
-                f'alt="{esc(alt)}"></a><figcaption>{esc(a["label"])}</figcaption></figure>')
+                f'alt="{esc(alt)}"></a><a class="proj-btn asset-btn" href="{esc(quote(a["href"]))}" target="_blank" rel="noopener">{esc(a["label"])}</a></figure>')
         parts.append(f'        <h3 class="gallery-title">{esc(title)}</h3>\n'
                      f'        <div class="gallery">{"".join(figs)}</div>')
     return "\n".join(parts)
@@ -609,7 +609,7 @@ code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px
 .asset img { display: block; margin: 0 auto; width: min(100%, var(--dw)); height: auto; }
 .asset-wide { flex: 1 1 min(100%, 380px); }
 .asset-wide img { width: 100%; }
-.asset figcaption { margin-top: 6px; font-size: 13px; }
+.asset-btn { display: block; margin-top: 8px; padding: 8px 10px; font-size: 13px; }
 .section-intro { margin: -12px 0 20px; line-height: 1.5; }
 .feature-list { padding-left: 20px; margin: 0; }
 .feature-list li { margin-bottom: 6px; }

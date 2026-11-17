@@ -224,7 +224,7 @@ LAYOUT = {  # kind: ("portrait", x, y, size) | ("prop", name, x, y, size)
     "Slash": [("prop", "bolt", 200, 170, 300), ("prop", "flame", 1720, 170, 300), ("prop", "burst", 1720, 910, 280)],
     "Helmet": [("portrait", 960, 140, 300), ("prop", "shield", 140, 930, 230), ("prop", "sword", 1780, 930, 230)],
     "Snake": [("portrait", 1700, 880, 320), ("prop", "leaf", 160, 150, 240), ("prop", "tongue", 1760, 150, 220), ("prop", "egg", 960, 80, 160)],
-    "Floral": [("portrait", 150, 150, 330), ("portrait", 1770, 150, 280), ("portrait", 1770, 930, 330), ("prop", "bee", 960, 90, 170)],
+    "Floral": [("portrait", 190, 190, 260), ("portrait", 1730, 190, 240), ("portrait", 1730, 890, 260), ("prop", "bee", 960, 110, 170)],
     "Tessel": [("prop", "flag", 150, 150, 240), ("prop", "flag", 1770, 150, 240), ("prop", "ball", 1760, 920, 260), ("prop", "whistle", 960, 80, 170)],
     "Perfum": [("prop", "rose", 150, 150, 300), ("prop", "rose", 1770, 930, 300), ("prop", "sparkle", 1780, 160, 220), ("portrait", 1810, 540, 200)],
     "Northbeam": [("portrait", 960, 150, 260), ("prop", "snow", 160, 170, 230), ("prop", "compass", 1770, 930, 240), ("prop", "aurora", 1770, 170, 230)],

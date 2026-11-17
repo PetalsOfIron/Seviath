@@ -31,6 +31,20 @@ TEXT = {"starting": ("Starting soon", ["The stream begins shortly"], "party", "p
         "offline": ("Offline", ["Thank you for watching,", "see you next time"], "sleepy", "zzz")}
 
 
+
+def bottle_clean():
+    """Whole bottle, stopper to foot, with the table around the foot removed."""
+    from PIL import ImageDraw
+    import make_brands as mb
+    b = mb.load("Bottle.png").crop((1650, 1560, 2930, 3958))
+    m = Image.new("L", b.size, 255)
+    d = ImageDraw.Draw(m)
+    d.rectangle((0, 2200, 300, b.height), fill=0)
+    d.rectangle((960, 2200, b.width, b.height), fill=0)
+    d.rectangle((0, 2395, b.width, b.height), fill=0) if False else None
+    b.putalpha(ImageChops.multiply(b.split()[3], m))
+    return b
+
 def bg_tessel():
     base = radial((W, H), (28, 120, 72), (8, 34, 26), cx=0.5, cy=0.5, spread=1.0).convert("RGBA")
     d = ImageDraw.Draw(base)
@@ -105,7 +119,7 @@ def hero_art(name, px):
     elif name == "Perfum":
         import make_brands as mb
         b = mb.load("Bottle.png")
-        art = mb.feather_x(b.crop((1700, 1900, 2900, 3900)), 0, bottom=0)
+        art = bottle_clean()
     elif name == "Hood":
         art = Image.open(ROOT / "images" / "LogoGaming.png").convert("RGBA").resize((px, px), Image.LANCZOS)
     if art is not None:

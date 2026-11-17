@@ -14,6 +14,20 @@ S = 2
 CAM = (80, H - 80 - 300, 80 + 533, H - 80)   # webcam window
 
 
+
+def bottle_clean():
+    """Whole bottle, stopper to foot, with the table around the foot removed."""
+    from PIL import ImageDraw
+    import make_brands as mb
+    b = mb.load("Bottle.png").crop((1650, 1560, 2930, 3958))
+    m = Image.new("L", b.size, 255)
+    d = ImageDraw.Draw(m)
+    d.rectangle((0, 2200, 300, b.height), fill=0)
+    d.rectangle((960, 2200, b.width, b.height), fill=0)
+    d.rectangle((0, 2395, b.width, b.height), fill=0) if False else None
+    b.putalpha(ImageChops.multiply(b.split()[3], m))
+    return b
+
 def cut_cam(img, margin=6):
     cut = Image.new("L", (W, H), 255)
     ImageDraw.Draw(cut).rectangle((CAM[0] + margin, CAM[1] + margin, CAM[2] - margin, CAM[3] - margin), fill=0)
@@ -64,7 +78,7 @@ def perfum():
         for k in (-1, 1):
             d.ellipse(((cx + k * 44 - 4) * S, (cy - 4) * S, (cx + k * 44 + 4) * S, (cy + 4) * S), fill=ROSE)
     img = down(L)
-    b = mb.load("Bottle.png").crop((1750, 2000, 2850, 3650))
+    b = bottle_clean()
     b.thumbnail((190, 300))
     cam = Image.new("RGBA", (232, 346), (0, 0, 0, 0))
     cd = ImageDraw.Draw(cam)

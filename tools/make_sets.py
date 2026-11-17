@@ -84,7 +84,7 @@ def portrait(kind, C):
         patch = ((250, 232, 150), 0.88, 0.0, 0.05, 0.8, 0.62)
     elif kind == "flower":
         src = Image.open(DL / "priekstwitterfiver" / "2x" / "1x" / "I will be right back.png").convert("RGBA")
-        im = _crop_circle(src, 160, 300, 210, px)
+        im = _crop_circle(src, 235, 330, 200, px)
         patch = ((252, 244, 255), 0.82, 0.0, 0.05, 0.74, 0.58)
     elif kind == "triangle":
         import nb_extract

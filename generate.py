@@ -51,7 +51,8 @@ SECTIONS = [
     ("programming", "Programming", "programming-grid"),
     ("design", "Design", "design-grid"),
     ("twitch", "Twitch Design", "twitch-grid"),
-    ("art-3D", "Art & 3D", "art-grid"),
+    ("art-3D", "Illustration", "illustration-grid", "image"),
+    ("art-3D", "3D & Video", "video-grid", "video"),
 ]
 
 
@@ -59,8 +60,9 @@ def portfolio_body(projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Portfolio</h1>\n'
              '        <p class="hero-tagline">Santa Madara Neilande &mdash; designer, illustrator, 3D artist &amp; developer</p>\n'
              '    </header>']
-    for key, title, sid in SECTIONS:
-        items = [p for p in projects if p.get("section") == key]
+    for key, title, sid, *kind in SECTIONS:
+        items = [p for p in projects if p.get("section") == key
+                 and (not kind or (p.get("type", "image") == "video") == (kind[0] == "video"))]
         parts.append(
             f'    <section class="section" id="{sid.replace("-grid", "")}">\n'
             f'        <h2 class="section-title">{esc(title)}</h2>\n'

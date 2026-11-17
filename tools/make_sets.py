@@ -40,7 +40,7 @@ SETS = {
                    font="constan.ttf", frame="petalgold", mascot="bottle", anim="shine", screens=True, blush=(240, 140, 150), ink=(84, 28, 52)),
     "Northbeam": dict(shape="triangle", pshape='arrow', main=(88, 100, 214), dark=(14, 24, 52), accent=(125, 235, 240), accent2=(40, 60, 140), fill=(24, 40, 96), text=(240, 248, 252), text2=(190, 214, 240),
                       font="OLDENGL.TTF", frame="triangle", mascot="triangle", anim="runner", screens=True, blush=(150, 190, 240), ink=(14, 24, 70)),
-    "Strikeline": dict(shape="rsquare", pshape='slantL', main=(0, 168, 232), dark=(16, 24, 32), accent=(232, 232, 232), accent2=(31, 58, 95), fill=(31, 58, 95), text=(250, 252, 255), text2=(200, 214, 228),
+    "Strikeline": dict(shape="rsquare", pshape='stripebar', main=(0, 168, 232), dark=(16, 24, 32), accent=(232, 232, 232), accent2=(31, 58, 95), fill=(31, 58, 95), text=(250, 252, 255), text2=(200, 214, 228),
                        font="impact.ttf", frame="stripes", mascot="shield", anim="runner", screens=True, blush=(120, 190, 230), ink=(16, 24, 32)),
 }
 
@@ -470,6 +470,12 @@ def shaped_panel(C, size):
     elif p == "cartouche":
         for sy in (30 * sc, h - 30 * sc):
             od.polygon([(w / 2 - 14 * sc, sy), (w / 2, sy - 14 * sc), (w / 2 + 14 * sc, sy), (w / 2, sy + 14 * sc)], fill=C["accent"] + (255,))
+    elif p == "stripebar":
+        pat = [(0.00, 0.03), (0.07, 0.05), (0.17, 0.03), (0.25, 0.09), (0.38, 0.04), (0.47, 0.09), (0.6, 0.03), (0.68, 0.05), (0.78, 0.03), (0.86, 0.04)]
+        for yy, tt in pat:
+            y0 = h * 0.12 + yy * h * 0.76
+            od.rectangle((18, y0, w * 0.1, y0 + tt * h * 0.76), fill=C["main"] + (255,))
+            od.rectangle((w * 0.9, y0, w - 18, y0 + tt * h * 0.76), fill=C["main"] + (255,))
     elif p == "arrow":
         for k in range(5):
             od.polygon([((150 + k * 26) * sc, h - 44 * sc), ((163 + k * 26) * sc, h - 70 * sc), ((176 + k * 26) * sc, h - 44 * sc)], fill=C["accent"] + (255,))
@@ -480,11 +486,13 @@ def shaped_panel(C, size):
 
 def panel(C, title):
     W, H = 1280, 400
+    if C.get("mascot") == "hood":
+        import make_hood as mh
+        img = mh.paper_panel((W, H), scale=1.2, seed=11)
+        return mh.lettered(img, title, (W / 2, H / 2 + 52), fit_size(title, C["font"], 900, 150))
     img = shaped_panel(C, (W, H)) if C.get("pshape") else panel_base((W, H), C, 1.2)
-    ic = mascot_icon(C, "smile", 210)
-    img.alpha_composite(ic, (130 if C.get("pshape") in ("slant", "arrow", "cartouche") else 100, (H - 210) // 2 + 6))
-    sz = fit_size(title, C["font"], 700, 150)
-    return title_text(img, title, (W / 2 + 130, H / 2 + sz * 0.34), sz, C)
+    sz = fit_size(title, C["font"], 900, 150)
+    return title_text(img, title, (W / 2, H / 2 + sz * 0.34), sz, C)
 
 
 def overlay(C):

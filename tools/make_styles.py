@@ -19,11 +19,18 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import make_panels as mpn  # noqa: E402
 
+BRAND = ["Petals Of Iron"]
+CORNER_FONT = ["OLDENGL.TTF"]
 EXTRA = {   # per-style colours for the parts make_panels does not touch
     "Floral": dict(plate="(76, 52, 124)", heart="(214, 120, 200)", bead="(244, 206, 100)", ame=("(176, 110, 214)", "(70, 40, 120)"), base="(220, 208, 240)", skip=("offline", "logo", "banner")),
     "Slash": dict(plate="(120, 8, 40)", heart="(255, 255, 255)", bead="(255, 160, 60)", ame=("(255, 160, 60)", "(130, 50, 10)"), base="(240, 240, 240)", skip=()),
     "Helmet": dict(plate="(70, 30, 90)", heart="(190, 56, 92)", bead="(240, 200, 96)", ame=("(236, 196, 92)", "(110, 76, 14)"), base="(224, 190, 100)", skip=()),
     "Hood": dict(plate="(110, 10, 12)", heart="(250, 240, 234)", bead="(206, 206, 216)", ame=("(206, 206, 216)", "(80, 80, 100)"), base="(206, 206, 216)", skip=()),
+    "Tessel": dict(plate="(20, 80, 50)", heart="(223, 255, 61)", bead="(223, 255, 61)", ame=("(31, 163, 74)", "(10, 70, 40)"), base="(230, 240, 230)", skip=("logo", "banner"), font="constan.ttf", name="Tessel"),
+    "Perfum": dict(plate="(110, 44, 76)", heart="(236, 150, 160)", bead="(226, 190, 120)", ame=("(200, 130, 170)", "(90, 30, 70)"), base="(240, 220, 205)", skip=("logo", "banner"), font="constan.ttf", name="Perfum"),
+    "Northbeam": dict(plate="(36, 56, 130)", heart="(125, 235, 240)", bead="(125, 235, 240)", ame=("(140, 150, 240)", "(50, 56, 140)"), base="(200, 220, 240)", skip=("logo", "banner"), name="Northbeam"),
+    "Strikeline": dict(plate="(20, 60, 110)", heart="(0, 168, 232)", bead="(0, 168, 232)", ame=("(90, 200, 240)", "(0, 80, 130)"), base="(220, 226, 232)", skip=("logo", "banner"), font="impact.ttf", name="Strikeline"),
+    "Rose": dict(plate="(140, 22, 44)", heart="(240, 120, 134)", bead="(255, 214, 96)", ame=("(255, 214, 96)", "(120, 80, 10)"), base="(244, 224, 214)", skip=("logo", "banner"), parts=("screens", "overlay", "alert", "corner"), name="Rose"),
 }
 
 
@@ -51,6 +58,8 @@ def themed(style):
     ]
     for a, b in reps:
         src = src.replace(a, b)
+    if ex.get("font"):
+        src = src.replace('font("OLDENGL.TTF"', 'font("%s"' % ex["font"])
     mod = types.ModuleType("make_purple")
     mod.__file__ = str(HERE / "make_purple.py")
     sys.modules["make_purple"] = mod
@@ -71,8 +80,8 @@ def corner_frames(mod, n=30):
         mod.chain(d, (60, 36), (W - 60, 36), link=16, width=3, S=S)
         mod.chain(d, (60, H - 36), (W - 60, H - 36), link=16, width=3, S=S)
     base = Image.alpha_composite(base, mod.on_layer((W, H), fn))
-    f = mod.font("OLDENGL.TTF", 54)
-    m = mod.text_mask((W, H), "Petals Of Iron", f, (W / 2 + 34, H / 2 + 20))
+    f = mod.font(CORNER_FONT[0], 54)
+    m = mod.text_mask((W, H), BRAND[0], f, (W / 2 + 34, H / 2 + 20))
     base = mod.shadow(base, m, (0, 3), 4, mod.INK, 0.7)
     base = mod.fill_mask(base, m, (252, 250, 255), (222, 214, 240))
     text_alpha = m.point(lambda v: 255 if v > 20 else 0)
@@ -104,14 +113,18 @@ def write_gif(frames, path, dur=50):
 
 def build(style):
     mod = themed(style)
+    BRAND[0] = EXTRA[style].get("name", "Petals Of Iron")
+    CORNER_FONT[0] = EXTRA[style].get("font", "OLDENGL.TTF")
     skip = EXTRA[style]["skip"]
+    parts = EXTRA[style].get("parts")
+    want = (lambda k: parts is None or k in parts)
     out = mod.OUT
     save = mod.save
-    for t in mod.PANELS:
+    for t in (mod.PANELS if want("panels") else []):
         save(mod.panel(t), out / "Panels" / (t.lower().replace(" ", "_") + ".png"))
     screens = [("starting_soon", "Starting soon", "The stream begins shortly"), ("be_right_back", "Be right back", "I will be back in a moment"),
                ("offline", "Offline", "Thank you for watching, see you next time")]
-    for name, title, sub in screens:
+    for name, title, sub in (screens if want("screens") else []):
         if name in skip:
             continue
         save(mod.screen(title, sub), out / "Screens" / (name + ".png"))
@@ -119,9 +132,14 @@ def build(style):
         save(mod.logo(), out / "Logo" / "logo.png")
     if "banner" not in skip:
         save(mod.banner(), out / "Banner" / "banner.png")
-    save(mod.overlay_frame(), out / "Overlay" / "overlay_frame.png", rgba=True)
-    write_gif(mod.alert_frames("Thanks for the follow!"), out / "Alert" / "alert.gif")
-    write_gif(corner_frames(mod), out / "Corner" / "corner.gif")
+    if want("overlay"):
+        save(mod.overlay_frame(), out / "Overlay" / "overlay_frame.png", rgba=True)
+    if want("alert"):
+        write_gif(mod.alert_frames("Thanks for the follow!"), out / "Alert" / "alert.gif")
+    if want("corner"):
+        write_gif(corner_frames(mod), out / "Corner" / "corner.gif")
+    if parts is not None:
+        return
     for t in mod.BADGES:
         save(mod.badge(t), out / "Badges" / (t[0] + "_432.png"), rgba=True)
     for k in mod.POINTS:
@@ -137,6 +155,13 @@ def build(style):
     anim.main()
 
 
+def snake_corner():
+    import make_snake
+    mod = make_snake.load_theme_module()
+    BRAND[0] = "Petals Of Iron"
+    write_gif(corner_frames(mod), mod.OUT / "Corner" / "corner.gif")
+
+
 def purple_corner():
     mod = types.ModuleType("make_purple")
     mod.__file__ = str(HERE / "make_purple.py")
@@ -149,7 +174,8 @@ if __name__ == "__main__":
     args = sys.argv[1:]
     if args == ["corners"]:
         purple_corner()
+        snake_corner()
     else:
-        for s in (args or list(EXTRA)):
+        for s in (args or [k for k in EXTRA if k in ('Slash', 'Helmet', 'Hood', 'Floral')]):
             build(s)
     print("done")

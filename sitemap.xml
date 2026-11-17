@@ -15,13 +15,13 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Football.png</image:loc><image:title>Football Banner</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/characterdesign.jpg</image:loc><image:title>Warrior lady Illustration</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/beija666.png</image:loc><image:title>Character design illustration Beija</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/addons.png</image:loc><image:title>Addons - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/addons.png</image:loc><image:title>Addons - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/about_me.png</image:loc><image:title>Purple about me - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/chat_rules.png</image:loc><image:title>Purple chat rules - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/donation.png</image:loc><image:title>Purple donation - Twitch design</image:title></image:image>
@@ -30,8 +30,10 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/pc_setup.png</image:loc><image:title>Purple pc setup - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/schedule.png</image:loc><image:title>Purple schedule - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/socials.png</image:loc><image:title>Purple socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/channel_points_112.png</image:loc><image:title>Channel points - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/channel_points_432.png</image:loc><image:title>Channel points - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/channel_points_rose_432.png</image:loc><image:title>Channel points rose - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/channel_points_star_432.png</image:loc><image:title>Channel points star - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Points/points_crown_432.png</image:loc><image:title>Purple points crown - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Points/points_gem_432.png</image:loc><image:title>Purple points gem - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Points/points_heart_432.png</image:loc><image:title>Purple points heart - Twitch design</image:title></image:image>
@@ -42,19 +44,19 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Overlay/purple_overlay_frame.png</image:loc><image:title>Purple overlay frame - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Overlay/wow_frame_fullscreen_1920x1080.png</image:loc><image:title>Wow frame fullscreen 1920 x1080 - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Overlay/wow_layout_1920x1080.png</image:loc><image:title>Wow layout 1920 x1080 - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/base_72.png</image:loc><image:title>Base - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/2month_72.png</image:loc><image:title>2 month - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/3month_72.png</image:loc><image:title>3 month - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/6month_72.png</image:loc><image:title>6 month - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/9month_72.png</image:loc><image:title>9 month - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/1year_72.png</image:loc><image:title>1 year - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/1_5year_72.png</image:loc><image:title>1.5 year - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/2year_72.png</image:loc><image:title>2 year - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/2_5year_72.png</image:loc><image:title>2.5 year - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/3year_72.png</image:loc><image:title>3 year - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/3_5year_72.png</image:loc><image:title>3.5 year - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/4year_72.png</image:loc><image:title>4 year - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Badges/4_5year_72.png</image:loc><image:title>4.5 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/base_432.png</image:loc><image:title>Base - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/2month_432.png</image:loc><image:title>2 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/3month_432.png</image:loc><image:title>3 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/6month_432.png</image:loc><image:title>6 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/9month_432.png</image:loc><image:title>9 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/1year_432.png</image:loc><image:title>1 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/1_5year_432.png</image:loc><image:title>1.5 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/2year_432.png</image:loc><image:title>2 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/2_5year_432.png</image:loc><image:title>2.5 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/3year_432.png</image:loc><image:title>3 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/3_5year_432.png</image:loc><image:title>3.5 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/4year_432.png</image:loc><image:title>4 year - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Badges/4_5year_432.png</image:loc><image:title>4.5 year - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Badges/1year_432.png</image:loc><image:title>Purple 1 year - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Badges/2year_432.png</image:loc><image:title>Purple 2 year - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Badges/3month_432.png</image:loc><image:title>Purple 3 month - Twitch design</image:title></image:image>
@@ -64,8 +66,8 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Badges/base_432.png</image:loc><image:title>Purple base - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Flair/tier2_flair_432.png</image:loc><image:title>Purple tier2 flair - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Flair/tier3_flair_432.png</image:loc><image:title>Purple tier3 flair - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Flair/tier2_flair_72.png</image:loc><image:title>Tier2 flair - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Flair/tier3_flair_72.png</image:loc><image:title>Tier3 flair - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Flair/tier2_flair_432.png</image:loc><image:title>Tier2 flair - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Flair/tier3_flair_432.png</image:loc><image:title>Tier3 flair - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starting/petals_starting_soon.png</image:loc><image:title>Petals starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Screens/purple_be_right_back.png</image:loc><image:title>Purple be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/offline.png</image:loc><image:title>Floral offline - Twitch design</image:title></image:image>
@@ -81,10 +83,10 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Banner/petals_gamer_banner.png</image:loc><image:title>Petals gamer banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Banner/purple_banner.png</image:loc><image:title>Purple banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Banner/snake_banner.png</image:loc><image:title>Snake banner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/hi_112.png</image:loc><image:title>Hi - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/laugh_112.png</image:loc><image:title>Laugh - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/lovely_112.png</image:loc><image:title>Lovely - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/pinata_party_112.png</image:loc><image:title>Pinata party - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/hi_448.png</image:loc><image:title>Hi - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/laugh_448.png</image:loc><image:title>Laugh - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/lovely_448.png</image:loc><image:title>Lovely - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/pinata_party_448.png</image:loc><image:title>Pinata party - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Emotes/amethyst_448.png</image:loc><image:title>Purple amethyst - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Emotes/crown_448.gif</image:loc><image:title>Purple crown - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Emotes/diamond_448.png</image:loc><image:title>Purple diamond - Twitch design</image:title></image:image>
@@ -94,24 +96,24 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Emotes/hype_448.gif</image:loc><image:title>Purple hype - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Emotes/ruby_448.png</image:loc><image:title>Purple ruby - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Emotes/sparkle_448.gif</image:loc><image:title>Purple sparkle - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/sparkly_112.png</image:loc><image:title>Sparkly - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/surprise_112.png</image:loc><image:title>Surprise - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Hype/hype_112.png</image:loc><image:title>Hype - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier1/cry_112.png</image:loc><image:title>Cry - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier1/fun_112.png</image:loc><image:title>Fun - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier1/happycat_112.gif</image:loc><image:title>Happycat - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier1/joyful_112.png</image:loc><image:title>Joyful - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier1/laughing_112.gif</image:loc><image:title>Laughing - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier1/mad_112.gif</image:loc><image:title>Mad - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier1/playful_112.gif</image:loc><image:title>Playful - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier1/sad_112.png</image:loc><image:title>Sad - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier1/sleepy_112.gif</image:loc><image:title>Sleepy - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier1/veryangry_112.png</image:loc><image:title>Veryangry - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier2_3_Bits/bits1k_gem_112.png</image:loc><image:title>Bits1 k gem - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier2_3_Bits/bits10k_legend_112.png</image:loc><image:title>Bits10 k legend - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier2_3_Bits/bits5k_cool_112.png</image:loc><image:title>Bits5 k cool - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier2_3_Bits/tier2_bloom_112.png</image:loc><image:title>Tier2 bloom - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/Tier2_3_Bits/tier3_royal_112.png</image:loc><image:title>Tier3 royal - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/sparkly_448.png</image:loc><image:title>Sparkly - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/surprise_448.png</image:loc><image:title>Surprise - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Hype/hype_448.png</image:loc><image:title>Hype - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier1/cry_448.png</image:loc><image:title>Cry - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier1/fun_448.png</image:loc><image:title>Fun - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier1/happycat_448.gif</image:loc><image:title>Happycat - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier1/joyful_448.png</image:loc><image:title>Joyful - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier1/laughing_448.gif</image:loc><image:title>Laughing - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier1/mad_448.gif</image:loc><image:title>Mad - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier1/playful_448.gif</image:loc><image:title>Playful - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier1/sad_448.png</image:loc><image:title>Sad - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier1/sleepy_448.gif</image:loc><image:title>Sleepy - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier1/veryangry_448.png</image:loc><image:title>Veryangry - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier2_3_Bits/bits1k_gem_448.png</image:loc><image:title>Bits1 k gem - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier2_3_Bits/bits10k_legend_448.png</image:loc><image:title>Bits10 k legend - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier2_3_Bits/bits5k_cool_448.png</image:loc><image:title>Bits5 k cool - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier2_3_Bits/tier2_bloom_448.png</image:loc><image:title>Tier2 bloom - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Emotes/Tier2_3_Bits/tier3_royal_448.png</image:loc><image:title>Tier3 royal - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_banner.png</image:loc><image:title>Perfum banner</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_logo.png</image:loc><image:title>Perfum logo</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_poster.png</image:loc><image:title>Perfum poster</image:title></image:image>

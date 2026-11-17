@@ -169,12 +169,12 @@ def large_version(src, rel, is_gif, w, h):
     """Bigger, smooth copy of a small asset (badges, icons, emotes, panels). Returns the site path of the file to link.
     Uses Lanczos in premultiplied alpha (no dark halos) plus a light sharpen. Needs Pillow; without it the existing
     copy is used (the copies are committed, so the deploy does not need Pillow)."""
+    apng = (LARGE_DIR / rel).with_suffix(".png")
+    if is_gif and apng.exists():     # smooth animated PNG redraw of this animated asset
+        return "images/twitch-large/" + rel.with_suffix(".png").as_posix()
     k = upscale_factor(w)
     if k == 1:
         return "images/twitch/" + rel.as_posix()
-    apng = (LARGE_DIR / rel).with_suffix(".png")
-    if is_gif and apng.exists():     # smooth animated PNG redraw of this animated emote
-        return "images/twitch-large/" + rel.with_suffix(".png").as_posix()
     dest = LARGE_DIR / rel
     href = "images/twitch-large/" + rel.as_posix()
     if dest.exists() and dest.stat().st_mtime >= src.stat().st_mtime:

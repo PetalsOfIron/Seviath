@@ -111,11 +111,13 @@ def portrait(kind, C):
         patch = ((255, 236, 236), 0.55, 0.0, 0.0, 0.8, 0.66)
     elif kind == "football":
         src = Image.open(DL / "assets" / "Footballboot.png").convert("RGBA")
-        im = _crop_circle(src, 2250, 1100, 700, px)
-        base = Image.new("RGBA", (px, px), (20, 80, 50, 255))
-        base.alpha_composite(im)
+        src = src.crop(src.split()[3].point(lambda v: 255 if v > 10 else 0).getbbox())
+        base = radial((px, px), (30, 110, 70), (10, 44, 32), cx=0.5, cy=0.5, spread=0.9).convert("RGBA")
+        k = px * 0.84 / max(src.size)
+        boot = src.resize((max(1, round(src.width * k)), max(1, round(src.height * k))), Image.LANCZOS)
+        base.alpha_composite(boot, ((px - boot.width) // 2, (px - boot.height) // 2))
         im = base
-        patch = ((240, 246, 240), 0.9, 0.0, 0.0, 0.72, 0.56)
+        patch = None
     else:
         im = None
         patch = None

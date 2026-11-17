@@ -109,6 +109,7 @@ TWITCH_GROUPS = [  # (folder, title, description used for alt text)
     ("Overlay", "Overlays", "Twitch stream overlay"),
     ("Badges", "Sub badges", "Twitch subscriber badge"),
     ("Flair", "Flair", "Twitch chat flair"),
+    ("Offline", "Offline screen", "Twitch offline screen"),
     ("Emotes", "Emotes", "Twitch emote"),
     ("Emotes/Hype", "Hype emotes", "Twitch hype emote"),
     ("Emotes/Tier1", "Tier 1 emotes", "Twitch tier 1 sub emote"),
@@ -167,8 +168,18 @@ def twitch_assets():
             strip_gif_loop(f)
         out.append({"folder": folder, "label": pretty_label(base), "href": "images/twitch/" + f.relative_to(TWITCH_DIR).as_posix(),
                     "w": w, "h": h, "gif": is_gif})
-    out.sort(key=lambda a: (order.get(a["folder"], 99), "" if a["label"] == "Base" else a["label"].lower() if not a["label"][:1].isdigit()
-                            else f'{float(re.match(r"[\d.]+", a["label"]).group()) / (12 if "month" in a["label"] else 1):08.3f}'))
+    def sort_key(a):
+        label = a["label"]
+        if label == "Base":
+            name = ""
+        elif label[:1].isdigit():  # badges: months before years
+            num = float(re.match(r"[0-9.]+", label).group())
+            name = "%08.3f" % (num / 12 if "month" in label else num)
+        else:
+            name = label.lower()
+        return (order.get(a["folder"], 99), name)
+
+    out.sort(key=sort_key)
     return out
 
 

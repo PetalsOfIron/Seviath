@@ -372,7 +372,7 @@ def render_design_gallery(assets):
 
 def portfolio_body(site, projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Portfolio</h1>\n'
-             '        <p class="hero-tagline">Santa Madara Neilande &mdash; designer, illustrator &amp; 3D artist &mdash; learning to code</p>\n'
+             '        <p class="hero-tagline">Santa Madara Neilande &mdash; designer &amp; illustrator &mdash; learning to code</p>\n'
              '    </header>']
     lds = []
     assets = twitch_assets()
@@ -412,8 +412,8 @@ def contacts_body(site):
     <section class="section">
         <div class="card">
             <h2 class="section-title">{esc(site["name"])}</h2>
-            <p>Graphic designer, Twitch designer, illustrator, 3D artist. I am just starting out and learning to become a developer.
-            I make logos, banners and stream overlays, character illustrations and 3D scenes, and I am learning by building small tools and apps.</p>
+            <p>Graphic designer, Twitch designer and illustrator. I am just starting out and learning to become a developer.
+            I make logos, banners and stream overlays, character illustrations, and I am learning by building small tools and apps.</p>
             <h3 class="card-sub">What I am</h3>
             <ul class="tag-list">{roles}</ul>
             <h3 class="card-sub">Get in touch</h3>
@@ -422,6 +422,143 @@ def contacts_body(site):
                 <a class="proj-btn" href="{esc(site["linkedin"])}" target="_blank" rel="me noopener">LinkedIn</a>
             </div>
         </div>
+    </section>"""
+
+
+# ----------------------------------------------------------------------- cv
+
+CV_PROFILE = ("Creative and detail-oriented digital artist and designer with a Bachelor's degree in Arts and Humanities "
+              "and hands-on experience in visual art teaching, SEO and digital marketing, customer service and security. "
+              "Builds her own tools and projects: a digital painting application, World of Warcraft addons, a "
+              "streaming-design portfolio and brand kits. Reliable, quick to learn and comfortable working both "
+              "independently and with people.")
+
+CV_SKILLS = ["Adobe Photoshop", "Adobe Illustrator", "Adobe Lightroom", "Adobe InDesign", "Adobe Premiere",
+             "Adobe After Effects", "Clip Studio Paint", "Inkscape", "Live2D Cubism", "Blender", "Unity", "Processing",
+             "Canva", "SEO", "WordPress", "Google Ads", "Google Analytics", "MS Word", "MS Excel", "PowerPoint"]
+
+CV_WORK = [
+    ("Sales Assistant", "JYSK Linnen'n Furniture SIA", "19/08/2026 – 07/09/2026", "Rīga, Latvia",
+     "Served customers at the cash register, processing purchases and providing advice. Arranged products on shelves."),
+    ("Sales Assistant", "Maxima Latvija", "13/07/2026 – 23/07/2026", "Rīga, Latvia",
+     "Monitored product expiry dates in display cabinets and ensured their proper arrangement. Sold fish and meat "
+     "products according to customer orders. Also worked at the cash register, serving customers."),
+    ("Security Guard", "Mērsraga ostas pārvalde", "01/05/2023 – 10/06/2026", "Mērsrags, Latvia",
+     "Ensured territory security at the Port of Mērsrags: worked with the Roger MT magnetic card identification "
+     "system, carried out video surveillance and control at the barrier. Checked documents, vehicles and passengers. "
+     "Performed patrols, monitored the territory and responded to incidents. Prepared documents, patrol logs and "
+     "headcounts in Excel. Maintained confidentiality, communicated with people and resolved tense situations "
+     "without aggression."),
+    ("Marketing Assistant", "Zinātnes un inovāciju parks", "18/07/2023 – 18/07/2024", "Remote, Latvia",
+     "Carried out SEO optimization work, wrote long-form texts in WordPress, optimized pages for Google search and "
+     "created product images. Performed page data analysis and selected Google Analytics tags, as well as "
+     "researched keyword demand in Google. Also gained skills in working with Google Ads."),
+    ("Sales Assistant", "SIA \"Gabriēla\"", "15/05/2022 – 20/11/2022", "Mērsrags, Latvia",
+     "Served customers in a wholesale store: advised on products, helped select suitable items and processed "
+     "purchases. Covered the cash register during colleagues' lunch breaks, ensuring uninterrupted customer "
+     "service. Monitored the sales floor orderliness and product availability."),
+    ("Leisure Attendant", "Mērsraga Invalīdu atbalsta centrs", "01/09/2021 – 28/02/2022", "Mērsrags, Latvia",
+     "Prepared and organized documents and received payments for the centre's services. Provided administrative "
+     "support for the centre's daily operations."),
+    ("Visual Arts Teacher", "Mersraga Mūzikas un mākslas skola", "01/10/2019 – 31/05/2020", "Mērsrags, Latvia",
+     "Taught children drawing, providing learning materials and explaining various drawing techniques and styles. "
+     "Evaluated students' work according to their skill level. During the teaching period, students learned "
+     "perspective and anatomy. During this time I also acquired in-depth drawing techniques, which later served as "
+     "a foundation for my transition to digital art. Worked as a substitute teacher."),
+]
+
+CV_EDU = [
+    ("DevOps Implementation and Change Management: Theory and Practice", "Vidzeme University of Applied Sciences (lifelong learning project)",
+     "01/09/2026 – 29/10/2026", "Remote, Rīga, Latvia",
+     "DevOps culture and transformation, value stream mapping, target operating models, security in DevOps, metrics and continuous improvement.",
+     "Level: LQF 6", ("Vidzeme-University-DevOps-Certificate.pdf", "Open certificate")),
+    ("Bachelor in Arts and Humanities", "Liepājas Universitāte", "01/09/2016 – 31/12/2019", "Liepāja, Latvia",
+     "Adobe After Effects, Photoshop, Illustrator, InDesign and Premiere, Processing, Unity, Blender, Canva, Inkscape, Clip Studio Paint, graphic design and layout, video creation, photography and photo editing.",
+     "Level in EQF: 6", ("Liepaja-University-Bachelor-Diploma.pdf", "Open diploma")),
+    ("Digital Media Practitioner", "Baltijas Datoru Akadēmija", "08/09/2020 – 17/11/2020", "Rīga, Latvia",
+     "SEO and marketing, Google Analytics, Google Ads, WordPress, design layout structure and sizes.",
+     "Level in EQF: 3", ("Digital-Media-Practitioner-Certificate-BDA.pdf", "Open certificate")),
+    ("High School", "Mērsraga Vidusskola", "01/09/2004 – 31/12/2016", "Mērsrags, Latvia", "", "Level in EQF: 4", None),
+]
+
+CV_PROJECTS = [
+    ("Seviath Studio", "her own digital painting application written in Rust, with a brush designer, gradients, layers, filters and tablet support."),
+    ("SeviathsUsefultools", "World of Warcraft addons for the Retail and Classic clients, published with download pages and releases."),
+    ("Twitch design and brand kits", "complete streaming sets (alerts, panels, emotes, badges, overlays, logos) and company brand kits with posters."),
+    ("Portfolio website", "self-built portfolio covering programming, design and illustration."),
+]
+
+CV_CERTS = [
+    ("Vidzeme-University-DevOps-Certificate.pdf", "DevOps Implementation and Change Management", "Vidzeme University of Applied Sciences"),
+    ("Coursera-KodeKloud-DevOps-Prerequisite-Certificate.pdf", "DevOps Prerequisite", "Coursera / KodeKloud"),
+    ("Liepaja-University-Bachelor-Diploma.pdf", "Bachelor in Arts and Humanities (diploma)", "Liepājas Universitāte"),
+    ("Digital-Media-Practitioner-Certificate-BDA.pdf", "Digital Media Practitioner", "Baltijas Datoru Akadēmija"),
+]
+
+
+def cv_entry(title, org, dates, place, text="", extra="", link=None):
+    open_link = (f'<a class="cv-open" href="files/certificates/{esc(link[0])}" target="_blank" rel="noopener">{esc(link[1])} (PDF)</a>'
+                 if link else "")
+    return (f'<article class="cv-item"><p class="cv-meta">{esc(dates)} · {esc(place)}</p>'
+            f'<h3 class="cv-title">{esc(title)}</h3><p class="cv-org">{esc(org)}</p>'
+            + (f"<p>{esc(text)}</p>" if text else "")
+            + (f'<p class="cv-level">{esc(extra)}</p>' if extra else "")
+            + open_link + "</article>")
+
+
+def cv_body(site):
+    skills = "".join(f"<li>{esc(s)}</li>" for s in CV_SKILLS)
+    work = "".join(cv_entry(t, o, d, p, x) for t, o, d, p, x in CV_WORK)
+    edu = "".join(cv_entry(*e) for e in CV_EDU)
+    projects = "".join(f"<li><strong>{esc(n)}</strong> – {esc(t)}</li>" for n, t in CV_PROJECTS)
+    certs = "".join(
+        f'<a class="proj-btn" href="files/certificates/{esc(f)}" target="_blank" rel="noopener">{esc(t)}<br><small>{esc(o)} · PDF</small></a>'
+        for f, t, o in CV_CERTS)
+    return f"""<header class="hero">
+        <h1 class="hero-name">CV</h1>
+        <p class="hero-tagline">{esc(site["name"])} · Digital Artist · Designer</p>
+    </header>
+
+    <section class="section">
+        <div class="card">
+            <h2 class="section-title">Profile</h2>
+            <p>{esc(CV_PROFILE)}</p>
+            <div class="cv-facts">
+                <div><span>Nationality</span>Latvian</div>
+                <div><span>Gender</span>Female</div>
+                <div><span>Languages</span>Latvian (mother tongue), English B2</div>
+                <div><span>Email</span><a href="mailto:{esc(site["email"])}">{esc(site["email"])}</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Work experience</h2>
+        <div class="card">{work}</div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="card">{edu}</div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Certificates</h2>
+        <div class="card"><div class="btn-grid">{certs}</div></div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Skills</h2>
+        <div class="card">
+            <ul class="tag-list">{skills}</ul>
+            <h3 class="card-sub">Interests</h3>
+            <p>Digital painting, game and addon development, streaming design, 3D and photography.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Selected projects</h2>
+        <div class="card"><ul class="feature-list">{projects}</ul></div>
     </section>"""
 
 
@@ -509,7 +646,7 @@ def tools_body(site):
 
 # --------------------------------------------------------------------- page
 
-NAV = [("index.html", "Portfolio"), ("usefultools.html", "SeviathsUsefultools"), ("seviathstudio.html", "Seviathstudio"), ("contacts.html", "Contacts")]
+NAV = [("index.html", "Portfolio"), ("usefultools.html", "SeviathsUsefultools"), ("seviathstudio.html", "Seviathstudio"), ("contacts.html", "Contacts"), ("cv.html", "CV")]
 
 
 def layout(site, *, filename, title, description, body, keywords, extra_ld=None, og_type="website"):
@@ -525,10 +662,10 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
         "name": site["name"],
         "url": f"{base}/",
         "email": f'mailto:{site["email"]}',
-        "jobTitle": "Graphic Designer, Illustrator & 3D Artist",
+        "jobTitle": "Digital Artist, Graphic Designer & Illustrator",
         "image": image,
         "sameAs": [site["linkedin"], site["github"]],
-        "knowsAbout": ["Graphic design", "Twitch design", "Illustration", "3D art", "DevOps", "Learning software development"],
+        "knowsAbout": ["Graphic design", "Twitch design", "Illustration", "DevOps", "Learning software development"],
     }
     graph = [person, {
         "@type": "WebSite", "@id": f"{base}/#website", "url": f"{base}/",
@@ -756,6 +893,15 @@ code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px
 .section-intro { margin: -12px 0 20px; line-height: 1.5; }
 .feature-list { padding-left: 20px; margin: 0; }
 .feature-list li { margin-bottom: 6px; }
+.cv-item { padding: 0 0 18px; margin: 0 0 18px; border-bottom: 1px solid rgba(122, 26, 43, 0.18); }
+.cv-item:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.cv-meta { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--burgundy); margin: 0 0 4px; }
+.cv-title { font-family: 'Fraunces', serif; font-size: 19px; margin: 0 0 2px; color: var(--burgundy-dark); }
+.cv-org { font-weight: 600; margin: 0 0 8px; opacity: .8; }
+.cv-level { font-style: italic; opacity: .75; margin: 6px 0 0; }
+.cv-open { display: inline-block; margin-top: 8px; font-weight: 600; }
+.cv-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 16px; }
+.cv-facts span { display: block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--burgundy); }
 
 .footer {
     max-width: 1100px;
@@ -799,24 +945,33 @@ def main():
     pages = {
         "index.html": layout(
             site, filename="index.html",
-            title=f"{name} - Portfolio | Graphic Designer, Twitch Designer, Illustrator & 3D Artist",
+            title=f"{name} - Portfolio | Graphic Designer, Twitch Designer & Illustrator",
             description=(f"Portfolio of {name}: graphic design, Twitch design (logos, banners, overlays), "
-                         "character illustration, 3D art and DevOps / software projects."),
+                         "character illustration and DevOps / software projects."),
             keywords=(f"{name}, Santa Neilande, Madara Neilande, portfolio, graphic designer, twitch design, "
                       "twitch logo, twitch banner, twitch overlay, stream design, illustrator, character design, "
-                      "fantasy illustration, 3D artist, Unity, brochure design, poster design, logo design, "
+                      "fantasy illustration, Unity, brochure design, poster design, logo design, "
                       "DevOps, Latvia"),
             body=port_body,
             extra_ld=[{"@type": "CollectionPage", "name": f"{name} - Portfolio", "url": f"{base}/",
                        "about": {"@id": f"{base}/#person"}}] + port_lds),
         "contacts.html": layout(
             site, filename="contacts.html",
-            title=f"Contacts - {name} | Designer, Illustrator & 3D Artist",
-            description=(f"Contact {name} - graphic designer, Twitch designer, illustrator, 3D artist."
+            title=f"Contacts - {name} | Designer & Illustrator",
+            description=(f"Contact {name} - graphic designer, Twitch designer and illustrator."
                          f"Email {site['email']} or find me on LinkedIn."),
             keywords=f"{name}, contact, hire designer, twitch designer, illustrator, LinkedIn, email",
             body=contacts_body(site),
             extra_ld={"@type": "ContactPage", "name": f"Contacts - {name}", "url": f"{base}/contacts.html",
+                      "about": {"@id": f"{base}/#person"}}),
+        "cv.html": layout(
+            site, filename="cv.html",
+            title=f"CV - {name} | Digital Artist & Designer",
+            description=(f"Curriculum vitae of {name}: work experience, education, skills and certificates "
+                         "of a digital artist and designer from Latvia."),
+            keywords=f"{name}, CV, resume, digital artist, designer, work experience, education, certificates, Latvia",
+            body=cv_body(site),
+            extra_ld={"@type": "ProfilePage", "name": f"CV - {name}", "url": f"{base}/cv.html",
                       "about": {"@id": f"{base}/#person"}}),
         "usefultools.html": layout(
             site, filename="usefultools.html",
@@ -873,7 +1028,7 @@ def main():
         (ROOT / fname).write_text(content, encoding="utf-8")
         print(f"Generated: {fname}")
 
-    urls = [f"{base}/", f"{base}/usefultools.html", f"{base}/seviathstudio.html", f"{base}/contacts.html"]
+    urls = [f"{base}/", f"{base}/usefultools.html", f"{base}/seviathstudio.html", f"{base}/contacts.html", f"{base}/cv.html"]
     # image entries help Google Images find the illustrations and designs
     img_xml = "".join(
         f"    <image:image><image:loc>{esc(abs_url(site, p['href']))}</image:loc>"

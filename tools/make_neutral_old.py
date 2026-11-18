@@ -70,6 +70,25 @@ def emblem_only(path):
     return im.crop((0, big[0], w, big[1]))
 
 
+def strip_wordmark(path, cut=None, circle_above=None):
+    """Remove the lettering under a badge: cut everything below row `cut`, or keep only a circle fitted to the badge found above row `circle_above`."""
+    from PIL import ImageDraw
+    im = Image.open(path).convert("RGBA")
+    w, h = im.size
+    a = im.split()[3].point(lambda v: 255 if v > 40 else 0)
+    if cut:
+        im.paste((0, 0, 0, 0), (0, cut, w, h))
+        return im
+    x0, y0, x1, y1 = a.crop((0, 0, w, circle_above)).getbbox()
+    R = (x1 - x0) / 2
+    cx, cy = (x0 + x1) / 2, y0 + R
+    m = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(m).ellipse((cx - R + 38, cy - R + 38, cx + R - 38, cy + R - 38), fill=255)
+    out = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    out.paste(im, (0, 0), m)
+    return out
+
+
 def finish(out, kit, logo_img=None):
     """Center the logo, add X profile pictures and the X header."""
     import make_gumroad as mg
@@ -250,15 +269,21 @@ def slash():
 
 def hood():
     out = kit_dir("Hood")
-    b = patched("make_hood.py", [('font("OLDENGL.TTF", size)', 'font("ROCKB.TTF", size)'), ('"Petals Of Iron"', '"Stream Time"'), ('"Gamer  -  Streamer  -  Artist"', '"Gaming  -  Art  -  Chat"')])
+    b = patched("make_hood.py", [('font("OLDENGL.TTF", size)', 'font("ROCKB.TTF", size)'), ('"Petals Of Iron"', '"Stream Time"'), ('"Gamer  -  Streamer  -  Artist"', '"Gaming  -  Art  -  Chat"'),
+                                 ('fit_size("Stream Time", "OLDENGL.TTF", 1700, 300)', 'fit_size("Stream Time", "ROCKB.TTF", 1350, 300)'),
+                                 ('fit_size(title, "OLDENGL.TTF", 760, 200)', 'fit_size(title, "OLDENGL.TTF", 600, 200)'), ('cx = 1400', 'cx = 1500'),
+                                 ('fit_size(ln, "georgiai.ttf", 700, 52)', 'fit_size(ln, "georgiai.ttf", 560, 52)'), ('cx = 1950', 'cx = 2000')])
     b.banner().convert("RGB").save(out / "Banner" / "banner.png", optimize=True)
     finish(out, "Hood", b.logo_round())
-    copy_common("Hood", out)
+    copy_common("Hood", out, [])
+    (out / "Screens").mkdir(parents=True, exist_ok=True)
+    for fn, t_, s_ in (("starting_soon.png", "Starting soon", "The stream begins shortly"), ("be_right_back.png", "Be right back", "I will be back in a moment"), ("offline.png", "Offline", "Thank you for watching, see you next time")):
+        b.screen(t_, s_).convert("RGB").save(out / "Screens" / fn, optimize=True)
 
 
 def helmet():
     out = kit_dir("Helmet")
-    finish(out, "Helmet", emblem_only(PORT / "Helmet" / "Logo" / "logo.png"))
+    finish(out, "Helmet", strip_wordmark(PORT / "Helmet" / "Logo" / "logo.png", circle_above=1740))
     st = patched("make_starting_soon.py", [('"PETALS OF IRON"', '" "'),
                                            ('OUT = ROOT / "images" / "twitch" / "Starting" / "petals_starting_soon.png"', 'OUT = Path(r"%s")' % (out / "Screens" / "starting_soon.png"))])
     st.main()
@@ -267,7 +292,7 @@ def helmet():
 
 def snake():
     out = kit_dir("Snake")
-    finish(out, "Snake", emblem_only(PORT / "Snake" / "Logo" / "logo.png"))
+    finish(out, "Snake", strip_wordmark(PORT / "Snake" / "Logo" / "logo.png", cut=1595))
     off = (HERE / "make_offline.py").read_text(encoding="utf-8")
     jobs = [("starting_soon.png", "Starting soon", 150, "The stream begins shortly", "Grab a drink and get comfy", "Back in a few minutes"),
             ("be_right_back.png", "Be right back", 150, "I will be back in a moment", "Stretch your legs", "Don't go far"),

@@ -187,8 +187,9 @@ def covers(name, src, counts):
             img = card(img, banner, (480, 230, 440, 176))
         else:
             img = card(img, overlay, (480, 230, 440, 247)) if overlay else img
+        sy = 420 if banner else 500          # without a banner the overlay card is taller: start the screens lower so nothing overlaps
         for i, p in enumerate(screens[:4]):
-            img = card(img, p, (480 + (i % 2) * 225, 420 + (i // 2) * 110, 215, 100))
+            img = card(img, p, (480 + (i % 2) * 225, sy + (i // 2) * 110, 215, 100))
     else:
         for i, p in enumerate(screens[:3]):
             pos = [(80, 230), (510, 230), (295, 430)][i]

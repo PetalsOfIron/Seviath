@@ -130,12 +130,12 @@ def screen2(art, kind, big, small, note):
         img = orbit(img, 1400, 540, 640, 230, -24, SKY, 3, 4, 2)
         img = porthole(img, art, face, 1400, 540, 400)
         img = orbit(img, 1400, 540, 640, 230, 24, GOLD, 3, 3, 4)
-        X, Y, anc, maxw = 130, 470, "left", 780
+        X, Y, anc, maxw = 110, 470, "left", 600
     elif kind == "brb":
         img = orbit(img, 520, 540, 620, 220, 20, SKY, 3, 4, 3)
         img = porthole(img, art, (0, 56, 540, 596), 520, 540, 400)
         img = orbit(img, 520, 540, 620, 220, -20, GOLD, 3, 3, 6)
-        X, Y, anc, maxw = 1020, 470, "left", 800
+        X, Y, anc, maxw = 1130, 470, "left", 740
     elif kind == "end":
         img = orbit(img, 960, 380, 520, 160, -8, SKY, 3, 4, 1)
         img = porthole(img, art, (60, 10, 520, 470), 960, 380, 290)
@@ -144,7 +144,7 @@ def screen2(art, kind, big, small, note):
     else:
         img = orbit(img, 1500, 600, 520, 190, -18, SKY, 2, 3, 9)
         img = porthole(img, art, face, 1500, 600, 300, ring=SILVER_D, dim=0.45)
-        X, Y, anc, maxw = 130, 470, "left", 780
+        X, Y, anc, maxw = 110, 470, "left", 720
     img = constellation(img, [(130, 160), (230, 110), (360, 170), (460, 120)] if anc == "left" and X < 900 else [(1450, 150), (1560, 100), (1690, 160), (1800, 110)])
     img, sz = fit2(img, big, (X, Y), maxw, 140, anc, 16)
     cx = X if anc == "left" else X

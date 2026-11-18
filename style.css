@@ -171,6 +171,15 @@ code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px
 .section-intro { margin: -12px 0 20px; line-height: 1.5; }
 .feature-list { padding-left: 20px; margin: 0; }
 .feature-list li { margin-bottom: 6px; }
+.cv-item { padding: 0 0 18px; margin: 0 0 18px; border-bottom: 1px solid rgba(122, 26, 43, 0.18); }
+.cv-item:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+.cv-meta { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--burgundy); margin: 0 0 4px; }
+.cv-title { font-family: 'Fraunces', serif; font-size: 19px; margin: 0 0 2px; color: var(--burgundy-dark); }
+.cv-org { font-weight: 600; margin: 0 0 8px; opacity: .8; }
+.cv-level { font-style: italic; opacity: .75; margin: 6px 0 0; }
+.cv-open { display: inline-block; margin-top: 8px; font-weight: 600; }
+.cv-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 16px; }
+.cv-facts span { display: block; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--burgundy); }
 
 .footer {
     max-width: 1100px;

@@ -43,7 +43,7 @@ def logo(name):
             ad.polygon([(cx + x, cy - 800), (cx + x + wd, cy - 800), (cx + x + wd - 700, cy + 800), (cx + x - 700, cy + 800)], fill=col + (255,))
     else:
         pim, patch = ms.portrait(C["mascot"], C)
-        px = int(R * 1.9)
+        px = int(R * (2.3 if C["mascot"] == "flower" else 1.9))
         art = Image.new("RGBA", (S, S), C["fill"] + (255,) if sum(C["fill"]) < 500 else C["accent2"] + (255,))
         pic = pim.resize((px, px), Image.LANCZOS)
         art.alpha_composite(pic, (cx - px // 2, cy + (30 if kind == "triangle" else 0) - px // 2))

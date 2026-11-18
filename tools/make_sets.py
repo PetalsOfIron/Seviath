@@ -84,8 +84,13 @@ def portrait(kind, C):
         patch = ((250, 232, 150), 0.88, 0.0, 0.05, 0.8, 0.62)
     elif kind == "flower":
         src = Image.open(DL / "priekstwitterfiver" / "2x" / "1x" / "I will be right back.png").convert("RGBA")
-        im = _crop_circle(src, 235, 330, 200, px)
-        patch = ((252, 244, 255), 0.82, 0.0, 0.05, 0.74, 0.58)
+        # the dahlia is cut by the left edge of the artwork: a narrow mirrored band finishes it up to the frame lines
+        pad = 90
+        padded = Image.new("RGBA", (src.width + pad, src.height))
+        padded.paste(src, (pad, 0))
+        padded.paste(src.crop((0, 0, pad, src.height)).transpose(Image.FLIP_LEFT_RIGHT), (0, 0))
+        im = padded.crop((0, 118, 430, 548)).resize((px, px), Image.LANCZOS)
+        patch = None
     elif kind == "triangle":
         import nb_extract
         cut = nb_extract.cutout().crop((300, 240, 2700, 2150))

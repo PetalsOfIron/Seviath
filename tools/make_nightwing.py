@@ -377,9 +377,6 @@ def emote_heart(S=448):
     hl = [(c + (x - c) * 0.72, c + 6 + (y - c - 6) * 0.72 - 6) for x, y in pts]
     d.polygon(hl, fill=(190, 56, 88, 255))
     d.ellipse((c - 90, c - 98, c - 36, c - 62), fill=(236, 150, 170, 255))
-    img = Image.alpha_composite(wings((S, S), c, c - 10, 0.16, flip=True), img)
-    img = Image.alpha_composite(wings((S, S), c, c - 10, 0.16), img) if False else img
-    img = Image.alpha_composite(img, wings((S, S), c, c - 10, 0.16))
     return outlined(img, None)
 
 

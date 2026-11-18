@@ -321,7 +321,8 @@ def render_twitch_gallery(assets):
 # ------------------------------------------------------------- design assets
 # Brand projects: everything in images/design/<Brand>/ becomes buttons under the Design section.
 DESIGN_DIR = ROOT / "images" / "design"
-DESIGN_BRANDS = {"Tessel": "Tessel brand kit", "Perfum": "Perfum brand kit", "Northbeam": "Northbeam company kit", "Football": "Football company kit"}
+DESIGN_NAMES = {"UrbanDictionary": "Urban Dictionary"}
+DESIGN_BRANDS = {"Tessel": "Tessel brand kit", "Perfum": "Perfum brand kit", "Northbeam": "Northbeam company kit", "Football": "Football company kit", "UrbanDictionary": "Event design: Urban Dictionary student exhibition"}
 
 
 def design_assets():
@@ -334,7 +335,7 @@ def design_assets():
                 continue
             label = pretty_label(f.stem.replace(brand_dir.name.lower() + "_", ""))
             tag = {".pdf": " (PDF)", ".ico": " (ICO)"}.get(f.suffix.lower(), "")
-            out.append({"brand": brand_dir.name, "label": f"{brand_dir.name} {label.lower()}{tag}",
+            out.append({"brand": brand_dir.name, "label": f"{DESIGN_NAMES.get(brand_dir.name, brand_dir.name)} {label.lower()}{tag}",
                         "href": "images/design/" + brand_dir.name + "/" + f.name})
     return out
 

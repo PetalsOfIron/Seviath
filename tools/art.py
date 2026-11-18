@@ -73,8 +73,10 @@ def glow(canvas, bbox, color, blur=90, alpha=90, mode="screen"):
     layer = Image.new("RGB", canvas.size, (0, 0, 0))
     ImageDraw.Draw(layer).ellipse(bbox, fill=tuple(int(c * alpha / 255) for c in color))
     layer = layer.filter(ImageFilter.GaussianBlur(blur))
-    out = ImageChops.screen(canvas.convert("RGB"), layer)
-    return out.convert("RGBA")
+    out = ImageChops.screen(canvas.convert("RGB"), layer).convert("RGBA")
+    if canvas.mode == "RGBA":
+        out.putalpha(canvas.split()[3])   # keep transparency of the canvas
+    return out
 
 
 def vignette(canvas, strength=0.55, color=(0, 0, 0)):

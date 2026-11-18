@@ -44,6 +44,15 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/schedule.png</image:loc><image:title>Hood schedule - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/socials.png</image:loc><image:title>Hood socials - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_about.png</image:loc><image:title>Nightwing about - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_commands.png</image:loc><image:title>Nightwing commands - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_discord.png</image:loc><image:title>Nightwing discord - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_donate.png</image:loc><image:title>Nightwing donate - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_faq.png</image:loc><image:title>Nightwing faq - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_rules.png</image:loc><image:title>Nightwing rules - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_schedule.png</image:loc><image:title>Nightwing schedule - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_socials.png</image:loc><image:title>Nightwing socials - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_specs.png</image:loc><image:title>Nightwing specs - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/about_me.png</image:loc><image:title>Northbeam about me - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/chat_rules.png</image:loc><image:title>Northbeam chat rules - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/donation.png</image:loc><image:title>Northbeam donation - Twitch design</image:title></image:image>
@@ -115,6 +124,9 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Points/points_controller_432.png</image:loc><image:title>Hood points controller - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Points/points_heart_432.png</image:loc><image:title>Hood points heart - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Points/points_sword_432.png</image:loc><image:title>Hood points sword - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Points/points_happy_448.png</image:loc><image:title>Nightwing points happy - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Points/points_love_448.png</image:loc><image:title>Nightwing points love - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Points/points_smug_448.png</image:loc><image:title>Nightwing points smug - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Points/points_beam_432.png</image:loc><image:title>Northbeam points beam - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Points/points_compass_432.png</image:loc><image:title>Northbeam points compass - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Points/points_snow_432.png</image:loc><image:title>Northbeam points snow - Twitch design</image:title></image:image>
@@ -146,6 +158,11 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Alert/alert.gif</image:loc><image:title>Floral alert - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Alert/alert.gif</image:loc><image:title>Helmet alert - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Alert/alert.gif</image:loc><image:title>Hood alert - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Alert/nightwing_alert_bits.png</image:loc><image:title>Nightwing alert bits - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Alert/nightwing_alert_donation.png</image:loc><image:title>Nightwing alert donation - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Alert/nightwing_alert_follow.png</image:loc><image:title>Nightwing alert follow - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Alert/nightwing_alert_raid.png</image:loc><image:title>Nightwing alert raid - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Alert/nightwing_alert_subscribe.png</image:loc><image:title>Nightwing alert subscribe - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Alert/alert.gif</image:loc><image:title>Northbeam alert - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Alert/alert.gif</image:loc><image:title>Perfum alert - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Alert/petals_alert.png</image:loc><image:title>Petals alert - Twitch design</image:title></image:image>
@@ -168,6 +185,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Overlay/overlay_frame.png</image:loc><image:title>Floral overlay frame - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Overlay/overlay_frame.png</image:loc><image:title>Helmet overlay frame - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Overlay/overlay_frame.png</image:loc><image:title>Hood overlay frame - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Overlay/nightwing_overlay.png</image:loc><image:title>Nightwing overlay - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Overlay/overlay_frame.png</image:loc><image:title>Northbeam overlay frame - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Overlay/overlay_frame.png</image:loc><image:title>Perfum overlay frame - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Overlay/purple_overlay_frame.png</image:loc><image:title>Purple overlay frame - Twitch design</image:title></image:image>
@@ -211,6 +229,16 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Badges/6month_432.png</image:loc><image:title>Hood 6 month - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Badges/9month_432.png</image:loc><image:title>Hood 9 month - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Badges/base_432.png</image:loc><image:title>Hood base - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Badges/1month_432.png</image:loc><image:title>Nightwing 1 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Badges/12month_432.png</image:loc><image:title>Nightwing 12 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Badges/24month_432.png</image:loc><image:title>Nightwing 24 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Badges/3month_432.png</image:loc><image:title>Nightwing 3 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Badges/36month_432.png</image:loc><image:title>Nightwing 36 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Badges/6month_432.png</image:loc><image:title>Nightwing 6 month - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Badges/bits1_432.png</image:loc><image:title>Nightwing bits1 - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Badges/bits100_432.png</image:loc><image:title>Nightwing bits100 - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Badges/bits1000_432.png</image:loc><image:title>Nightwing bits1000 - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Badges/bits10000_432.png</image:loc><image:title>Nightwing bits10000 - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Badges/1year_432.png</image:loc><image:title>Northbeam 1 year - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Badges/2year_432.png</image:loc><image:title>Northbeam 2 year - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Badges/3month_432.png</image:loc><image:title>Northbeam 3 month - Twitch design</image:title></image:image>
@@ -285,6 +313,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Screens/starting_soon.png</image:loc><image:title>Floral starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Screens/starting_soon.png</image:loc><image:title>Helmet starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Screens/starting_soon.png</image:loc><image:title>Hood starting soon - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Screens/nightwing_starting_soon.png</image:loc><image:title>Nightwing starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Screens/starting_soon.png</image:loc><image:title>Northbeam starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Screens/starting_soon.png</image:loc><image:title>Perfum starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Screens/starting_soon.png</image:loc><image:title>Purple starting soon - Twitch design</image:title></image:image>
@@ -295,6 +324,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Screens/be_right_back.png</image:loc><image:title>Floral be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Screens/be_right_back.png</image:loc><image:title>Helmet be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Screens/be_right_back.png</image:loc><image:title>Hood be right back - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Screens/nightwing_be_right_back.png</image:loc><image:title>Nightwing be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Screens/be_right_back.png</image:loc><image:title>Northbeam be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Screens/be_right_back.png</image:loc><image:title>Perfum be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Screens/be_right_back.png</image:loc><image:title>Purple be right back - Twitch design</image:title></image:image>
@@ -305,6 +335,8 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/offline.png</image:loc><image:title>Floral offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Screens/offline.png</image:loc><image:title>Helmet offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Screens/offline.png</image:loc><image:title>Hood offline - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Screens/nightwing_ending.png</image:loc><image:title>Nightwing ending - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Screens/nightwing_offline.png</image:loc><image:title>Nightwing offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Screens/offline.png</image:loc><image:title>Northbeam offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Screens/offline.png</image:loc><image:title>Perfum offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Screens/offline.png</image:loc><image:title>Purple offline - Twitch design</image:title></image:image>
@@ -315,6 +347,8 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Logo/logo.png</image:loc><image:title>Floral logo - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Logo/gamer_streamer_logo.png</image:loc><image:title>Gamer streamer logo - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Logo/logo.png</image:loc><image:title>Helmet logo - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Logo/nightwing_avatar.png</image:loc><image:title>Nightwing avatar - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Logo/nightwing_logo.png</image:loc><image:title>Nightwing logo - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Logo/petals_helmet_logo.png</image:loc><image:title>Petals helmet logo - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Logo/petals_snake_logo.png</image:loc><image:title>Petals snake logo - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Logo/purple_logo.png</image:loc><image:title>Purple logo - Twitch design</image:title></image:image>
@@ -323,6 +357,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/banner.png</image:loc><image:title>Floral banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Banner/gamer_streamer_banner.png</image:loc><image:title>Gamer streamer banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Banner/banner.png</image:loc><image:title>Hood banner - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Banner/nightwing_banner.png</image:loc><image:title>Nightwing banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Banner/petals_gamer_banner.png</image:loc><image:title>Petals gamer banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Banner/purple_banner.png</image:loc><image:title>Purple banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Banner/banner.png</image:loc><image:title>Slash banner - Twitch design</image:title></image:image>
@@ -357,6 +392,17 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Emotes/sword_up_448.gif</image:loc><image:title>Hood sword up - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/laugh_112.png</image:loc><image:title>Laugh - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Emotes/lovely_112.png</image:loc><image:title>Lovely - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_angry_448.png</image:loc><image:title>Nightwing nw angry - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_cry_448.png</image:loc><image:title>Nightwing nw cry - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_gem_448.png</image:loc><image:title>Nightwing nw gem - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_gg_448.png</image:loc><image:title>Nightwing nw gg - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_happy_448.png</image:loc><image:title>Nightwing nw happy - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_heart_448.png</image:loc><image:title>Nightwing nw heart - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_love_448.png</image:loc><image:title>Nightwing nw love - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_shock_448.png</image:loc><image:title>Nightwing nw shock - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_sleep_448.png</image:loc><image:title>Nightwing nw sleep - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_smug_448.png</image:loc><image:title>Nightwing nw smug - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Emotes/nw_wink_448.png</image:loc><image:title>Nightwing nw wink - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Emotes/aurora_448.png</image:loc><image:title>Northbeam aurora - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Emotes/beam_on_448.gif</image:loc><image:title>Northbeam beam on - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Emotes/compass_448.gif</image:loc><image:title>Northbeam compass - Twitch design</image:title></image:image>

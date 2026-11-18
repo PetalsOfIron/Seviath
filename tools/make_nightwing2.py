@@ -277,16 +277,17 @@ def new_logo(art, S=2000):
     lay.alpha_composite(crop, (px, py))
     img = shadow(img, lay.split()[3], (0, 16), 22, (0, 0, 0), 0.55)
     img = Image.alpha_composite(img, lay)
-    # name ribbon
-    rb = Image.new("RGBA", (S, S), (0, 0, 0, 0))
-    rd = ImageDraw.Draw(rb)
-    y0, y1 = 1570, 1760
-    rd.polygon([(250, y0), (S - 250, y0), (S - 190, (y0 + y1) / 2), (S - 250, y1), (250, y1), (190, (y0 + y1) / 2)], fill=DEEP + (255,))
-    img = shadow(img, rb.split()[3], (0, 12), 16, (0, 0, 0), 0.55)
-    rd.polygon([(250, y0), (S - 250, y0), (S - 190, (y0 + y1) / 2), (S - 250, y1), (250, y1), (190, (y0 + y1) / 2)], outline=AMBER + (255,), width=7)
-    rd.polygon([(268, y0 + 16), (S - 268, y0 + 16), (S - 214, (y0 + y1) / 2), (S - 268, y1 - 16), (268, y1 - 16), (214, (y0 + y1) / 2)], outline=INDIGO + (255,), width=4)
-    img = Image.alpha_composite(img, rb)
-    img, _ = fit_title(img, NAME, (S // 2, 1706), 1260, size=130, anchor="center", track=14)
+    if nw.LOGO_TEXT:
+        # name ribbon
+        rb = Image.new("RGBA", (S, S), (0, 0, 0, 0))
+        rd = ImageDraw.Draw(rb)
+        y0, y1 = 1570, 1760
+        rd.polygon([(250, y0), (S - 250, y0), (S - 190, (y0 + y1) / 2), (S - 250, y1), (250, y1), (190, (y0 + y1) / 2)], fill=DEEP + (255,))
+        img = shadow(img, rb.split()[3], (0, 12), 16, (0, 0, 0), 0.55)
+        rd.polygon([(250, y0), (S - 250, y0), (S - 190, (y0 + y1) / 2), (S - 250, y1), (250, y1), (190, (y0 + y1) / 2)], outline=AMBER + (255,), width=7)
+        rd.polygon([(268, y0 + 16), (S - 268, y0 + 16), (S - 214, (y0 + y1) / 2), (S - 268, y1 - 16), (268, y1 - 16), (214, (y0 + y1) / 2)], outline=INDIGO + (255,), width=4)
+        img = Image.alpha_composite(img, rb)
+        img, _ = fit_title(img, NAME, (S // 2, 1706), 1260, size=130, anchor="center", track=14)
     return img
 
 

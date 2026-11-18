@@ -136,9 +136,9 @@ def clean_black(im):
     import numpy as np
     from scipy import ndimage
     a = np.asarray(im)
-    if a[0, 0, 3] != 255 or a[0, 0, :3].max() > 12:
+    if a[0, 0, 3] != 255 or a[0, 0, :3].max() > 40:
         return im
-    dark = (a[..., :3].max(axis=2) < 14) & (a[..., 3] == 255)
+    dark = (a[..., :3].max(axis=2) < 46) & (a[..., 3] == 255)
     lab, n = ndimage.label(dark)
     border = set(np.unique(np.concatenate([lab[0], lab[-1], lab[:, 0], lab[:, -1]]))) - {0}
     bgm = np.isin(lab, list(border))

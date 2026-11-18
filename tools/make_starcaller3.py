@@ -43,12 +43,13 @@ def logo(art, S=2000):
     d = ImageDraw.Draw(img)
     for (x, y, rr) in ((1500, 250, 40), (1640, 520, 22), (1560, 1120, 30), (330, 1230, 20), (1380, 180, 18)):
         sparkle(d, x, y, rr, GOLD)
-    img, sz = fit2(img, nw.NAME, (S // 2, 1680), 1500, 160, "center", 20)
-    d = ImageDraw.Draw(img)
-    d.line([(420, 1760), (900, 1760)], fill=GOLD + (255,), width=5)
-    d.line([(1100, 1760), (1580, 1760)], fill=GOLD + (255,), width=5)
-    draw_star(d, 1000, 1760, 26, GOLD, ri=11, n=4)
-    img = t2(img, "WOW  ·  ART  ·  STREAMS", (S // 2, 1850), 52, "center", 22, GOLD, GOLD_D)
+    if nw.LOGO_TEXT:
+        img, sz = fit2(img, nw.NAME, (S // 2, 1680), 1500, 160, "center", 20)
+        d = ImageDraw.Draw(img)
+        d.line([(420, 1760), (900, 1760)], fill=GOLD + (255,), width=5)
+        d.line([(1100, 1760), (1580, 1760)], fill=GOLD + (255,), width=5)
+        draw_star(d, 1000, 1760, 26, GOLD, ri=11, n=4)
+        img = t2(img, nw.TAGLINE, (S // 2, 1850), 52, "center", 22, GOLD, GOLD_D)
     return img
 
 

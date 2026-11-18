@@ -372,7 +372,7 @@ def render_design_gallery(assets):
 
 def portfolio_body(site, projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Portfolio</h1>\n'
-             '        <p class="hero-tagline">Santa Madara Neilande &mdash; designer, illustrator, 3D artist &amp; developer</p>\n'
+             '        <p class="hero-tagline">Santa Madara Neilande &mdash; designer, illustrator &amp; 3D artist &mdash; learning to code</p>\n'
              '    </header>']
     lds = []
     assets = twitch_assets()
@@ -412,8 +412,8 @@ def contacts_body(site):
     <section class="section">
         <div class="card">
             <h2 class="section-title">{esc(site["name"])}</h2>
-            <p>Graphic designer, Twitch designer, illustrator, 3D artist and DevOps / software developer.
-            I make logos, banners and stream overlays, character illustrations, 3D scenes, and I build tools and apps.</p>
+            <p>Graphic designer, Twitch designer, illustrator, 3D artist. I am just starting out and learning to become a developer.
+            I make logos, banners and stream overlays, character illustrations and 3D scenes, and I am learning by building small tools and apps.</p>
             <h3 class="card-sub">What I am</h3>
             <ul class="tag-list">{roles}</ul>
             <h3 class="card-sub">Get in touch</h3>
@@ -525,10 +525,10 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
         "name": site["name"],
         "url": f"{base}/",
         "email": f'mailto:{site["email"]}',
-        "jobTitle": "Graphic Designer, Illustrator, 3D Artist & Developer",
+        "jobTitle": "Graphic Designer, Illustrator & 3D Artist",
         "image": image,
         "sameAs": [site["linkedin"], site["github"]],
-        "knowsAbout": ["Graphic design", "Twitch design", "Illustration", "3D art", "DevOps", "Software development"],
+        "knowsAbout": ["Graphic design", "Twitch design", "Illustration", "3D art", "DevOps", "Learning software development"],
     }
     graph = [person, {
         "@type": "WebSite", "@id": f"{base}/#website", "url": f"{base}/",
@@ -811,9 +811,9 @@ def main():
                        "about": {"@id": f"{base}/#person"}}] + port_lds),
         "contacts.html": layout(
             site, filename="contacts.html",
-            title=f"Contacts - {name} | Designer, Illustrator & Developer",
-            description=(f"Contact {name} - graphic designer, Twitch designer, illustrator, 3D artist and DevOps "
-                         f"developer. Email {site['email']} or find me on LinkedIn."),
+            title=f"Contacts - {name} | Designer, Illustrator & 3D Artist",
+            description=(f"Contact {name} - graphic designer, Twitch designer, illustrator, 3D artist."
+                         f"Email {site['email']} or find me on LinkedIn."),
             keywords=f"{name}, contact, hire designer, twitch designer, illustrator, LinkedIn, email",
             body=contacts_body(site),
             extra_ld={"@type": "ContactPage", "name": f"Contacts - {name}", "url": f"{base}/contacts.html",

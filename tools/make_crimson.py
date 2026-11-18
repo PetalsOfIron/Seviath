@@ -212,12 +212,14 @@ def banner(cut, W=1200, H=480):
     d = ImageDraw.Draw(img)
     d.line([(60, 256), (420, 256)], fill=GOLD + (255,), width=3)
     bat(d, 450, 256, 16, GOLD)
-    img = nw.label(img, "WOW  ·  ART  ·  STREAMS", (60, 312), 22, GOLD, "left", 9)
+    img = nw.label(img, nw.TAGLINE, (60, 312), 22, GOLD, "left", 9)
     return img
 
 
 def logo(art, S=2000):
     img = nw.emblem(face_hack(art), S, with_name=False)
+    if not nw.LOGO_TEXT:
+        return img
     rb = Image.new("RGBA", (S, S), (0, 0, 0, 0))
     rd = ImageDraw.Draw(rb)
     y0, y1 = 1550, 1740

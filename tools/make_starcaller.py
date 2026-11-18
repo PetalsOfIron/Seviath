@@ -122,7 +122,7 @@ def banner(art, W=1200, H=480):
     img = Image.alpha_composite(img, gradient_x((W, H), 560, 820, DEEP, 0, 225))
     img, _ = nw.fit_title(img, nw.NAME, (640, 226), 520, size=66, track=10)
     nw.divider(img, 640 + 260, 262, 260)
-    img = nw.label(img, "WOW  ·  ART  ·  STREAMS", (640, 318), 22, GOLD, anchor="left", track=9)
+    img = nw.label(img, nw.TAGLINE, (640, 318), 22, GOLD, anchor="left", track=9)
     return img
 
 

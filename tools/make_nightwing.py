@@ -17,6 +17,8 @@ from art import *  # noqa: F401,F403
 ART = Path(sys.argv[1] if len(sys.argv) > 1 else "C:/Users/SaphiresSilver/Documents/twitch/character.png")
 OUT = Path("C:/Users/SaphiresSilver/Documents/twitch/Nightwing")
 NAME = "PETALS OF IRON"
+TAGLINE = "WOW  ·  ART  ·  STREAMS"
+LOGO_TEXT = True   # False: logos without any lettering (name-free packs)
 
 DEEP = (16, 12, 38)
 NIGHT = (30, 22, 70)
@@ -274,7 +276,7 @@ def banner(art_cut, W=1200, H=480):
     img = Image.alpha_composite(img, lay)
     img, _ = fit_title(img, NAME, (60, 230), 470, size=70, track=10)
     divider(img, 60 + 250, 266, 250)
-    img = label(img, "WOW  ·  ART  ·  STREAMS", (60, 322), 24, AMBER, anchor="left", track=10)
+    img = label(img, TAGLINE, (60, 322), 24, AMBER, anchor="left", track=10)
     return img
 
 

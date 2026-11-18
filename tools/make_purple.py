@@ -443,7 +443,7 @@ def alert_frames(text="Thanks for the follow!", n=24):
     size = 120
     for ln in lines:
         wdt = probe.textlength(ln, font=font("OLDENGL.TTF", 100)) / SS
-        size = min(size, int(100 * 480 / wdt))
+        size = min(size, int(100 * 480 / max(wdt, 1)))
     f = font("OLDENGL.TTF", size)
     m = text_mask((W, H), lines[0], f, (W / 2, H / 2 - 4))
     m = ImageChops.lighter(m, text_mask((W, H), lines[1], f, (W / 2, H / 2 + size * 0.95)))

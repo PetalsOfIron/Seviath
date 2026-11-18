@@ -470,13 +470,30 @@ CV_WORK = [
 CV_EDU = [
     ("DevOps Implementation and Change Management: Theory and Practice", "Vidzeme University of Applied Sciences (lifelong learning project)",
      "01/09/2026 – 29/10/2026", "Remote, Rīga, Latvia",
-     "DevOps culture and transformation, value stream mapping, target operating models, security in DevOps, metrics and continuous improvement.",
+     ["Modern definitions of DevOps and how they have evolved", "Benefits of DevOps for organizational efficiency",
+      "Transformational leadership approaches in DevOps implementation", "Letting go of established ways of thinking (unlearning)",
+      "Psychological safety and neuroscience insights in the context of change", "Ways of thinking, mental models and cognitive biases",
+      "The role of GRC (Governance, Risk, Compliance) in DevOps practice", "The path to a DevOps organization",
+      "What characterizes an effective DevOps organization", "DevOps Kaizen: continuous improvement",
+      "Integrating security into DevOps processes", "Measurements that support learning",
+      "How to define meaningful metrics for change management", "Value stream mapping of the current state",
+      "Measurements that help improve processes and the organization", "Developing an improvement map and running experiments",
+      "Developing a future-state value stream map", "Target operating models (TOM) and organizational design",
+      "Conway's Law and its impact on system architecture", "Desired DevOps outcomes and how to achieve them",
+      "TOM design principles for a successful transformation", "Creating and implementing a DevOps vision",
+      "How to build and communicate a transformation vision in large organizations", "Empowering and engaging employees in change",
+      "Promoting DevOps beyond the organization's boundaries", "Sustaining energy and momentum during change",
+      "How to make the case for DevOps adoption", "Building a culture and climate that supports growth",
+      "Building trust as the foundation for sustainable change", "Sharing, shadowing and development",
+      "Challenges, risks and critical success factors"],
      "Level: LQF 6", ("Vidzeme-University-DevOps-Certificate.pdf", "Open certificate")),
     ("Bachelor in Arts and Humanities", "Liepājas Universitāte", "01/09/2016 – 31/12/2019", "Liepāja, Latvia",
-     "Adobe After Effects, Photoshop, Illustrator, InDesign and Premiere, Processing, Unity, Blender, Canva, Inkscape, Clip Studio Paint, graphic design and layout, video creation, photography and photo editing.",
+     ["Adobe After Effects", "Adobe Photoshop", "Adobe Illustrator", "Processing", "Adobe InDesign", "Unity", "Blender",
+      "Adobe Premiere", "Canva", "Inkscape", "Clip Studio Paint", "Graphic design, design layout", "Video creation",
+      "Photography and photo editing"],
      "Level in EQF: 6", ("Liepaja-University-Bachelor-Diploma.pdf", "Open diploma")),
     ("Digital Media Practitioner", "Baltijas Datoru Akadēmija", "08/09/2020 – 17/11/2020", "Rīga, Latvia",
-     "SEO and marketing, Google Analytics, Google Ads, WordPress, design layout structure and sizes.",
+     ["SEO and marketing", "Google Analytics", "Google Ads", "WordPress", "Design layout structure and sizes"],
      "Level in EQF: 3", ("Digital-Media-Practitioner-Certificate-BDA.pdf", "Open certificate")),
     ("High School", "Mērsraga Vidusskola", "01/09/2004 – 31/12/2016", "Mērsrags, Latvia", "", "Level in EQF: 4", None),
 ]
@@ -501,7 +518,8 @@ def cv_entry(title, org, dates, place, text="", extra="", link=None):
                  if link else "")
     return (f'<article class="cv-item"><p class="cv-meta">{esc(dates)} · {esc(place)}</p>'
             f'<h3 class="cv-title">{esc(title)}</h3><p class="cv-org">{esc(org)}</p>'
-            + (f"<p>{esc(text)}</p>" if text else "")
+            + ((f'<p class="cv-skills-h">Skills gained</p><ul class="cv-skills">' + "".join(f"<li>{esc(x)}</li>" for x in text) + "</ul>")
+               if isinstance(text, list) else (f"<p>{esc(text)}</p>" if text else ""))
             + (f'<p class="cv-level">{esc(extra)}</p>' if extra else "")
             + open_link + "</article>")
 
@@ -898,6 +916,9 @@ code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px
 .cv-meta { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--burgundy); margin: 0 0 4px; }
 .cv-title { font-family: 'Fraunces', serif; font-size: 19px; margin: 0 0 2px; color: var(--burgundy-dark); }
 .cv-org { font-weight: 600; margin: 0 0 8px; opacity: .8; }
+.cv-skills-h { font-weight: 700; margin: 4px 0 6px; }
+.cv-skills { columns: 2 280px; column-gap: 28px; margin: 0 0 8px; padding-left: 20px; }
+.cv-skills li { margin-bottom: 4px; break-inside: avoid; }
 .cv-level { font-style: italic; opacity: .75; margin: 6px 0 0; }
 .cv-open { display: inline-block; margin-top: 8px; font-weight: 600; }
 .cv-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 16px; }

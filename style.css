@@ -176,6 +176,9 @@ code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px
 .cv-meta { font-size: 13px; letter-spacing: .04em; text-transform: uppercase; color: var(--burgundy); margin: 0 0 4px; }
 .cv-title { font-family: 'Fraunces', serif; font-size: 19px; margin: 0 0 2px; color: var(--burgundy-dark); }
 .cv-org { font-weight: 600; margin: 0 0 8px; opacity: .8; }
+.cv-skills-h { font-weight: 700; margin: 4px 0 6px; }
+.cv-skills { columns: 2 280px; column-gap: 28px; margin: 0 0 8px; padding-left: 20px; }
+.cv-skills li { margin-bottom: 4px; break-inside: avoid; }
 .cv-level { font-style: italic; opacity: .75; margin: 6px 0 0; }
 .cv-open { display: inline-block; margin-top: 8px; font-weight: 600; }
 .cv-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 16px; }

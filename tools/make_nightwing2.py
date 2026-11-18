@@ -18,6 +18,9 @@ HORN = (104, 150, 222)
 HORN_L = (178, 212, 248)
 LINE = (30, 16, 42)
 RED = (206, 44, 76)
+EYE_A = (58, 140, 160)
+EYE_B = (150, 226, 230)
+RIB = (70, 80, 168)
 
 
 def sm(pts, n=8):
@@ -81,8 +84,8 @@ class Pen:
 
 def eye_open(pen, cx, cy, rx=36, ry=42, pupil=1.0, look=0):
     pen.ell(cx, cy, rx, ry, (255, 255, 255), LINE, 3.5)
-    pen.ell(cx + look, cy + 4, rx * 0.72, ry * 0.8, (58, 140, 160))
-    pen.ell(cx + look, cy + 14, rx * 0.64, ry * 0.5, (150, 226, 230))
+    pen.ell(cx + look, cy + 4, rx * 0.72, ry * 0.8, EYE_A)
+    pen.ell(cx + look, cy + 14, rx * 0.64, ry * 0.5, EYE_B)
     pen.ell(cx + look, cy + 2, rx * 0.34 * pupil, ry * 0.4 * pupil, (20, 24, 44))
     pen.ell(cx + look - rx * 0.28, cy - ry * 0.28, rx * 0.2, rx * 0.2, (255, 255, 255))
     pen.ell(cx + look + rx * 0.26, cy + ry * 0.3, rx * 0.1, rx * 0.1, (255, 255, 255))
@@ -137,7 +140,7 @@ def chibi(expr):
     for sgn in (1, -1):
         def Q(x, y):
             return (224 + sgn * (x - 224), y)
-        pen.line([Q(150, 104), Q(166, 94), Q(184, 96)], (70, 80, 168), 7, smooth=True)
+        pen.line([Q(150, 104), Q(166, 94), Q(184, 96)], RIB, 7, smooth=True)
     # expressions
     L, R = 160, 288
     EY = 262
@@ -171,7 +174,7 @@ def chibi(expr):
     elif expr == "angry":
         for cx, sg in ((L, 1), (R, -1)):
             pen.ell(cx, EY + 6, 34, 34, (255, 255, 255), LINE, 3.5)
-            pen.ell(cx, EY + 10, 22, 24, (58, 140, 160))
+            pen.ell(cx, EY + 10, 22, 24, EYE_A)
             pen.ell(cx, EY + 10, 11, 13, (20, 24, 44))
             pen.ell(cx - 7, EY, 6, 6, (255, 255, 255))
         pen.poly([(L - 44, EY - 44), (L + 44, EY - 4), (L + 44, EY - 52), (L - 44, EY - 62)], SKIN)

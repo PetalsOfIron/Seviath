@@ -285,7 +285,12 @@ def twitch_assets():
         if is_gif:
             ensure_gif_loop(f)
         rel = f.relative_to(TWITCH_DIR)
-        out.append({"folder": folder, "label": pretty_label(base), "href": large_version(f, rel, is_gif, w, h),
+        sname = rel.parts[0] if rel.parts[0] in THEME_SETS else "Petals"
+        lab = pretty_label(base)
+        if sname != "Petals" and lab.lower().startswith(sname.lower() + " "):
+            lab = lab[len(sname) + 1:]
+            lab = lab[:1].upper() + lab[1:]
+        out.append({"set": sname, "folder": folder, "label": lab, "href": large_version(f, rel, is_gif, w, h),
                     "w": w, "h": h, "gif": is_gif})
     def sort_key(a):
         label = a["label"]
@@ -302,19 +307,32 @@ def twitch_assets():
     return out
 
 
+SET_TITLES = {"Petals": "Petals of Iron set", "Purple": "Purple Gothic set", "Hood": "Hooded Gamer set", "Strikeline": "Strikeline set"}
+
+
+SET_TITLES = {"Petals": "Petals of Iron set", "Purple": "Purple Gothic set", "Hood": "Hooded Gamer set"}
+
+
 def render_twitch_gallery(assets):
-    """One button per design, grouped under small headings - the same look as the other works."""
+    """One block per style (set), each with its own small headings and one button per design."""
     parts = []
-    for folder, title, what in TWITCH_GROUPS:
-        items = [a for a in assets if a["folder"] == folder]
-        if not items:
+    for sname in ["Petals"] + list(THEME_SETS):
+        sub = [a for a in assets if a.get("set") == sname]
+        if not sub:
             continue
-        btns = "\n      ".join(
-            f'<a class="proj-btn" href="{esc(asset_url(a["href"]))}" target="_blank" rel="noopener" '
-            f'title="{esc(what)}: {esc(a["label"])}">{esc(a["label"])}{" (animated)" if a["gif"] else ""}</a>'
-            for a in items)
-        parts.append(f'        <h3 class="gallery-title">{esc(title)}</h3>\n'
-                     f'        <div class="btn-grid">\n      {btns}\n    </div>')
+        stitle = SET_TITLES.get(sname, sname + " set")
+        inner = []
+        for folder, title, what in TWITCH_GROUPS:
+            items = [a for a in sub if a["folder"] == folder]
+            if not items:
+                continue
+            btns = "\n      ".join(
+                f'<a class="proj-btn" href="{esc(asset_url(a["href"]))}" target="_blank" rel="noopener" '
+                f'title="{esc(stitle)} - {esc(what)}: {esc(a["label"])}">{esc(a["label"])}{" (animated)" if a["gif"] else ""}</a>'
+                for a in items)
+            inner.append(f'        <h4 class="gallery-sub">{esc(title)}</h4>\n'
+                         f'        <div class="btn-grid">\n      {btns}\n    </div>')
+        parts.append(f'        <h3 class="gallery-title">{esc(stitle)}</h3>\n' + "\n".join(inner))
     return "\n".join(parts)
 
 
@@ -734,6 +752,7 @@ main > .hero:first-child { margin-top: 20vh; }
 code { background: rgba(122, 26, 43, 0.12); padding: 1px 6px; border-radius: 4px; }
 .tool-card { margin-top: 8px; }
 .gallery-title { font-family: 'Fraunces', serif; font-size: 22px; margin: 32px 0 14px; color: var(--burgundy-dark); }
+.gallery-sub { font-family: 'Space Grotesk', sans-serif; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin: 18px 0 8px; color: var(--burgundy); opacity: .8; }
 .section-intro { margin: -12px 0 20px; line-height: 1.5; }
 .feature-list { padding-left: 20px; margin: 0; }
 .feature-list li { margin-bottom: 6px; }

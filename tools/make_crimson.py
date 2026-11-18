@@ -57,6 +57,19 @@ def bat_wings(size, cx, cy, scale, flip=False, alpha=255):
 nw.wings = bat_wings
 
 
+def circle_art(art, box, d):
+    c = art.crop(box).resize((d, d), Image.LANCZOS).convert("RGBA")
+    m = Image.new("L", (d * 3, d * 3), 0)
+    ImageDraw.Draw(m).ellipse((0, 0, d * 3 - 1, d * 3 - 1), fill=255)
+    base = radial((d, d), (150, 28, 48), (36, 6, 14), 0.5, 0.4, 0.9).convert("RGBA")
+    base.alpha_composite(c)
+    base.putalpha(m.resize((d, d), Image.LANCZOS))
+    return base
+
+
+nw.circle_art = circle_art
+
+
 def bat(d, cx, cy, w, col, alpha=255):
     pts = [(0, -0.12), (0.12, -0.28), (0.18, -0.12), (0.26, -0.18), (0.55, -0.34), (1.0, -0.18), (0.8, 0.02), (0.64, 0.0), (0.5, 0.18), (0.36, 0.04), (0.18, 0.2), (0.08, 0.04), (0, 0.1)]
     full = [(cx + x * w, cy + y * w) for x, y in pts] + [(cx - x * w, cy + y * w) for x, y in reversed(pts)]
@@ -135,7 +148,7 @@ def figure(art_cut):
 
 
 def face_hack(art):
-    face = art.crop((300, 70, 620, 390)).resize((368, 368), Image.LANCZOS).convert("RGBA")
+    face = art.crop((235, 50, 675, 490)).resize((368, 368), Image.LANCZOS).convert("RGBA")
     h = Image.new("RGBA", (1000, 1600), (0, 0, 0, 0))
     h.alpha_composite(face, (322, 70))
     return h
@@ -187,7 +200,8 @@ def screen(cut, kind, big, small, note):
         img = nw.label(img, note, (X, 700), 26, BONE_D, "left", 5)
     img = ImageDraw.Draw(img) and img
     nw.corner_brackets(img, 44, 110, GOLD + (255,), width=4)
-    img = nw.label(img, nw.NAME, (960 if kind == "end" else 70, 60 if kind == "end" else 100), 26, BONE, "center" if kind == "end" else "left", 12)
+    if kind != "end":
+        img = nw.label(img, nw.NAME, (70, 100), 26, BONE, "left", 12)
     return img
 
 
@@ -279,7 +293,7 @@ def alert(art, head, sub, col, W=1000, H=320):
     r = 108
     d = ImageDraw.Draw(img)
     d.ellipse((120 - r - 10, H // 2 - r - 10, 120 + r + 10, H // 2 + r + 10), fill=DEEP + (255,), outline=col + (255,), width=6)
-    pic = art.crop((300, 70, 620, 390)).resize((2 * r, 2 * r), Image.LANCZOS).convert("RGBA")
+    pic = art.crop((235, 50, 675, 490)).resize((2 * r, 2 * r), Image.LANCZOS).convert("RGBA")
     mm = Image.new("L", (2 * r * 3, 2 * r * 3), 0)
     ImageDraw.Draw(mm).ellipse((0, 0, 2 * r * 3 - 1, 2 * r * 3 - 1), fill=255)
     base = radial((2 * r, 2 * r), (120, 20, 40), (30, 6, 12), 0.5, 0.4, 0.9).convert("RGBA")

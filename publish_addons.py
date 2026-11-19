@@ -117,7 +117,7 @@ def main():
         print("site: nothing changed")
         return
     run("git", "add", "-A", cwd=HERE)
-    msg = "Update the SeviathsUsefultools downloads (retail %s, forever %s)\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>" % (
+    msg = "Update the SeviathsUsefultools downloads (retail %s, forever %s)" % (
         site["usefultools"]["retail"]["version"], site["usefultools"]["forever"]["version"])
     run("git", "-c", "user.name=santamadaraneilande-ctrl", "-c", "user.email=santamadaraneilande@gmail.com", "commit", "-q", "-m", msg, cwd=HERE)
     print(run("git", "push", "origin", "main", cwd=HERE) or "site: pushed")

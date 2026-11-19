@@ -6,12 +6,6 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/redhead1.png</image:loc><image:title>Red head illustration</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/bottlepirate.png</image:loc><image:title>Pirate illustration</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/cukcilvekspabeigtaversija.png</image:loc><image:title>Pigman illustration</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/brochure.png</image:loc><image:title>Brochure first-side</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/brochure2.png</image:loc><image:title>Brochure other side</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Urban2.png</image:loc><image:title>Urban dictionary</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Roselogo1.png</image:loc><image:title>Rose Logo</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/TreesBanner.png</image:loc><image:title>Rowan trees banner</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Football.png</image:loc><image:title>Football banner plain</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/characterdesign.jpg</image:loc><image:title>Warrior lady Illustration</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/beija666.png</image:loc><image:title>Character design illustration Beija</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_about.png</image:loc><image:title>About - Twitch design</image:title></image:image>
@@ -211,6 +205,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Logo/starcaller_logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Logo/petals_helmet_logo.png</image:loc><image:title>Petals helmet logo - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Logo/petals_snake_logo.png</image:loc><image:title>Petals snake logo - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Logo/rose_logo.png</image:loc><image:title>Rose logo - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Banner/crimson_banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Banner/banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
@@ -250,6 +245,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_story.png</image:loc><image:title>Football story</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_ticket.png</image:loc><image:title>Football ticket</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_wordmark.png</image:loc><image:title>Football wordmark</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Football.png</image:loc><image:title>Football banner plain</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_avatar.png</image:loc><image:title>Northbeam avatar</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_banner_facebook.png</image:loc><image:title>Northbeam banner facebook</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_banner_light.png</image:loc><image:title>Northbeam banner light</image:title></image:image>
@@ -376,6 +372,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_wall_label_template.png</image:loc><image:title>Urban Dictionary wall label template</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_web_banner.png</image:loc><image:title>Urban Dictionary web banner</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_x_header.png</image:loc><image:title>Urban Dictionary x header</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Urban2.png</image:loc><image:title>Urban Dictionary original poster</image:title></image:image>
   </url>
   <url>
     <loc>https://petalsofiron.github.io/Seviath/usefultools.html</loc>

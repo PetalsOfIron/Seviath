@@ -42,10 +42,9 @@ def render_button(project):
 
 
 def render_section(projects, section_id):
-    if projects:
-        buttons = "\n      ".join(render_button(p) for p in projects)
-    else:
-        buttons = '<p class="empty-note">No works added yet.</p>'
+    if not projects:
+        return ""
+    buttons = "\n      ".join(render_button(p) for p in projects)
     return f'<div class="btn-grid" id="{section_id}">\n      {buttons}\n    </div>'
 
 
@@ -277,8 +276,10 @@ def twitch_assets():
         if is_gif:
             ensure_gif_loop(f)
         rel = f.relative_to(TWITCH_DIR)
-        sname = rel.parts[0] if rel.parts[0] in THEME_SETS else "Petals"
+        sname = rel.parts[0] if rel.parts[0] in THEME_SETS and rel.parts[0] != "Rose" else "Petals"   # the Rose screens are part of the Petals of Iron set
         lab = pretty_label(base)
+        if rel.parts[0] == "Rose" and lab.lower().startswith("rose "):
+            lab = lab[5:].capitalize()
         if sname != "Petals" and lab.lower().startswith(sname.lower() + " "):
             lab = lab[len(sname) + 1:]
             lab = lab[:1].upper() + lab[1:]
@@ -335,6 +336,13 @@ DESIGN_NAMES = {"UrbanDictionary": "Urban Dictionary"}
 DESIGN_BRANDS = {"Tessel": "Tessel brand kit", "Perfum": "Perfum brand kit", "Northbeam": "Northbeam company kit", "Football": "Football company kit", "UrbanDictionary": "Event design: Urban Dictionary student exhibition"}
 
 
+# Loose design pieces: each gets a place of its own (a section or the kit it belongs to)
+DESIGN_EXTRA = {"Football": [("Football banner plain", "images/Football.png")],
+                "UrbanDictionary": [("Urban Dictionary original poster", "images/Urban2.png")]}
+DESIGN_STANDALONE = [("Brochure design", [("Brochure first-side", "images/brochure.png"), ("Brochure other side", "images/brochure2.png")]),
+                     ("Rowan trees banner", [("Rowan trees banner", "images/TreesBanner.png")])]
+
+
 def design_assets():
     out = []
     if not DESIGN_DIR.is_dir():
@@ -347,11 +355,16 @@ def design_assets():
             tag = {".pdf": " (PDF)", ".ico": " (ICO)"}.get(f.suffix.lower(), "")
             out.append({"brand": brand_dir.name, "label": f"{DESIGN_NAMES.get(brand_dir.name, brand_dir.name)} {label.lower()}{tag}",
                         "href": "images/design/" + brand_dir.name + "/" + f.name})
+        for label, href in DESIGN_EXTRA.get(brand_dir.name, []):
+            out.append({"brand": brand_dir.name, "label": label, "href": href})
     return out
 
 
 def render_design_gallery(assets):
     parts = []
+    for title, items in DESIGN_STANDALONE:
+        btns = chr(10).join("      " + f'<a class="proj-btn" href="{esc(asset_url(h))}" target="_blank" rel="noopener" title="{esc(l)}">{esc(l)}</a>' for l, h in items)
+        parts.append(f'        <h3 class="gallery-title">{esc(title)}</h3>' + chr(10) + '        <div class="btn-grid">' + chr(10) + btns + chr(10) + '    </div>')
     for brand in sorted({a["brand"] for a in assets}):
         items = [a for a in assets if a["brand"] == brand]
         btns = "\n      ".join(

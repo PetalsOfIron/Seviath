@@ -11,7 +11,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_about.png</image:loc><image:title>About - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_about.png</image:loc><image:title>About - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_about.png</image:loc><image:title>About - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
@@ -22,8 +22,8 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/addons.png</image:loc><image:title>Addons - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/addons.png</image:loc><image:title>Addons - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
@@ -43,7 +43,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_donate.png</image:loc><image:title>Donate - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_donate.png</image:loc><image:title>Donate - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_donate.png</image:loc><image:title>Donate - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
@@ -55,7 +55,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
@@ -71,7 +71,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
@@ -83,7 +83,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
@@ -101,7 +101,7 @@
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>

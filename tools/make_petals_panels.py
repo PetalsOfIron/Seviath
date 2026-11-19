@@ -2,7 +2,7 @@
 """Redraw the eight Petals of Iron channel panels as crisp high-resolution artwork (same design as the originals):
 pill with a red inner line, red medallion with a cream icon, bold serif title, grey-blue leaves and red berries.
 Draws at 4x and scales down, so edges stay clean.   python tools/make_petals_panels.py
-Writes images/twitch-large/<name>.png (2560x800) and images/twitch/<name>.png (320x100)."""
+Writes images/twitch/<name>.png at 2560x800."""
 import math
 from pathlib import Path
 
@@ -159,8 +159,11 @@ def main():
     big, small = ROOT / "images" / "twitch-large", ROOT / "images" / "twitch"
     for name, title, kind in PANELS:
         im = panel(title, kind)
-        im.resize((W * 2, H * 2), Image.LANCZOS).save(big / f"{name}.png", optimize=True)
-        im.resize((320, 100), Image.LANCZOS).save(small / f"{name}.png", optimize=True)
+        # the 2560x800 drawing is the master itself (nothing gets upscaled from a small file, so no blur)
+        im.resize((W * 2, H * 2), Image.LANCZOS).save(small / f"{name}.png", optimize=True)
+        old = big / f"{name}.png"
+        if old.exists():
+            old.unlink()
         print(name)
 
 

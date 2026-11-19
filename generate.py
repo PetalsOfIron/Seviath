@@ -339,8 +339,7 @@ DESIGN_BRANDS = {"Tessel": "Tessel brand kit", "Perfum": "Perfum brand kit", "No
 # Loose design pieces: each gets a place of its own (a section or the kit it belongs to)
 DESIGN_EXTRA = {"Football": [("Football banner plain", "images/Football.png")],
                 "UrbanDictionary": [("Urban Dictionary original poster", "images/Urban2.png")]}
-DESIGN_STANDALONE = [("Brochure design", [("Brochure first-side", "images/brochure.png"), ("Brochure other side", "images/brochure2.png")]),
-                     ("Rowan trees banner", [("Rowan trees banner", "images/TreesBanner.png")])]
+DESIGN_STANDALONE = [("Brochure design", [("Brochure first-side", "images/brochure.png"), ("Brochure other side", "images/brochure2.png")])]
 
 
 def design_assets():

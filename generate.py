@@ -111,21 +111,13 @@ def section_ld(site, topic, sid, items):
 TWITCH_DIR = ROOT / "images" / "twitch"
 TWITCH_GROUPS = [  # (folder, title, description used for alt text)
     ("", "Panels", "Twitch channel panel"),
-    ("__points", "Channel point icons", "Twitch channel point icon"),
-    ("Alert", "Alert", "Twitch stream alert animation"),
     ("Corner", "Corner", "Twitch stream corner animation"),
     ("Overlay", "Overlays", "Twitch stream overlay"),
-    ("Badges", "Sub badges", "Twitch subscriber badge"),
-    ("Flair", "Flair", "Twitch chat flair"),
     ("Starting", "Starting soon screen", "Twitch starting soon screen"),
     ("Brb", "Be right back screen", "Twitch be right back screen"),
     ("Offline", "Offline screen", "Twitch offline screen"),
     ("Logo", "Logos", "Twitch channel logo"),
     ("Banner", "Banners", "Twitch channel banner"),
-    ("Emotes", "Emotes", "Twitch emote"),
-    ("Emotes/Hype", "Hype emotes", "Twitch hype emote"),
-    ("Emotes/Tier1", "Tier 1 emotes", "Twitch tier 1 sub emote"),
-    ("Emotes/Tier2_3_Bits", "Tier 2, Tier 3 & Bits emotes", "Twitch tier 2, tier 3 and bits emote"),
 ]
 
 

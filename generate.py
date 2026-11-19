@@ -111,7 +111,6 @@ TWITCH_DIR = ROOT / "images" / "twitch"
 TWITCH_GROUPS = [  # (folder, title, description used for alt text)
     ("", "Panels", "Twitch channel panel"),
     ("Corner", "Corner", "Twitch stream corner animation"),
-    ("Overlay", "Overlays", "Twitch stream overlay"),
     ("Starting", "Starting soon screen", "Twitch starting soon screen"),
     ("Brb", "Be right back screen", "Twitch be right back screen"),
     ("Offline", "Offline screen", "Twitch offline screen"),

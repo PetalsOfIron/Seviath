@@ -988,7 +988,7 @@ def main():
             site, filename="index.html",
             title=f"{name} - Graphic Designer, Twitch Designer & Illustrator",
             description=(f"{name} is a graphic designer, Twitch designer and illustrator from Latvia. Official portfolio: graphic design, Twitch design (logos, banners, overlays), "
-                         "character illustration and software projects."),
+                         "character illustration and software projects. Also learning DevOps."),
             keywords=(f"{name}, {name} portfolio, {name} designer, {name} illustrator, Seviath, Santa Neilande, Madara Neilande, portfolio, graphic designer, twitch design, "
                       "twitch logo, twitch banner, twitch overlay, stream design, illustrator, character design, "
                       "fantasy illustration, Unity, brochure design, poster design, logo design, "

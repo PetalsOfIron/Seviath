@@ -13,7 +13,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
-DES = ROOT / "images" / "design"
+DES = ROOT.parent / "portfolio_originals" / "design"  # clean, unmarked sources
 OUT = Path("C:/Users/SaphiresSilver/Documents/twitch/Missing")
 FT = "C:/Windows/Fonts/"
 SANS, IMPACT, GEO, TIMESI, TIMES, TIMESBD = FT + "bahnschrift.ttf", FT + "impact.ttf", FT + "georgiab.ttf", FT + "timesi.ttf", FT + "times.ttf", FT + "timesbd.ttf"
@@ -319,12 +319,12 @@ def card(s, name, size, heading, lines, shape="rect"):
         im.convert("RGB").save(OUT / s.name / name, optimize=True)
         return
     if s.align == "c":
-        fit(im, lg, (W // 2 - int(W * .18), int(H * .08), int(W * .36), int(H * .26)), "ct")
+        fit(im, lg, (W // 2 - int(W * .18), int(H * .21), int(W * .36), int(H * .17)), "ct")
         d = ImageDraw.Draw(im)
-        d.text((W // 2, int(H * .55)), T(s, heading), font=title_font(s, int(H * (.14 if len(heading) < 12 else .105))), fill=s.ink, anchor="mm")
-        s.rule(d, W // 2, int(H * .68), int(W * .3))
+        d.text((W // 2, int(H * .485)), T(s, heading), font=title_font(s, int(H * (.14 if len(heading) < 12 else .105))), fill=s.ink, anchor="mm")
+        s.rule(d, W // 2, int(H * .60), int(W * .3))
         for i, t in enumerate(lines):
-            d.text((W // 2, int(H * .78) + i * int(H * .08)), t, font=F(SANS, int(H * .05)), fill=s.acc, anchor="mm")
+            d.text((W // 2, int(H * .68) + i * int(H * .07)), t, font=F(SANS, int(H * .05)), fill=s.acc, anchor="mm")
     else:
         fit(im, lg, (int(W * .08), int(H * .08), int(W * .3), int(H * .22)), "lt")
         d = ImageDraw.Draw(im)

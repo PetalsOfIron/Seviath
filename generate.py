@@ -376,7 +376,7 @@ def render_design_gallery(assets):
 
 def portfolio_body(site, projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Santa Madara Neilande</h1>\n'
-             '        <p class="hero-tagline">Graphic designer, Twitch designer &amp; illustrator &mdash; also known as <strong>Seviath</strong></p>\n'
+             '        <p class="hero-tagline">Graphic designer, Twitch designer &amp; illustrator &mdash; also known as <strong>Seviath</strong> and <strong>PetalsOfIron</strong></p>\n'
              '    </header>',
              '<section class="section" id="about"><div class="card"><h2 class="section-title">About Santa Madara Neilande</h2>'
              '<p><strong>Santa Madara Neilande</strong> is a graphic designer and illustrator from Latvia. '
@@ -695,8 +695,8 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
         "nationality": "Latvian",
         "url": f"{base}/",
         "email": f'mailto:{site["email"]}',
-        "alternateName": ["Seviath", "Santa Neilande", "Madara Neilande", "Santa Madara"],
-        "description": "Santa Madara Neilande is a graphic designer, Twitch designer and illustrator from Latvia, also known as Seviath.",
+        "alternateName": ["Seviath", "PetalsOfIron", "Petals of Iron", "Santa Neilande", "Madara Neilande", "Santa Madara"],
+        "description": "Santa Madara Neilande is a graphic designer, Twitch designer and illustrator from Latvia, also known as Seviath and PetalsOfIron.",
         "mainEntityOfPage": {"@id": f"{base}/#website"},
         "jobTitle": "Digital Artist, Graphic Designer & Illustrator",
         "image": image,
@@ -997,7 +997,7 @@ def main():
             title=f"{name} - Graphic Designer, Twitch Designer & Illustrator",
             description=(f"{name} is a graphic designer, Twitch designer and illustrator from Latvia. Official portfolio: graphic design, Twitch design (logos, banners, overlays), "
                          "character illustration and software projects. Also learning DevOps."),
-            keywords=(f"{name}, {name} portfolio, {name} designer, {name} illustrator, Seviath, Santa Neilande, Madara Neilande, portfolio, graphic designer, twitch design, "
+            keywords=(f"{name}, {name} portfolio, {name} designer, {name} illustrator, Seviath, PetalsOfIron, Santa Neilande, Madara Neilande, portfolio, graphic designer, twitch design, "
                       "twitch logo, twitch banner, twitch overlay, stream design, illustrator, character design, "
                       "fantasy illustration, Unity, brochure design, poster design, logo design, "
                       "DevOps, Latvia"),

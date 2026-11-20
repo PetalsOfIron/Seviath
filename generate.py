@@ -377,7 +377,18 @@ def render_design_gallery(assets):
 def portfolio_body(site, projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Santa Madara Neilande</h1>\n'
              '        <p class="hero-tagline">Graphic designer, Twitch designer &amp; illustrator &mdash; also known as <strong>Seviath</strong></p>\n'
-             '    </header>']
+             '    </header>',
+             '<section class="section" id="about"><div class="card"><h2 class="section-title">About Santa Madara Neilande</h2>'
+             '<p><strong>Santa Madara Neilande</strong> is a graphic designer, illustrator and digital artist from Latvia. '
+             'She studied Arts and Humanities (new media) at Liepāja University and Digital Media at Baltic Computer Academy, '
+             'and designs logos, posters, brochures, brand kits and Twitch / VTuber graphics (banners, overlays, emotes, alerts), '
+             'plus character illustration, in tools such as Photoshop, Illustrator, InDesign, After Effects, Clip Studio Paint, '
+             'Blender and Unity.</p>'
+             '<p>She is currently <strong>learning DevOps</strong>: in 2026 she completed a Vidzeme University of Applied Sciences course on '
+             'DevOps implementation and change management (culture, value stream mapping, continuous improvement, security in DevOps) '
+             'and is studying further with KodeKloud. She is also learning software development by building her own projects, '
+             'the Seviathstudio painting app and the SeviathsUsefultools World of Warcraft addons, under the name Seviath.</p>'
+             '</div></section>']
     lds = []
     assets = twitch_assets()
     for key, title, sid, *kind in SECTIONS:

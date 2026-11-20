@@ -379,15 +379,12 @@ def portfolio_body(site, projects):
              '        <p class="hero-tagline">Graphic designer, Twitch designer &amp; illustrator &mdash; also known as <strong>Seviath</strong></p>\n'
              '    </header>',
              '<section class="section" id="about"><div class="card"><h2 class="section-title">About Santa Madara Neilande</h2>'
-             '<p><strong>Santa Madara Neilande</strong> is a graphic designer, illustrator and digital artist from Latvia. '
-             'She studied Arts and Humanities (new media) at Liepāja University and Digital Media at Baltic Computer Academy, '
-             'and designs logos, posters, brochures, brand kits and Twitch / VTuber graphics (banners, overlays, emotes, alerts), '
-             'plus character illustration, in tools such as Photoshop, Illustrator, InDesign, After Effects, Clip Studio Paint, '
-             'Blender and Unity.</p>'
-             '<p>She is currently <strong>learning DevOps</strong>: in 2026 she completed a Vidzeme University of Applied Sciences course on '
-             'DevOps implementation and change management (culture, value stream mapping, continuous improvement, security in DevOps) '
-             'and has DevOps training from KodeKloud. She is also learning software development by building her own projects, '
-             'the Seviathstudio painting app and the SeviathsUsefultools World of Warcraft addons, under the name Seviath.</p>'
+             '<p><strong>Santa Madara Neilande</strong> is a graphic designer and illustrator from Latvia. '
+             'She holds a Bachelor&rsquo;s degree in Arts and Humanities from Liepāja University and a Digital Media Practitioner certificate '
+             'from Baltic Computer Academy. Her work is graphic design: vector graphics, logos, posters, brochures, brand kits and Twitch / VTuber '
+             'graphics such as banners, overlays and emotes, as well as digital character illustration.</p>'
+             '<p>She works in Adobe Photoshop, Illustrator, InDesign, After Effects and Premiere, Clip Studio Paint, Inkscape and Blender. '
+             'Alongside design she is learning DevOps.</p>'
              '</div></section>']
     lds = []
     assets = twitch_assets()

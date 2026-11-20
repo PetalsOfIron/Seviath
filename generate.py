@@ -386,7 +386,7 @@ def portfolio_body(site, projects):
              'Blender and Unity.</p>'
              '<p>She is currently <strong>learning DevOps</strong>: in 2026 she completed a Vidzeme University of Applied Sciences course on '
              'DevOps implementation and change management (culture, value stream mapping, continuous improvement, security in DevOps) '
-             'and is studying further with KodeKloud. She is also learning software development by building her own projects, '
+             'and has DevOps training from KodeKloud. She is also learning software development by building her own projects, '
              'the Seviathstudio painting app and the SeviathsUsefultools World of Warcraft addons, under the name Seviath.</p>'
              '</div></section>']
     lds = []

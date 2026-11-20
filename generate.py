@@ -376,7 +376,7 @@ def render_design_gallery(assets):
 
 def portfolio_body(site, projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Santa Madara Neilande</h1>\n'
-             '        <p class="hero-tagline"><strong>Seviath</strong> &mdash; graphic designer, Twitch designer &amp; illustrator &mdash; creator of the SeviathsUsefultools WoW addons and the Seviathstudio painting app</p>\n'
+             '        <p class="hero-tagline">Graphic designer, Twitch designer &amp; illustrator &mdash; also known as <strong>Seviath</strong></p>\n'
              '    </header>']
     lds = []
     assets = twitch_assets()
@@ -682,10 +682,13 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
         "@type": "Person",
         "@id": f"{base}/#person",
         "name": site["name"],
+        "givenName": "Santa Madara",
+        "familyName": "Neilande",
+        "nationality": "Latvian",
         "url": f"{base}/",
         "email": f'mailto:{site["email"]}',
         "alternateName": ["Seviath", "Santa Neilande", "Madara Neilande", "Santa Madara"],
-        "description": "Santa Madara Neilande (Seviath) is a graphic designer, Twitch designer and illustrator who also makes the SeviathsUsefultools World of Warcraft addons and the Seviathstudio painting app.",
+        "description": "Santa Madara Neilande is a graphic designer, Twitch designer and illustrator from Latvia, also known as Seviath.",
         "mainEntityOfPage": {"@id": f"{base}/#website"},
         "jobTitle": "Digital Artist, Graphic Designer & Illustrator",
         "image": image,
@@ -983,10 +986,10 @@ def main():
     pages = {
         "index.html": layout(
             site, filename="index.html",
-            title=f"{name} (Seviath) - Graphic Designer, Twitch Designer & Illustrator | Portfolio",
-            description=(f"Official portfolio of {name}, also known as Seviath: graphic design, Twitch design (logos, banners, overlays), "
-                         "character illustration, the SeviathsUsefultools World of Warcraft addons and the Seviathstudio painting app."),
-            keywords=(f"{name}, Seviath, Seviaths, SeviathsUsefultools, Seviathstudio, Santa Neilande, Madara Neilande, portfolio, graphic designer, twitch design, "
+            title=f"{name} - Graphic Designer, Twitch Designer & Illustrator",
+            description=(f"{name} is a graphic designer, Twitch designer and illustrator from Latvia. Official portfolio: graphic design, Twitch design (logos, banners, overlays), "
+                         "character illustration and software projects."),
+            keywords=(f"{name}, {name} portfolio, {name} designer, {name} illustrator, Seviath, Santa Neilande, Madara Neilande, portfolio, graphic designer, twitch design, "
                       "twitch logo, twitch banner, twitch overlay, stream design, illustrator, character design, "
                       "fantasy illustration, Unity, brochure design, poster design, logo design, "
                       "DevOps, Latvia"),

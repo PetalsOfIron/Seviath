@@ -340,11 +340,12 @@ def ticket(em, wm):
     img = put(img, fit(em, 300, 340), center=(240, H / 2), shadow_op=0.4)
     img = text(img, NAME, (470, 250), font("impact.ttf", 170), (250, 252, 255), track=10)
     img = text(img, "MATCH TICKET  -  SATURDAY 15:00", (474, 350), font("bahnschrift.ttf", 44), CYAN, track=10)
-    img = text(img, "HOME STADIUM  -  BLOCK B  -  ROW 12  -  SEAT 24", (474, 450), font("bahnschrift.ttf", 36), (226, 238, 250), track=6)
+    img = text(img, "HOME STADIUM  -  BLOCK B  -  ROW 12  -  SEAT 24", (474, 450), font("bahnschrift.ttf", 34), (226, 238, 250), track=3)
     d = ImageDraw.Draw(img)
     d.line([(1560, 40), (1560, H - 40)], fill=(226, 238, 250, 160), width=4)
     for y in range(50, H - 50, 36):
         d.rectangle((1556, y, 1564, y + 18), fill=(16, 24, 32, 255))
+    d.rectangle((1600, 150, 1980, 590), fill=(20, 38, 66, 255))  # solid panel so the corner stripes never show through the barcode
     for i in range(34):  # simple barcode
         x = 1625 + i * 10
         d.rectangle((x, 180, x + (3 if i % 3 else 7), 560), fill=(244, 247, 250, 255))

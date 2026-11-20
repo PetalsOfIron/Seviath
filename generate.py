@@ -384,7 +384,7 @@ def portfolio_body(site, projects):
              'from Baltic Computer Academy. Her work is graphic design: vector graphics, logos, posters, brochures, brand kits and Twitch / VTuber '
              'graphics such as banners, overlays and emotes, as well as digital character illustration.</p>'
              '<p>She works in Adobe Photoshop, Illustrator, InDesign, After Effects and Premiere, Clip Studio Paint, Inkscape and Blender. '
-             'Alongside design she is learning DevOps.</p>'
+             'Alongside design she is learning DevOps and has made a digital painting app (Seviathstudio) and World of Warcraft addons (SeviathsUsefultools).</p>'
              '</div></section>']
     lds = []
     assets = twitch_assets()

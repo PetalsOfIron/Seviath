@@ -715,6 +715,7 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
 <meta name="author" content="{esc(site["name"])}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#dcc9c3">
+<meta name="google-site-verification" content="-VESzpDQaNiR5GDgM3UvPcG7iRlC5MFL0xVJqkBSi84">
 <link rel="canonical" href="{esc(url)}">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">

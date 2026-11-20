@@ -10,6 +10,7 @@ Seviathstudio download link, then run:
 
     python3 generate.py
 """
+import datetime
 import hashlib
 import json
 import html
@@ -374,8 +375,8 @@ def render_design_gallery(assets):
 
 
 def portfolio_body(site, projects):
-    parts = ['<header class="hero">\n        <h1 class="hero-name">Portfolio</h1>\n'
-             '        <p class="hero-tagline">Santa Madara Neilande &mdash; designer &amp; illustrator &mdash; learning to code</p>\n'
+    parts = ['<header class="hero">\n        <h1 class="hero-name">Santa Madara Neilande</h1>\n'
+             '        <p class="hero-tagline"><strong>Seviath</strong> &mdash; graphic designer, Twitch designer &amp; illustrator &mdash; creator of the SeviathsUsefultools WoW addons and the Seviathstudio painting app</p>\n'
              '    </header>']
     lds = []
     assets = twitch_assets()
@@ -683,15 +684,22 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
         "name": site["name"],
         "url": f"{base}/",
         "email": f'mailto:{site["email"]}',
+        "alternateName": ["Seviath", "Santa Neilande", "Madara Neilande", "Santa Madara"],
+        "description": "Santa Madara Neilande (Seviath) is a graphic designer, Twitch designer and illustrator who also makes the SeviathsUsefultools World of Warcraft addons and the Seviathstudio painting app.",
+        "mainEntityOfPage": {"@id": f"{base}/#website"},
         "jobTitle": "Digital Artist, Graphic Designer & Illustrator",
         "image": image,
-        "sameAs": [site["linkedin"], site["github"]],
+        "sameAs": [site["linkedin"], site["github"], "https://x.com/SMadNa5"],
         "knowsAbout": ["Graphic design", "Twitch design", "Illustration", "DevOps", "Learning software development"],
     }
     graph = [person, {
         "@type": "WebSite", "@id": f"{base}/#website", "url": f"{base}/",
-        "name": f'{site["name"]} - Portfolio', "inLanguage": "en",
+        "name": f'{site["name"]} (Seviath) - Portfolio', "alternateName": "Seviath", "inLanguage": "en",
         "publisher": {"@id": f"{base}/#person"}}]
+    if filename not in ("index.html", "404.html"):
+        graph.append({"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": site["name"], "item": f"{base}/"},
+            {"@type": "ListItem", "position": 2, "name": dict(NAV).get(filename, filename), "item": url}]})
     if extra_ld:
         graph.extend(extra_ld if isinstance(extra_ld, list) else [extra_ld])
     ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
@@ -969,10 +977,10 @@ def main():
     pages = {
         "index.html": layout(
             site, filename="index.html",
-            title=f"{name} - Portfolio | Graphic Designer, Twitch Designer & Illustrator",
-            description=(f"Portfolio of {name}: graphic design, Twitch design (logos, banners, overlays), "
-                         "character illustration and DevOps / software projects."),
-            keywords=(f"{name}, Santa Neilande, Madara Neilande, portfolio, graphic designer, twitch design, "
+            title=f"{name} (Seviath) - Graphic Designer, Twitch Designer & Illustrator | Portfolio",
+            description=(f"Official portfolio of {name}, also known as Seviath: graphic design, Twitch design (logos, banners, overlays), "
+                         "character illustration, the SeviathsUsefultools World of Warcraft addons and the Seviathstudio painting app."),
+            keywords=(f"{name}, Seviath, Seviaths, SeviathsUsefultools, Seviathstudio, Santa Neilande, Madara Neilande, portfolio, graphic designer, twitch design, "
                       "twitch logo, twitch banner, twitch overlay, stream design, illustrator, character design, "
                       "fantasy illustration, Unity, brochure design, poster design, logo design, "
                       "DevOps, Latvia"),
@@ -981,8 +989,8 @@ def main():
                        "about": {"@id": f"{base}/#person"}}] + port_lds),
         "contacts.html": layout(
             site, filename="contacts.html",
-            title=f"Contacts - {name} | Designer & Illustrator",
-            description=(f"Contact {name} - graphic designer, Twitch designer and illustrator."
+            title=f"Contacts - {name} (Seviath) | Designer & Illustrator",
+            description=(f"Contact {name} (Seviath) - graphic designer, Twitch designer and illustrator. "
                          f"Email {site['email']} or find me on LinkedIn."),
             keywords=f"{name}, contact, hire designer, twitch designer, illustrator, LinkedIn, email",
             body=contacts_body(site),
@@ -990,7 +998,7 @@ def main():
                       "about": {"@id": f"{base}/#person"}}),
         "cv.html": layout(
             site, filename="cv.html",
-            title=f"CV - {name} | Digital Artist & Designer",
+            title=f"CV - {name} (Seviath) | Digital Artist & Designer",
             description=(f"Curriculum vitae of {name}: work experience, education, skills and certificates "
                          "of a digital artist and designer from Latvia."),
             keywords=f"{name}, CV, resume, digital artist, designer, work experience, education, certificates, Latvia",
@@ -999,28 +1007,31 @@ def main():
                       "about": {"@id": f"{base}/#person"}}),
         "usefultools.html": layout(
             site, filename="usefultools.html",
-            title=f"SeviathsUsefultools - World of Warcraft addons by {name} | Download",
-            description=("SeviathsUsefultools is a free World of Warcraft addon with farming, codex, dungeon & raid "
+            title=f"SeviathsUsefultools - WoW addons for Retail & WoW Forever by {name} (Seviath)",
+            description=(f"SeviathsUsefultools by {name} (Seviath): free World of Warcraft addons with farming, codex, dungeon & raid "
                          "and guild tools. Download the Retail (Midnight) or WoW Forever edition."),
             keywords=(f"SeviathsUsefultools, Seviaths Useful Tools, WoW addon, World of Warcraft addon, WoW Forever, "
                       f"retail addon, Midnight, {name}, download"),
             body=tools_body(site),
-            extra_ld={"@type": "SoftwareApplication", "name": "SeviathsUsefultools",
-                      "applicationCategory": "GameApplication", "operatingSystem": "Windows, macOS",
-                      "url": f"{base}/usefultools.html",
-                      "downloadUrl": [site["usefultools"]["retail"]["download_url"],
-                                      site["usefultools"]["forever"]["download_url"]],
-                      "author": {"@id": f"{base}/#person"},
-                      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}),
+            extra_ld=[{"@type": "SoftwareApplication", "name": f'SeviathsUsefultools - {k["name"]}',
+                       "alternateName": "Seviaths Useful Tools", "applicationCategory": "GameApplication",
+                       "operatingSystem": "Windows, macOS", "url": f"{base}/usefultools.html",
+                       "downloadUrl": k["download_url"], "softwareVersion": k["version"],
+                       "codeRepository": k["source_url"], "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+                       "author": {"@id": f"{base}/#person"},
+                       "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}}
+                      for k in (site["usefultools"]["retail"], site["usefultools"]["forever"])]),
         "seviathstudio.html": layout(
             site, filename="seviathstudio.html",
-            title=f"Seviathstudio - Digital painting app by {name} | Download",
-            description=("Seviathstudio is a free, open source digital painting and illustration app with a brush "
+            title=f"Seviathstudio - free digital painting app by {name} (Seviath)",
+            description=(f"Seviathstudio by {name} (Seviath) is a free, open source digital painting and illustration app with a brush "
                          "designer, layers, gradient brushes, filters and a session recorder. Download it here."),
             keywords=(f"Seviathstudio, {name}, digital painting app, illustration software, brush designer, "
                       "free painting software, open source, download"),
             body=studio_body(site),
             extra_ld={"@type": "SoftwareApplication", "name": "Seviathstudio",
+                      "alternateName": "Seviath Studio", "codeRepository": s["source_url"],
+                      "license": "https://www.gnu.org/licenses/gpl-3.0.html",
                       "applicationCategory": "MultimediaApplication", "operatingSystem": "Windows",
                       "url": f"{base}/seviathstudio.html", "downloadUrl": s["download_url"],
                       "author": {"@id": f"{base}/#person"},
@@ -1061,7 +1072,7 @@ def main():
         + [{"title": a["label"] + " - Twitch design", "href": a["href"]} for a in twitch_assets()]
         + [{"title": a["label"], "href": a["href"]} for a in design_assets() if a["href"].lower().endswith((".png", ".jpg", ".jpeg", ".webp"))])
     entries = "".join(
-        f"  <url>\n    <loc>{esc(u)}</loc>\n{img_xml if u == f'{base}/' else ''}  </url>\n" for u in urls)
+        f"  <url>\n    <loc>{esc(u)}</loc>\n    <lastmod>{datetime.date.today().isoformat()}</lastmod>\n{img_xml if u == f'{base}/' else ''}  </url>\n" for u in urls)
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
                'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n' + entries + "</urlset>\n")

@@ -376,7 +376,7 @@ def render_design_gallery(assets):
 
 def portfolio_body(site, projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Santa Madara Neilande</h1>\n'
-             '        <p class="hero-tagline">Graphic designer, Twitch designer &amp; illustrator &mdash; also known as <strong>Seviath</strong> and <strong>PetalsOfIron</strong></p>\n'
+             '        <p class="hero-tagline">Graphic designer, Twitch designer &amp; illustrator</p>\n'
              '    </header>',
              '<section class="section" id="about"><div class="card"><h2 class="section-title">About Santa Madara Neilande</h2>'
              '<p><strong>Santa Madara Neilande</strong> is a graphic designer and illustrator from Latvia. '

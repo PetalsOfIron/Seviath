@@ -689,12 +689,13 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
         "mainEntityOfPage": {"@id": f"{base}/#website"},
         "jobTitle": "Digital Artist, Graphic Designer & Illustrator",
         "image": image,
+        "logo": f"{base}/images/seviath-logo.png",
         "sameAs": [site["linkedin"], site["github"], "https://x.com/SMadNa5"],
         "knowsAbout": ["Graphic design", "Twitch design", "Illustration", "DevOps", "Learning software development"],
     }
     graph = [person, {
         "@type": "WebSite", "@id": f"{base}/#website", "url": f"{base}/",
-        "name": f'{site["name"]} (Seviath) - Portfolio', "alternateName": "Seviath", "inLanguage": "en",
+        "name": f'{site["name"]} (Seviath) - Portfolio', "alternateName": "Seviath", "image": f"{base}/images/seviath-logo.png", "inLanguage": "en",
         "publisher": {"@id": f"{base}/#person"}}]
     if filename not in ("index.html", "404.html"):
         graph.append({"@type": "BreadcrumbList", "itemListElement": [
@@ -715,6 +716,10 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#dcc9c3">
 <link rel="canonical" href="{esc(url)}">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="{esc(site["name"])}">
 <meta property="og:title" content="{esc(title)}">

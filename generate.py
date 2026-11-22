@@ -374,7 +374,7 @@ def render_design_gallery(assets):
     return "\n".join(parts)
 
 
-APPS_URL = "https://seviath1.wordpress.com/apps/"
+APPS_URL = "https://seviath.framer.website/"
 APPS_SECTION = (
     '<section class="section" id="apps" aria-labelledby="apps-title">'
     '<h2 class="section-title" id="apps-title">Seviath Apps</h2>'
@@ -705,7 +705,7 @@ def tools_body(site):
 
 # --------------------------------------------------------------------- page
 
-NAV = [("index.html", "Portfolio"), ("usefultools.html", "SeviathsUsefultools"), ("seviathstudio.html", "Seviathstudio"), ("contacts.html", "Contacts"), ("cv.html", "CV"), ("https://seviath1.wordpress.com/apps/", "Seviath Apps")]
+NAV = [("index.html", "Portfolio"), ("usefultools.html", "SeviathsUsefultools"), ("seviathstudio.html", "Seviathstudio"), ("contacts.html", "Contacts"), ("cv.html", "CV"), ("https://seviath.framer.website/", "Seviath Apps")]
 
 
 def layout(site, *, filename, title, description, body, keywords, extra_ld=None, og_type="website"):

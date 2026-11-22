@@ -696,7 +696,7 @@ def tools_body(site):
 
 # --------------------------------------------------------------------- page
 
-NAV = [("index.html", "Portfolio"), ("usefultools.html", "SeviathsUsefultools"), ("seviathstudio.html", "Seviathstudio"), ("contacts.html", "Contacts"), ("cv.html", "CV")]
+NAV = [("index.html", "Portfolio"), ("usefultools.html", "SeviathsUsefultools"), ("seviathstudio.html", "Seviathstudio"), ("contacts.html", "Contacts"), ("cv.html", "CV"), ("https://seviath1.wordpress.com/apps/", "Seviath Apps")]
 
 
 def layout(site, *, filename, title, description, body, keywords, extra_ld=None, og_type="website"):
@@ -704,7 +704,8 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
     url = f"{base}/" if filename == "index.html" else f"{base}/{filename}"
     image = f"{base}/images/petals-background.png"
     nav = "".join(
-        f'<a href="{f}?v={BUILD}"' + (' aria-current="page"' if f == filename else "") + f'>{esc(n)}</a>'
+        (f'<a href="{f}" target="_blank" rel="noopener">{esc(n)}</a>' if f.startswith("http")
+         else f'<a href="{f}?v={BUILD}"' + (' aria-current="page"' if f == filename else "") + f'>{esc(n)}</a>')
         for f, n in NAV)
     person = {
         "@type": "Person",

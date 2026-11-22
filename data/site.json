@@ -23,7 +23,12 @@
       "source_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail",
       "version": "2.3",
       "updated": "20 Nov 2026",
-      "releases_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail/releases/latest"
+      "releases_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail/releases/latest",
+      "curseforge": {
+        "page": "https://www.curseforge.com/wow/addons/seviathsusefultools",
+        "project_id": 1774340,
+        "file_id": 9598990
+      }
     },
     "forever": {
       "name": "WoW Forever",
@@ -31,7 +36,12 @@
       "source_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever",
       "version": "1.0",
       "updated": "20 Nov 2026",
-      "releases_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever/releases/latest"
+      "releases_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever/releases/latest",
+      "curseforge": {
+        "page": "https://www.curseforge.com/wow/addons/seviaths-useful-tools-forever",
+        "project_id": 1793827,
+        "file_id": 9634220
+      }
     }
   }
 }

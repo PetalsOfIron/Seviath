@@ -399,8 +399,7 @@ def portfolio_body(site, projects):
              'graphics such as banners, overlays and emotes, as well as digital character illustration.</p>'
              '<p>She works in Adobe Photoshop, Illustrator, InDesign, After Effects and Premiere, Clip Studio Paint, Inkscape and Blender. '
              'Alongside design she is learning DevOps and has made a digital painting app (Seviathstudio) and World of Warcraft addons (SeviathsUsefultools).</p>'
-             '</div></section>',
-             APPS_SECTION]
+             '</div></section>']
     lds = []
     assets = twitch_assets()
     for key, title, sid, *kind in SECTIONS:
@@ -654,6 +653,15 @@ def studio_body(site):
 
 # ------------------------------------------------------------ useful tools
 
+def cf_buttons(e):
+    """One-click install through the CurseForge app (curseforge://install) plus the CurseForge page as a fallback."""
+    cf = e.get("curseforge")
+    if not cf: return ""
+    install = f'curseforge://install?addonId={cf["project_id"]}&fileId={cf["file_id"]}'
+    return (f'<a class="proj-btn download-btn" href="{esc(install)}" rel="noopener">&#11015; Install {esc(e["name"])} with CurseForge</a>\n'
+            f'                    <a class="proj-btn" href="{esc(cf["page"])}" target="_blank" rel="noopener">CurseForge page</a>')
+
+
 def tools_body(site):
     t = site["usefultools"]
 
@@ -664,7 +672,8 @@ def tools_body(site):
                 <p>{text}</p>
                 <p>Current version: <strong>{esc(e["version"])}</strong>{(" &middot; updated " + esc(e["updated"])) if e.get("updated") else ""}</p>
                 <div class="btn-grid">
-                    <a class="proj-btn download-btn" href="{esc(e["download_url"])}" rel="noopener">&#11015; Download for {esc(e["name"])}</a>
+{cf_buttons(e)}
+                    <a class="proj-btn" href="{esc(e["download_url"])}" rel="noopener">&#11015; Download zip ({esc(e["name"])})</a>
                     <a class="proj-btn" href="{esc(e.get("releases_url", e["download_url"]))}" target="_blank" rel="noopener">What is new</a>
                     <a class="proj-btn" href="{esc(e["source_url"])}" target="_blank" rel="noopener">Source code on GitHub</a>
                 </div>

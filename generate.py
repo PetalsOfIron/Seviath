@@ -731,7 +731,7 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
         "jobTitle": "Digital Artist, Graphic Designer & Illustrator",
         "image": image,
         "logo": f"{base}/images/seviath-logo.png",
-        "sameAs": [site["linkedin"], site["github"], "https://x.com/SMadNa5"],
+        "sameAs": [site["linkedin"], site["github"], "https://x.com/SMadNa5", "https://seviath.framer.website/", "https://petalsofiron.itch.io/seviathseo"],
         "knowsAbout": ["Graphic design", "Twitch design", "Illustration", "DevOps", "Learning software development"],
     }
     graph = [person, {

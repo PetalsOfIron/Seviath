@@ -480,6 +480,10 @@ CV_WORK = [
 ]
 
 CV_EDU = [
+    ("Git Basics for DevOps", "KodeKloud, offered through Coursera (online course)",
+     "22/11/2026", "Remote, Rīga, Latvia",
+     ["Git version control basics for DevOps work"], "Verified: coursera.org/verify/VLVK2HSZD7M1",
+     ("Coursera-KodeKloud-Git-Basics-for-DevOps-Certificate.pdf", "Open certificate")),
     ("DevOps Implementation and Change Management: Theory and Practice", "Vidzeme University of Applied Sciences (lifelong learning project)",
      "01/09/2026 – 29/10/2026", "Remote, Rīga, Latvia",
      ["Modern definitions of DevOps and how they have evolved", "Benefits of DevOps for organizational efficiency",
@@ -519,6 +523,7 @@ CV_PROJECTS = [
 
 CV_CERTS = [
     ("Vidzeme-University-DevOps-Certificate.pdf", "DevOps Implementation and Change Management", "Vidzeme University of Applied Sciences"),
+    ("Coursera-KodeKloud-Git-Basics-for-DevOps-Certificate.pdf", "Git Basics for DevOps (Nov 2026)", "Coursera / KodeKloud"),
     ("Coursera-KodeKloud-DevOps-Prerequisite-Certificate.pdf", "DevOps Prerequisite", "Coursera / KodeKloud"),
     ("Liepaja-University-Bachelor-Diploma.pdf", "Bachelor in Arts and Humanities (diploma)", "Liepājas Universitāte"),
     ("Digital-Media-Practitioner-Certificate-BDA.pdf", "Digital Media Practitioner", "Baltijas Datoru Akadēmija"),

@@ -780,6 +780,8 @@ def layout(site, *, filename, title, description, body, keywords, extra_ld=None,
 <script type="application/ld+json">
 {ld}
 </script>
+<script data-goatcounter="https://sevaith.goatcounter.com/count" async src="count.js"></script>
+<script defer src="track.js"></script>
 </head>
 <body>
 

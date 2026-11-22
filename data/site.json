@@ -1,37 +1,37 @@
 {
- "name": "Santa Madara Neilande",
- "url": "https://petalsofiron.github.io/Seviath",
- "email": "santamadaraneilande@gmail.com",
- "linkedin": "https://www.linkedin.com/in/santa-madara-neilande-9388401b6/",
- "github": "https://github.com/PetalsOfIron",
- "roles": [
-  "Graphic Designer",
-  "Twitch Designer",
-  "Illustrator",
-  "Learning to Be a Developer"
- ],
- "seviathstudio": {
-  "download_url": "https://github.com/PetalsOfIron/seviathstudio/releases/latest",
-  "download_label": "Download Seviathstudio",
-  "version": "latest",
-  "source_url": "https://github.com/PetalsOfIron/seviathstudio"
- },
- "usefultools": {
-  "retail": {
-   "name": "Retail (Midnight)",
-   "download_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail/releases/latest/download/SeviathsUsefulTools-Retail.zip",
-   "source_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail",
-   "version": "2.3",
-   "updated": "20 Nov 2026",
-   "releases_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail/releases/latest"
+  "name": "Santa Madara Neilande",
+  "url": "https://petalsofiron.github.io/Seviath",
+  "email": "santamadaraneilande@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/santa-madara-neilande-9388401b6/",
+  "github": "https://github.com/PetalsOfIron",
+  "roles": [
+    "Graphic Designer",
+    "Twitch Designer",
+    "Illustrator",
+    "Learning to Be a Developer"
+  ],
+  "seviathstudio": {
+    "download_url": "https://github.com/PetalsOfIron/seviathstudio/releases/latest/download/SeviathStudio-windows.zip",
+    "download_label": "Download Seviathstudio",
+    "version": "0.1.0 (22 Nov 2026)",
+    "source_url": "https://github.com/PetalsOfIron/seviathstudio"
   },
-  "forever": {
-   "name": "WoW Forever",
-   "download_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever/releases/latest/download/SeviathsUsefulTools-Forever.zip",
-   "source_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever",
-   "version": "1.0",
-   "updated": "20 Nov 2026",
-   "releases_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever/releases/latest"
+  "usefultools": {
+    "retail": {
+      "name": "Retail (Midnight)",
+      "download_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail/releases/latest/download/SeviathsUsefulTools-Retail.zip",
+      "source_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail",
+      "version": "2.3",
+      "updated": "20 Nov 2026",
+      "releases_url": "https://github.com/PetalsOfIron/WOWSeviathsUsefultools-Retail/releases/latest"
+    },
+    "forever": {
+      "name": "WoW Forever",
+      "download_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever/releases/latest/download/SeviathsUsefulTools-Forever.zip",
+      "source_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever",
+      "version": "1.0",
+      "updated": "20 Nov 2026",
+      "releases_url": "https://github.com/PetalsOfIron/SeviathsUsefultools-forever/releases/latest"
+    }
   }
- }
 }

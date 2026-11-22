@@ -378,12 +378,12 @@ APPS_URL = "https://seviath1.wordpress.com/apps/"
 APPS_SECTION = (
     '<section class="section" id="apps" aria-labelledby="apps-title">'
     '<h2 class="section-title" id="apps-title">Seviath Apps</h2>'
-    '<p class="section-intro">Free applications made by Seviath: a digital painting studio, World of Warcraft addons and more on the way.</p>'
+    '<p class="section-intro">Free applications made by Seviath: World of Warcraft addons, a digital painting studio in development and more on the way.</p>'
     '<div class="card">'
     '<p><strong>Seviath Labs</strong> is the home of my applications. Every new app is added to one page with its download and details.</p>'
     '<div class="btn-grid">'
     f'<a class="proj-btn" href="{APPS_URL}" target="_blank" rel="noopener">Open Seviath Labs &ndash; all apps</a>'
-    '<a class="proj-btn" href="seviathstudio.html">Seviathstudio &ndash; digital painting app</a>'
+    '<a class="proj-btn" href="seviathstudio.html">Seviathstudio &ndash; digital painting app (in development)</a>'
     '<a class="proj-btn" href="usefultools.html">SeviathsUsefultools &ndash; WoW addons</a>'
     '</div></div></section>')
 

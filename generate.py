@@ -374,6 +374,20 @@ def render_design_gallery(assets):
     return "\n".join(parts)
 
 
+APPS_URL = "https://seviath1.wordpress.com/apps/"
+APPS_SECTION = (
+    '<section class="section" id="apps" aria-labelledby="apps-title">'
+    '<h2 class="section-title" id="apps-title">Seviath Apps</h2>'
+    '<p class="section-intro">Free applications made by Seviath: a digital painting studio, World of Warcraft addons and more on the way.</p>'
+    '<div class="card">'
+    '<p><strong>Seviath Labs</strong> is the home of my applications. Every new app is added to one page with its download and details.</p>'
+    '<div class="btn-grid">'
+    f'<a class="proj-btn" href="{APPS_URL}" target="_blank" rel="noopener">Open Seviath Labs &ndash; all apps</a>'
+    '<a class="proj-btn" href="seviathstudio.html">Seviathstudio &ndash; digital painting app</a>'
+    '<a class="proj-btn" href="usefultools.html">SeviathsUsefultools &ndash; WoW addons</a>'
+    '</div></div></section>')
+
+
 def portfolio_body(site, projects):
     parts = ['<header class="hero">\n        <h1 class="hero-name">Santa Madara Neilande</h1>\n'
              '        <p class="hero-tagline">Graphic designer, Twitch designer &amp; illustrator</p>\n'
@@ -385,7 +399,8 @@ def portfolio_body(site, projects):
              'graphics such as banners, overlays and emotes, as well as digital character illustration.</p>'
              '<p>She works in Adobe Photoshop, Illustrator, InDesign, After Effects and Premiere, Clip Studio Paint, Inkscape and Blender. '
              'Alongside design she is learning DevOps and has made a digital painting app (Seviathstudio) and World of Warcraft addons (SeviathsUsefultools).</p>'
-             '</div></section>']
+             '</div></section>',
+             APPS_SECTION]
     lds = []
     assets = twitch_assets()
     for key, title, sid, *kind in SECTIONS:

@@ -705,7 +705,7 @@ def tools_body(site):
 
 # --------------------------------------------------------------------- page
 
-NAV = [("index.html", "Portfolio"), ("usefultools.html", "SeviathsUsefultools"), ("seviathstudio.html", "Seviathstudio"), ("contacts.html", "Contacts"), ("cv.html", "CV"), ("https://seviath.framer.website/", "Seviath Apps")]
+NAV = [("index.html", "Portfolio"), ("contacts.html", "Contacts"), ("cv.html", "CV"), ("https://seviath.framer.website/", "Seviath Apps")]
 
 
 def layout(site, *, filename, title, description, body, keywords, extra_ld=None, og_type="website"):
@@ -1106,11 +1106,20 @@ def main():
 <body><a href="index.html">Portfolio</a></body></html>
 """,
     }
+    framer = "https://seviath.framer.website/"
+    for old, label in (("usefultools.html", "SeviathsUsefultools"), ("seviathstudio.html", "Seviathstudio")):
+        pages[old] = f"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>{label} - moved to Seviath Labs</title>
+<link rel="canonical" href="{framer}"><meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={framer}"></head>
+<body><p>{label} now lives on the <a href="{framer}">Seviath Labs apps page</a>.</p>
+<script>location.replace("{framer}");</script></body></html>
+"""
     for fname, content in pages.items():
         (ROOT / fname).write_text(content, encoding="utf-8")
         print(f"Generated: {fname}")
 
-    urls = [f"{base}/", f"{base}/usefultools.html", f"{base}/seviathstudio.html", f"{base}/contacts.html", f"{base}/cv.html"]
+    urls = [f"{base}/", f"{base}/contacts.html", f"{base}/cv.html"]
     # image entries help Google Images find the illustrations and designs
     img_xml = "".join(
         f"    <image:image><image:loc>{esc(abs_url(site, p['href']))}</image:loc>"

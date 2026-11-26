@@ -114,6 +114,60 @@
    "section": "art-3D",
    "type": "image",
    "href": "images/cilveks-skelets.png"
+  },
+  {
+   "title": "Ark Logo",
+   "section": "design",
+   "type": "image",
+   "href": "images/design/logos/Ark.jpg"
+  },
+  {
+   "title": "Bottle Emblem Logo",
+   "section": "design",
+   "type": "image",
+   "href": "images/design/logos/botttle.jpg"
+  },
+  {
+   "title": "Dress Silhouette Logo",
+   "section": "design",
+   "type": "image",
+   "href": "images/design/logos/Dresslogo.png"
+  },
+  {
+   "title": "Female Hat Emblem",
+   "section": "design",
+   "type": "image",
+   "href": "images/design/logos/Female.jpg"
+  },
+  {
+   "title": "Geometric Wolf Logo",
+   "section": "design",
+   "type": "image",
+   "href": "images/design/logos/wolf.jpg"
+  },
+  {
+   "title": "Wolf Shield Logo",
+   "section": "design",
+   "type": "image",
+   "href": "images/design/logos/Wolf1logo.png"
+  },
+  {
+   "title": "Glitchy Streamer Banner",
+   "section": "twitch",
+   "type": "image",
+   "href": "images/twitch/banners/Glichybanner.jpg"
+  }
+  {
+   "title": "Offline Screen (Brown)",
+   "section": "twitch",
+   "type": "image",
+   "href": "images/twitch/offline/ScreenBrown.jpg"
+  },
+  {
+   "title": "Offline Screen (Crimson)",
+   "section": "twitch",
+   "type": "image",
+   "href": "images/twitch/offline/Screenred.jpg"
   }
  ]
 }

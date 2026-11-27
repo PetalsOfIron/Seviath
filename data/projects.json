@@ -119,13 +119,13 @@
    "title": "Ark Logo",
    "section": "design",
    "type": "image",
-   "href": "images/design/Otherdesigns/logo/Ark.jpg"
+   "href": "images/design/Otherdesigns/logo/Ark.png"
   },
   {
    "title": "Bottle Emblem Logo",
    "section": "design",
    "type": "image",
-   "href": "images/design/Otherdesigns/logo/botttle.jpg"
+   "href": "images/design/Otherdesigns/logo/botttle.png"
   },
   {
    "title": "Dress Silhouette Logo",
@@ -143,7 +143,7 @@
    "title": "Geometric Wolf Logo",
    "section": "design",
    "type": "image",
-   "href": "images/design/Otherdesigns/logo/wolf.jpg"
+   "href": "images/design/Otherdesigns/logo/wolfie2.png"
   },
   {
    "title": "Wolf Shield Logo",
@@ -180,6 +180,12 @@
    "section": "twitch",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Banner/Floral bannerPink.png"
+  },
+  {
+   "title": "Offline Screen (Crimson)",
+   "section": "twitch",
+   "type": "image",
+   "href": "images/twitch/OtherDesignWorks/Banner/FloralWallpaper.png"
   }
  ]
 }

@@ -194,7 +194,7 @@
    "href": "images/twitch/OtherDesignWorks/Panels/Floralpanels.png"
   },
   {
-   "title": "Rose and Swords",
+   "title": "Rose and Swords logo",
    "section": "twitch",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/RoseandSwords.png"
@@ -212,40 +212,46 @@
    "href": "images/twitch/OtherDesignWorks/Logo/SwordandBones.png"
   },
   {
-   "title": "Sword and Claws",
+   "title": "Sword and Claws logo",
    "section": "twitch",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Swordclaws.png"
   },
    {
-   "title": "Swords Rose and claws",
+   "title": "Swords Rose and claws logo",
    "section": "twitch",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Swordsandrose2.png"
   },
   {
-   "title": "Skull and Roses",
+   "title": "Skull and Roses logo",
    "section": "twitch",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Skullandroses.png"
   },
   {
-   "title": "Pirate",
+   "title": "Pirate logo",
    "section": "twitch",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Pirate.png"
   },
   {
-   "title": "Mask",
+   "title": "Mask logo",
    "section": "twitch",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Mask.png"
   },
   {
-   "title": "Rose",
+   "title": "Rose logo",
    "section": "twitch",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Rose.png"
+  },
+  {
+   "title": "Triangle logo",
+   "section": "design",
+   "type": "image",
+   "href": "images/design/Otherdesigns/logo/Tranglegreen.png"
   }
  ]
 }

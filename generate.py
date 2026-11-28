@@ -417,11 +417,16 @@ def portfolio_body(site, projects):
             ld_items = items + [{"title": f'{a["label"]} ({a["folder"] or "panel"})', "href": a["href"], "type": "image"}
                                 for a in assets]
         lds.append(section_ld(site, topic, sid, ld_items))
+        plain = [p for p in items if not p.get("group")]
+        grouped = ""
+        for g in dict.fromkeys(p["group"] for p in items if p.get("group")):
+            grouped += (f'\n        <h3 class="gallery-title">{esc(g)}</h3>\n'
+                        f'        {render_section([p for p in items if p.get("group") == g], sid + "-" + re.sub(r"[^a-z0-9]+", "-", g.lower()))}')
         parts.append(
             f'    <section class="section" id="{anchor}" aria-labelledby="{anchor}-title">\n'
             f'        <h2 class="section-title" id="{anchor}-title">{esc(title)}</h2>\n'
             f'        <p class="section-intro">{esc(intro)}</p>\n'
-            f'        {render_section(items, sid)}{extra}\n'
+            f'        {render_section(plain, sid)}{grouped}{extra}\n'
             f'    </section>')
     return "\n\n".join(parts), lds
 

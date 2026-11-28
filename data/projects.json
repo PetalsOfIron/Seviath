@@ -118,156 +118,182 @@
   {
    "title": "Ark Logo",
    "section": "design",
+   "group": "Logos",
    "type": "image",
    "href": "images/design/Otherdesigns/logo/Ark.png"
   },
   {
    "title": "Bottle Emblem Logo",
    "section": "design",
+   "group": "Logos",
    "type": "image",
    "href": "images/design/Otherdesigns/logo/bottle.png"
   },
   {
    "title": "Dress Silhouette Logo",
    "section": "design",
+   "group": "Logos",
    "type": "image",
    "href": "images/design/Otherdesigns/logo/Dresslogo.png"
   },
   {
    "title": "Female Hat Emblem",
    "section": "design",
+   "group": "Logos",
    "type": "image",
    "href": "images/design/Otherdesigns/logo/Female.png"
   },
   {
    "title": "Geometric Wolf Logo",
    "section": "design",
+   "group": "Logos",
    "type": "image",
    "href": "images/design/Otherdesigns/logo/wolfie2.png"
   },
   {
    "title": "Wolf Shield Logo",
    "section": "design",
+   "group": "Logos",
    "type": "image",
    "href": "images/design/Otherdesigns/logo/Wolf1logo.png"
   },
   {
    "title": "Glitchy Streamer Banner",
    "section": "twitch",
+   "group": "Banners",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Banner/Glichybanner.png"
   },
   {
    "title": "Offline Screen (Brown)",
    "section": "twitch",
+   "group": "Offline screens",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Offlinescreen/ScreenBrown.png"
   },
   {
    "title": "Offline Screen (Crimson)",
    "section": "twitch",
+   "group": "Offline screens",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Offlinescreen/Screenred.png"
   },
   {
    "title": "Dark Rose Panels",
    "section": "twitch",
+   "group": "Panels",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Panels/Darkrosepanels.png"
   },
   {
    "title": "Floral Pink Banner",
    "section": "twitch",
+   "group": "Banners",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Banner/Floral bannerPink.png"
   },
   {
    "title": "Floral Wallpaper",
    "section": "twitch",
+   "group": "Banners",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Banner/FloralWallpaper.png"
   },
    {
    "title": "FloralPanels",
    "section": "twitch",
+   "group": "Panels",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Panels/Floralpanels.png"
   },
   {
    "title": "Rose and Swords logo",
    "section": "twitch",
+   "group": "Logos",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/RoseandSwords.png"
   },
   {
    "title": "Crossed Swords logo",
    "section": "twitch",
+   "group": "Logos",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Crossedswordspurple.png"
   },
   {
    "title": "Sword and bones logo",
    "section": "twitch",
+   "group": "Logos",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/SwordandBones.png"
   },
   {
    "title": "Sword and Claws logo",
    "section": "twitch",
+   "group": "Logos",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Swordclaws.png"
   },
    {
    "title": "Swords Rose and claws logo",
    "section": "twitch",
+   "group": "Logos",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Swordsandrose2.png"
   },
   {
    "title": "Skull and Roses logo",
    "section": "twitch",
+   "group": "Logos",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Skullandroses.png"
   },
   {
    "title": "Pirate logo",
    "section": "twitch",
+   "group": "Logos",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Pirate.png"
   },
   {
    "title": "Mask logo",
    "section": "twitch",
+   "group": "Logos",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Mask.png"
   },
   {
    "title": "Rose logo",
    "section": "twitch",
+   "group": "Logos",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Rose.png"
   },
   {
    "title": "Triangle logo",
    "section": "design",
+   "group": "Logos",
    "type": "image",
    "href": "images/design/Otherdesigns/logo/Tranglegreen.png"
   },
   {
    "title": "Black Cat and Roses logo",
    "section": "twitch",
+   "group": "Logos",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Logo/Cat.png"
   },
   {
    "title": "Snake Wallpaper",
    "section": "twitch",
+   "group": "Banners",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Banner/Snake and rosesgreen.png"
   },
    {
    "title": "Skull and chains Wallpaper",
    "section": "twitch",
+   "group": "Banners",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Banner/Skullblue.png"
   }

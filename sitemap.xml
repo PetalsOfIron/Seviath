@@ -2,419 +2,117 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://petalsofiron.github.io/Seviath/</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-28</lastmod>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/elven.png</image:loc><image:title>Elfen lady illustration</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/redhead1.png</image:loc><image:title>Red head illustration</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/bottlepirate.png</image:loc><image:title>Pirate illustration</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/cukcilvekspabeigtaversija.png</image:loc><image:title>Pigman illustration</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/characterdesign.jpg</image:loc><image:title>Warrior lady Illustration</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/beija666.png</image:loc><image:title>Character design illustration Beija</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_about.png</image:loc><image:title>About - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_about.png</image:loc><image:title>About - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_about.png</image:loc><image:title>About - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Panels/lavender_about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Panels/about_me.png</image:loc><image:title>About me - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/addons.png</image:loc><image:title>Addons - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Panels/lavender_chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Panels/chat_rules.png</image:loc><image:title>Chat rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_commands.png</image:loc><image:title>Commands - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_commands.png</image:loc><image:title>Commands - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_commands.png</image:loc><image:title>Commands - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_discord.png</image:loc><image:title>Discord - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_discord.png</image:loc><image:title>Discord - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_discord.png</image:loc><image:title>Discord - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_donate.png</image:loc><image:title>Donate - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_donate.png</image:loc><image:title>Donate - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_donate.png</image:loc><image:title>Donate - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Panels/donation.png</image:loc><image:title>Donation - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Panels/lavender_faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Panels/faq.png</image:loc><image:title>Faq - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Panels/lavender_links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Panels/links.png</image:loc><image:title>Links - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Panels/lavender_pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Panels/pc_setup.png</image:loc><image:title>Pc setup - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_rules.png</image:loc><image:title>Rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_rules.png</image:loc><image:title>Rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_rules.png</image:loc><image:title>Rules - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Panels/lavender_schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Panels/schedule.png</image:loc><image:title>Schedule - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Panels/lavender_socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Panels/socials.png</image:loc><image:title>Socials - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Panels/crimson_specs.png</image:loc><image:title>Specs - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Panels/nightwing_specs.png</image:loc><image:title>Specs - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Panels/starcaller_specs.png</image:loc><image:title>Specs - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Panels/lavender_support.png</image:loc><image:title>Support - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Corner/corner.gif</image:loc><image:title>Corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Corner/corner.gif</image:loc><image:title>Corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Corner/corner.gif</image:loc><image:title>Corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Corner/corner.gif</image:loc><image:title>Corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Corner/corner.gif</image:loc><image:title>Corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Corner/corner.gif</image:loc><image:title>Corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Corner/corner.gif</image:loc><image:title>Corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Corner/corner.gif</image:loc><image:title>Corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Corner/corner.gif</image:loc><image:title>Corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Corner/corner.gif</image:loc><image:title>Corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch-large/Corner/petals_corner.png</image:loc><image:title>Petals corner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Screens/crimson_starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Screens/starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Screens/starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Screens/starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Beija.png</image:loc><image:title>Character design illustration Beija</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/cilveks-skelets.png</image:loc><image:title>FleshRobot</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Otherdesigns/logo/Ark.png</image:loc><image:title>Ark Logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Otherdesigns/logo/bottle.png</image:loc><image:title>Bottle Emblem Logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Otherdesigns/logo/Dresslogo.png</image:loc><image:title>Dress Silhouette Logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Otherdesigns/logo/Female.png</image:loc><image:title>Female Hat Emblem</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Otherdesigns/logo/wolfie2.png</image:loc><image:title>Geometric Wolf Logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Otherdesigns/logo/Wolf1logo.png</image:loc><image:title>Wolf Shield Logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Banner/Glichybanner.png</image:loc><image:title>Glitchy Streamer Banner</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Offlinescreen/ScreenBrown.png</image:loc><image:title>Offline Screen (Brown)</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Offlinescreen/Screenred.png</image:loc><image:title>Offline Screen (Crimson)</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Panels/Darkrosepanels.png</image:loc><image:title>Dark Rose Panels</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Banner/Floral%20bannerPink.png</image:loc><image:title>Floral Pink Banner</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Banner/FloralWallpaper.png</image:loc><image:title>Floral Wallpaper</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Panels/Floralpanels.png</image:loc><image:title>FloralPanels</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/RoseandSwords.png</image:loc><image:title>Rose and Swords logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Crossedswordspurple.png</image:loc><image:title>Crossed Swords logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/SwordandBones.png</image:loc><image:title>Sword and bones logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Swordclaws.png</image:loc><image:title>Sword and Claws logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Swordsandrose2.png</image:loc><image:title>Swords Rose and claws logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Skullandroses.png</image:loc><image:title>Skull and Roses logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Pirate.png</image:loc><image:title>Pirate logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Mask.png</image:loc><image:title>Mask logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Rose.png</image:loc><image:title>Rose logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Otherdesigns/logo/Tranglegreen.png</image:loc><image:title>Triangle logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Cat.png</image:loc><image:title>Black Cat and Roses logo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Banner/Snake%20and%20rosesgreen.png</image:loc><image:title>Snake Wallpaper</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Banner/Skullblue.png</image:loc><image:title>Skull and chains Wallpaper</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Panels/PanelsLavender.png</image:loc><image:title>PanelsLavender - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/Panels/ROSEPanels.png</image:loc><image:title>Rosepanels - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Screens/lavender_starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Screens/nightwing_starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Screens/starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Screens/starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Screens/starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/Screens/starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Screens/starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Screens/snake_starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Screens/starcaller_starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Screens/starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Screens/starting_soon.png</image:loc><image:title>Starting soon - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Screens/crimson_be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Screens/lavender_be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Screens/nightwing_be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Screens/starcaller_be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Screens/be_right_back.png</image:loc><image:title>Be right back - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Screens/crimson_ending.png</image:loc><image:title>Ending - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Screens/lavender_ending.png</image:loc><image:title>Ending - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Screens/nightwing_ending.png</image:loc><image:title>Ending - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Screens/starcaller_ending.png</image:loc><image:title>Ending - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Screens/crimson_offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Screens/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Screens/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Screens/lavender_offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Screens/nightwing_offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Northbeam/Screens/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Perfum/Screens/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Screens/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/Screens/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Screens/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Screens/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Screens/starcaller_offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Strikeline/Screens/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Tessel/Screens/offline.png</image:loc><image:title>Offline - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Logo/gamer_streamer_logo.png</image:loc><image:title>Gamer streamer logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Logo/crimson_logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/Logo/logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Logo/logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Logo/lavender_logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Logo/nightwing_logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Logo/purple_logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Logo/logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Logo/logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/Logo/rose_logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Logo/starcaller_logo.png</image:loc><image:title>Logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Logo/petals_helmet_logo.png</image:loc><image:title>Petals helmet logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Logo/petals_snake_logo.png</image:loc><image:title>Petals snake logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Logo/rose_logo.png</image:loc><image:title>Rose logo - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Crimson/Banner/crimson_banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Floral/banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Banner/banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Logo/seviath-logo.png</image:loc><image:title>Seviath-logo - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Logo/Shochaselavend.png</image:loc><image:title>Shochaselavend - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Banner/lavender_banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Nightwing/Banner/nightwing_banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Purple/Banner/purple_banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Slash/Banner/banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Banner/snake_banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Starcaller/Banner/starcaller_banner.png</image:loc><image:title>Banner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Banner/gamer_streamer_banner.png</image:loc><image:title>Gamer streamer banner - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Helmet/Banner/Helmetbanner.png</image:loc><image:title>Helmetbanner - Twitch design</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/Banner/petals_gamer_banner.png</image:loc><image:title>Petals gamer banner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Banner/petals_rowan_trees_banner.png</image:loc><image:title>Petals rowan trees banner - Twitch design</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_avatar.png</image:loc><image:title>Football avatar</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_banner_facebook.png</image:loc><image:title>Football banner facebook</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_banner_linkedin.png</image:loc><image:title>Football banner linkedin</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_banner_twitch.png</image:loc><image:title>Football banner twitch</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_banner_twitter.png</image:loc><image:title>Football banner twitter</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_banner_youtube.png</image:loc><image:title>Football banner youtube</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_brand_guidelines.png</image:loc><image:title>Football brand guidelines</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_business_card_back.png</image:loc><image:title>Football business card back</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_business_card_front.png</image:loc><image:title>Football business card front</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_crest.png</image:loc><image:title>Football crest</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_email_signature.png</image:loc><image:title>Football email signature</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_envelope.png</image:loc><image:title>Football envelope</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_favicon_192.png</image:loc><image:title>Football favicon 192</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_favicon_32.png</image:loc><image:title>Football favicon 32</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_favicon_512.png</image:loc><image:title>Football favicon 512</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_gift_voucher.png</image:loc><image:title>Football gift voucher</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_invoice.png</image:loc><image:title>Football invoice</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_letterhead.png</image:loc><image:title>Football letterhead</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_logo.png</image:loc><image:title>Football logo</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_logo_black.png</image:loc><image:title>Football logo black</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_logo_dark.png</image:loc><image:title>Football logo dark</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_logo_white.png</image:loc><image:title>Football logo white</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_match_day_poster.png</image:loc><image:title>Football match day poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_name_badge.png</image:loc><image:title>Football name badge</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_new_arrival_poster.png</image:loc><image:title>Football new arrival poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_og_image.png</image:loc><image:title>Football og image</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_post_square.png</image:loc><image:title>Football post square</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_poster.png</image:loc><image:title>Football poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_product_tag.png</image:loc><image:title>Football product tag</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_sale_poster.png</image:loc><image:title>Football sale poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_scarf.png</image:loc><image:title>Football scarf</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_slide_content.png</image:loc><image:title>Football slide content</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_slide_title.png</image:loc><image:title>Football slide title</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_story.png</image:loc><image:title>Football story</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_thank_you_card.png</image:loc><image:title>Football thank you card</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Snake/Banner/Snake.png</image:loc><image:title>Snake - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Rose/Banner/twitterbanner.png</image:loc><image:title>Twitterbanner - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Cat.png</image:loc><image:title>Cat - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Crossedswordspurple.png</image:loc><image:title>Crossedswordspurple - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Panels/Darkrosepanels.png</image:loc><image:title>Darkrosepanels - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Banner/Floral%20bannerPink.png</image:loc><image:title>Floral bannerPink - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Panels/Floralpanels.png</image:loc><image:title>Floralpanels - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Banner/FloralWallpaper.png</image:loc><image:title>FloralWallpaper - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Banner/Glichybanner.png</image:loc><image:title>Glichybanner - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Hood/logo/Hoodlogo.png</image:loc><image:title>Hoodlogo - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/Lavender/Overlay/lavenderoverlay.png</image:loc><image:title>Lavenderoverlay - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Mask.png</image:loc><image:title>Mask - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Pirate.png</image:loc><image:title>Pirate - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Rose.png</image:loc><image:title>Rose - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/RoseandSwords.png</image:loc><image:title>RoseandSwords - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Offlinescreen/ScreenBrown.png</image:loc><image:title>ScreenBrown - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Offlinescreen/Screenred.png</image:loc><image:title>Screenred - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Skullandroses.png</image:loc><image:title>Skullandroses - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Banner/Skullblue.png</image:loc><image:title>Skullblue - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Banner/Snake%20and%20rosesgreen.png</image:loc><image:title>Snake and rosesgreen - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/SwordandBones.png</image:loc><image:title>SwordandBones - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Swordclaws.png</image:loc><image:title>Swordclaws - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/twitch/OtherDesignWorks/Logo/Swordsandrose2.png</image:loc><image:title>Swordsandrose2 - Twitch design</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/Banner.png</image:loc><image:title>Football banner</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_ticket.png</image:loc><image:title>Football ticket</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/football_wordmark.png</image:loc><image:title>Football wordmark</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Football/Strikelinelogo.png</image:loc><image:title>Football strikelinelogo</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Football.png</image:loc><image:title>Football banner plain</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_avatar.png</image:loc><image:title>Northbeam avatar</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_banner_facebook.png</image:loc><image:title>Northbeam banner facebook</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/DarkNorthbeamlogo.png</image:loc><image:title>Northbeam darknorthbeamlogo</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/GreenNorthbeamlogo.png</image:loc><image:title>Northbeam greennorthbeamlogo</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_banner_light.png</image:loc><image:title>Northbeam banner light</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_banner_linkedin.png</image:loc><image:title>Northbeam banner linkedin</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_banner_twitch.png</image:loc><image:title>Northbeam banner twitch</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_banner_twitter.png</image:loc><image:title>Northbeam banner twitter</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_banner_youtube.png</image:loc><image:title>Northbeam banner youtube</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_brand_guidelines.png</image:loc><image:title>Northbeam brand guidelines</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_business_card_back.png</image:loc><image:title>Northbeam business card back</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_business_card_front.png</image:loc><image:title>Northbeam business card front</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_email_signature.png</image:loc><image:title>Northbeam email signature</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_envelope.png</image:loc><image:title>Northbeam envelope</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_event_poster.png</image:loc><image:title>Northbeam event poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_favicon_192.png</image:loc><image:title>Northbeam favicon 192</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_favicon_32.png</image:loc><image:title>Northbeam favicon 32</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_favicon_512.png</image:loc><image:title>Northbeam favicon 512</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_gift_voucher.png</image:loc><image:title>Northbeam gift voucher</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_icon.png</image:loc><image:title>Northbeam icon</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_invoice.png</image:loc><image:title>Northbeam invoice</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_letterhead.png</image:loc><image:title>Northbeam letterhead</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_logo.png</image:loc><image:title>Northbeam logo</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_logo_black.png</image:loc><image:title>Northbeam logo black</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_logo_dark.png</image:loc><image:title>Northbeam logo dark</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_logo_white.png</image:loc><image:title>Northbeam logo white</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_name_badge.png</image:loc><image:title>Northbeam name badge</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_new_arrival_poster.png</image:loc><image:title>Northbeam new arrival poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_og_image.png</image:loc><image:title>Northbeam og image</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_post_square.png</image:loc><image:title>Northbeam post square</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_poster.png</image:loc><image:title>Northbeam poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_product_tag.png</image:loc><image:title>Northbeam product tag</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_sale_poster.png</image:loc><image:title>Northbeam sale poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_slide_content.png</image:loc><image:title>Northbeam slide content</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_slide_title.png</image:loc><image:title>Northbeam slide title</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_story.png</image:loc><image:title>Northbeam story</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_thank_you_card.png</image:loc><image:title>Northbeam thank you card</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_ticket.png</image:loc><image:title>Northbeam ticket</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/northbeam_wordmark.png</image:loc><image:title>Northbeam wordmark</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_avatar.png</image:loc><image:title>Perfum avatar</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Northbeam/Northbeamlogo.png</image:loc><image:title>Northbeam northbeamlogo</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_banner.png</image:loc><image:title>Perfum banner</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_banner_facebook.png</image:loc><image:title>Perfum banner facebook</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_banner_linkedin.png</image:loc><image:title>Perfum banner linkedin</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_banner_twitch.png</image:loc><image:title>Perfum banner twitch</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_banner_twitter.png</image:loc><image:title>Perfum banner twitter</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_banner_youtube.png</image:loc><image:title>Perfum banner youtube</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_brand_guidelines.png</image:loc><image:title>Perfum brand guidelines</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_business_card_back.png</image:loc><image:title>Perfum business card back</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_business_card_front.png</image:loc><image:title>Perfum business card front</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_email_signature.png</image:loc><image:title>Perfum email signature</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_emblem.png</image:loc><image:title>Perfum emblem</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_envelope.png</image:loc><image:title>Perfum envelope</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_event_poster.png</image:loc><image:title>Perfum event poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_favicon_192.png</image:loc><image:title>Perfum favicon 192</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_favicon_32.png</image:loc><image:title>Perfum favicon 32</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_favicon_512.png</image:loc><image:title>Perfum favicon 512</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_gift_voucher.png</image:loc><image:title>Perfum gift voucher</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_invoice.png</image:loc><image:title>Perfum invoice</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_letterhead.png</image:loc><image:title>Perfum letterhead</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_logo.png</image:loc><image:title>Perfum logo</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_logo_black.png</image:loc><image:title>Perfum logo black</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_logo_dark.png</image:loc><image:title>Perfum logo dark</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_logo_white.png</image:loc><image:title>Perfum logo white</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_name_badge.png</image:loc><image:title>Perfum name badge</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_og_image.png</image:loc><image:title>Perfum og image</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_post_square.png</image:loc><image:title>Perfum post square</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_poster.png</image:loc><image:title>Perfum poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_product_poster.png</image:loc><image:title>Perfum product poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_product_tag.png</image:loc><image:title>Perfum product tag</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_sale_poster.png</image:loc><image:title>Perfum sale poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_slide_content.png</image:loc><image:title>Perfum slide content</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_slide_title.png</image:loc><image:title>Perfum slide title</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_story.png</image:loc><image:title>Perfum story</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_thank_you_card.png</image:loc><image:title>Perfum thank you card</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_ticket.png</image:loc><image:title>Perfum ticket</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/perfum_wordmark.png</image:loc><image:title>Perfum wordmark</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_avatar.png</image:loc><image:title>Tessel avatar</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_banner.png</image:loc><image:title>Tessel banner</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_banner_facebook.png</image:loc><image:title>Tessel banner facebook</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_banner_linkedin.png</image:loc><image:title>Tessel banner linkedin</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_banner_twitch.png</image:loc><image:title>Tessel banner twitch</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_banner_twitter.png</image:loc><image:title>Tessel banner twitter</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_banner_youtube.png</image:loc><image:title>Tessel banner youtube</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_brand_guidelines.png</image:loc><image:title>Tessel brand guidelines</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Perfum/Perfumeposter.png</image:loc><image:title>Perfum perfumeposter</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/Apavsplak%C4%81tsfiver.png</image:loc><image:title>Tessel apavsplakātsfiver</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/Logo%20fshowcase.png</image:loc><image:title>Tessel logo fshowcase</image:title></image:image>
+    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/showcasebanner1111.png</image:loc><image:title>Tessel showcasebanner1111</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_business_card_back.png</image:loc><image:title>Tessel business card back</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_business_card_front.png</image:loc><image:title>Tessel business card front</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_email_signature.png</image:loc><image:title>Tessel email signature</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_emblem.png</image:loc><image:title>Tessel emblem</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_envelope.png</image:loc><image:title>Tessel envelope</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_event_poster.png</image:loc><image:title>Tessel event poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_favicon_192.png</image:loc><image:title>Tessel favicon 192</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_favicon_32.png</image:loc><image:title>Tessel favicon 32</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_favicon_512.png</image:loc><image:title>Tessel favicon 512</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_gift_voucher.png</image:loc><image:title>Tessel gift voucher</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_invoice.png</image:loc><image:title>Tessel invoice</image:title></image:image>
     <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_letterhead.png</image:loc><image:title>Tessel letterhead</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_logo.png</image:loc><image:title>Tessel logo</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_logo_black.png</image:loc><image:title>Tessel logo black</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_logo_dark.png</image:loc><image:title>Tessel logo dark</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_logo_white.png</image:loc><image:title>Tessel logo white</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_name_badge.png</image:loc><image:title>Tessel name badge</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_og_image.png</image:loc><image:title>Tessel og image</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_post_square.png</image:loc><image:title>Tessel post square</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_poster.png</image:loc><image:title>Tessel poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_product_poster.png</image:loc><image:title>Tessel product poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_product_tag.png</image:loc><image:title>Tessel product tag</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_sale_poster.png</image:loc><image:title>Tessel sale poster</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_slide_content.png</image:loc><image:title>Tessel slide content</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_slide_title.png</image:loc><image:title>Tessel slide title</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_story.png</image:loc><image:title>Tessel story</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_thank_you_card.png</image:loc><image:title>Tessel thank you card</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_ticket.png</image:loc><image:title>Tessel ticket</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/Tessel/tessel_wordmark.png</image:loc><image:title>Tessel wordmark</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_arrow_left_A3.png</image:loc><image:title>Urban Dictionary arrow left a3</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_arrow_right_A3.png</image:loc><image:title>Urban Dictionary arrow right a3</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_arrow_up_A3.png</image:loc><image:title>Urban Dictionary arrow up a3</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_artist_statement_panel_A4.png</image:loc><image:title>Urban Dictionary artist statement panel a4</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_badge_organizer.png</image:loc><image:title>Urban Dictionary badge organizer</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_badge_student.png</image:loc><image:title>Urban Dictionary badge student</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_badge_visitor.png</image:loc><image:title>Urban Dictionary badge visitor</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_brand_guidelines.png</image:loc><image:title>Urban Dictionary brand guidelines</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_certificate_A4.png</image:loc><image:title>Urban Dictionary certificate a4</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_email_header.png</image:loc><image:title>Urban Dictionary email header</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_entrance_sign_A3.png</image:loc><image:title>Urban Dictionary entrance sign a3</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_facebook_event_cover.png</image:loc><image:title>Urban Dictionary facebook event cover</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_flyer_A5_back.png</image:loc><image:title>Urban Dictionary flyer a5 back</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_flyer_A5_front.png</image:loc><image:title>Urban Dictionary flyer a5 front</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_instagram_post_square.png</image:loc><image:title>Urban Dictionary instagram post square</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_instagram_story.png</image:loc><image:title>Urban Dictionary instagram story</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_invitation_back.png</image:loc><image:title>Urban Dictionary invitation back</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_invitation_front.png</image:loc><image:title>Urban Dictionary invitation front</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_linkedin_cover.png</image:loc><image:title>Urban Dictionary linkedin cover</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_opening_night_sign_A3.png</image:loc><image:title>Urban Dictionary opening night sign a3</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_pin_button.png</image:loc><image:title>Urban Dictionary pin button</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_post_exhibition_days.png</image:loc><image:title>Urban Dictionary post exhibition days</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_post_opening_night.png</image:loc><image:title>Urban Dictionary post opening night</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_post_save_the_date.png</image:loc><image:title>Urban Dictionary post save the date</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_post_thank_you.png</image:loc><image:title>Urban Dictionary post thank you</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_poster_A3.png</image:loc><image:title>Urban Dictionary poster a3</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_profile_avatar.png</image:loc><image:title>Urban Dictionary profile avatar</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_program_cover_A5.png</image:loc><image:title>Urban Dictionary program cover a5</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_program_schedule_A4.png</image:loc><image:title>Urban Dictionary program schedule a4</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_roll_up_banner.png</image:loc><image:title>Urban Dictionary roll up banner</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_slide_schedule.png</image:loc><image:title>Urban Dictionary slide schedule</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_slide_students.png</image:loc><image:title>Urban Dictionary slide students</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_slide_thank_you.png</image:loc><image:title>Urban Dictionary slide thank you</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_slide_title.png</image:loc><image:title>Urban Dictionary slide title</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_sticker.png</image:loc><image:title>Urban Dictionary sticker</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_thank_you_board_A3.png</image:loc><image:title>Urban Dictionary thank you board a3</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_ticket_exhibition_day.png</image:loc><image:title>Urban Dictionary ticket exhibition day</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_ticket_opening_night.png</image:loc><image:title>Urban Dictionary ticket opening night</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_wall_label_template.png</image:loc><image:title>Urban Dictionary wall label template</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_web_banner.png</image:loc><image:title>Urban Dictionary web banner</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/design/UrbanDictionary/urbandictionary_x_header.png</image:loc><image:title>Urban Dictionary x header</image:title></image:image>
-    <image:image><image:loc>https://petalsofiron.github.io/Seviath/images/Urban2.png</image:loc><image:title>Urban Dictionary original poster</image:title></image:image>
   </url>
   <url>
     <loc>https://petalsofiron.github.io/Seviath/contacts.html</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-28</lastmod>
   </url>
   <url>
     <loc>https://petalsofiron.github.io/Seviath/cv.html</loc>
-    <lastmod>2026-11-22</lastmod>
+    <lastmod>2026-11-28</lastmod>
   </url>
 </urlset>

@@ -40,24 +40,28 @@
   {
    "title": "Elfen lady illustration",
    "section": "art-3D",
+   "group": "Illustration",
    "type": "image",
    "href": "images/elven.png"
   },
   {
    "title": "Red head illustration",
    "section": "art-3D",
+   "group": "Illustration",
    "type": "image",
    "href": "images/redhead1.png"
   },
   {
    "title": "Pirate illustration",
    "section": "art-3D",
+   "group": "Illustration",
    "type": "image",
    "href": "images/bottlepirate.png"
   },
   {
    "title": "Pigman illustration",
    "section": "art-3D",
+   "group": "Illustration",
    "type": "image",
    "href": "images/cukcilvekspabeigtaversija.png"
   },
@@ -100,18 +104,21 @@
   {
    "title": "Warrior lady Illustration",
    "section": "art-3D",
+   "group": "Illustration",
    "type": "image",
    "href": "images/characterdesign.jpg"
   },
   {
    "title": "Character design illustration Beija",
    "section": "art-3D",
+   "group": "Illustration",
    "type": "image",
    "href": "images/Beija.png"
   },
   {
    "title": "FleshRobot",
    "section": "art-3D",
+   "group": "Illustration",
    "type": "image",
    "href": "images/cilveks-skelets.png"
   },
@@ -296,6 +303,13 @@
    "group": "Banners",
    "type": "image",
    "href": "images/twitch/OtherDesignWorks/Banner/Skullblue.png"
+  },
+  {
+   "title": "Monster",
+   "section": "art-3D",
+   "group": "Illustration",
+   "type": "image",
+   "href": "images/Illustration/Monster.png"
   }
  ]
 }
